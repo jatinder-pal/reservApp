@@ -46,7 +46,7 @@ function getproducts(){
 $(document).ready(function(){
 	getproducts();
 	
-	$('#getproducts').on('submit', function(e){
+	$('.saveproducts').on('click', function(e){
 		e.preventDefault();
 		var checkdata = $('input[name=product_ids]:checked');
 		console.log(checkdata);
