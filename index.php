@@ -50,7 +50,11 @@ $(document).ready(function(){
 	var checkdata1 = Array();
 	var access_token = '<?php echo $access_token ?>';
 	var checkdata = $('#getproducts').serialize();
-	checkdata1 = $('input[type=checkbox]:checked').val();
+	$('input[name="product_ids[]"]').each( function(){
+            if($(this).prop('checked') == true){
+                checkdata1 = $(this).val();
+            }
+        });
 	console.log(checkdata);
 	console.log(checkdata1);
 	});
