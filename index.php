@@ -48,8 +48,10 @@ $(document).ready(function(){
 	
 	$('body').on('click', '.saveproducts', function(e){
 	var access_token = '<?php echo $access_token ?>';
-	checkdata = $('#getproducts').serialize();
+	var checkdata = $('#getproducts').serialize();
+	var checkdata1 = $('input[type=checkbox]:checked').val();
 	console.log(checkdata);
+	console.log(checkdata1);
 	});
 });
 </script>	
