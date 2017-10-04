@@ -47,10 +47,8 @@ $(document).ready(function(){
 	getproducts();
 	
 	$('body').on('click', '.saveproducts', function(e){
-	//e.preventDefault();
-	console.log($('#getproducts').serialize());
-	console.log('data');
-	var checkdata = $('input[name=product_ids]:checked');
+	var access_token = '<?php echo $access_token ?>';
+	checkdata = $('#getproducts').serialize();
 	console.log(checkdata);
 	});
 });
