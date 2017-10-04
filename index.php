@@ -54,7 +54,7 @@ $(document).ready(function(){
 	$("input[name='product_ids[]']:checked").each(function() {
 	    checkdata.push($(this).val());
 	});
-	console.log(checkdata1);
+	console.log(checkdata);
 	$.ajax({
 		type: 'POST',
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&productids='+checkdata,
