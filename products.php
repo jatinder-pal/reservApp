@@ -14,7 +14,7 @@ try
 			echo '<thead><tr><th></th><th>Product Name</th><th>Content</th><th>Brand</th><th>Image</th></tr></thead>';
 			echo '<tbody><tr>';
 			foreach($products as $Allproducts) {
-				echo '<td><input type="checkbox" name="product_ids[]" value="'.$Allproducts["id"].'" data-pro-handle="'.$Allproducts["handle"].'" /></td>';
+				echo '<td><input type="checkbox" name="product_ids" value="'.$Allproducts["id"].'" data-pro-handle="'.$Allproducts["handle"].'" /></td>';
 				echo '<td>'.$Allproducts['title'].'</td>';
 				echo '<td>'.$Allproducts['body_html'].'</td>';
 				echo '<td>'.$Allproducts['vendor'].'</td>';
