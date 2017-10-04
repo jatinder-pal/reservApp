@@ -45,12 +45,9 @@ function getproducts(){
 }
 $(document).ready(function(){
 	getproducts();
-	$('.saveproducts').click(function(e){
-	e.preventDefault();
-	alert(123);
-	});
-	$('body .saveproducts').on('click', function(e){
-	e.preventDefault();
+	
+	$('body').on('click', '.saveproducts', function(e){
+	//e.preventDefault();
 	console.log($('#getproducts').serialize());
 	console.log('data');
 	var checkdata = $('input[name=product_ids]:checked');
