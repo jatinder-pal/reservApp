@@ -21,7 +21,7 @@ try
 				echo '<td><img src="'.$Allproducts["image"]["src"].'" alt="productimage" /></td>';
 			}
 			echo '</tr>';
-			echo '<tr><td><input type="submit" value="Show button on Product Page" name="submit" /></td></tr></tbody>';
+			echo '<tr><td colspan="5"><input type="submit" value="Show button on Product Page" name="submit" /></td></tr></tbody>';
 			echo '</table>';
 			 echo '</form>';
 			}
