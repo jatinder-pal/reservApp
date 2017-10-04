@@ -50,15 +50,14 @@ $(document).ready(function(){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	//var checkdata = $('#getproducts').serialize();
-	var checkdata1 = [];
+	var checkdata = [];
 	$("input[name='product_ids[]']:checked").each(function() {
-	    checkdata1.push($(this).val());
+	    checkdata.push($(this).val());
 	});
 	console.log(checkdata1);
 	$.ajax({
 		type: 'POST',
-		url: '/metafields.php?access_token='+access_token+'&shop='+shop,
-		data: checkdata1,
+		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&productids='+checkdata,
 		dataType: "html",
 		success: function(data) { 
 			console.log(data);
