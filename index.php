@@ -50,9 +50,9 @@ $(document).ready(function(){
 	var checkdata1 = Array();
 	var access_token = '<?php echo $access_token ?>';
 	var checkdata = $('#getproducts').serialize();
-	$('input[name="product_ids[]"]').each( function(){
+	$('input[name="product_ids[]"]').each( function(index){
             if($(this).prop('checked') == true){
-                checkdata1 = $(this).val();
+                checkdata1[index] = $(this).val();
             }
         });
 	console.log(checkdata);
