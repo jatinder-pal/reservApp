@@ -39,7 +39,7 @@ function getproducts(){
 		url: '/products.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
 			$('.content-container').html(data);
-			console.log(data);
+			//console.log(data);
 		}
 	});
 }
@@ -48,6 +48,7 @@ $(document).ready(function(){
 	
 	$('.saveproducts').on('click', function(e){
 		e.preventDefault();
+		console.log('data');
 		var checkdata = $('input[name=product_ids]:checked');
 		console.log(checkdata);
 	});
