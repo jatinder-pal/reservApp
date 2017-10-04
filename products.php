@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__.'/conf.php'; //Configuration
 require __DIR__.'/vendor/autoload.php';
 use phpish\shopify;
 $access_token = $_REQUEST['access_token'];
@@ -10,9 +10,8 @@ try
 			$products = $shopify('GET /admin/products.json');
 			if($products){
 			echo '<div>';			  
-			foreach($products as $Allproducts)
-			{
-				print_r(Allproducts);
+			foreach($products as $Allproducts) {
+				print_r($Allproducts);
 			}
 			 echo '</div>';
 			}
