@@ -32,6 +32,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	 
 <script>
 	$(document).ready(function(){
+	getproducts();
 		// Get products
 	function getproducts(){
 		console.log('Get products');
