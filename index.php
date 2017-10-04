@@ -47,9 +47,10 @@ $(document).ready(function(){
 	getproducts();
 	
 	$('body').on('click', '.saveproducts', function(e){
+	var checkdata1 = Array();
 	var access_token = '<?php echo $access_token ?>';
 	var checkdata = $('#getproducts').serialize();
-	var checkdata1[] = $('input[type=checkbox]:checked').val();
+	checkdata1 = $('input[type=checkbox]:checked').val();
 	console.log(checkdata);
 	console.log(checkdata1);
 	});
