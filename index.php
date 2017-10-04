@@ -45,6 +45,9 @@ function getproducts(){
 }
 $(document).ready(function(){
 	getproducts();
+	$('.saveproducts').click(function(){
+	alert(123);
+	});
 	$('body .saveproducts').on('click', function(e){
 		console.log($('#getproducts').serialize());
 		console.log('data');
