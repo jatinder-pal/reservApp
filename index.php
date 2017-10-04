@@ -47,14 +47,12 @@ $(document).ready(function(){
 	getproducts();
 	
 	$('body').on('click', '.saveproducts', function(e){
-	var checkdata1 = Array();
 	var access_token = '<?php echo $access_token ?>';
 	var checkdata = $('#getproducts').serialize();
-	$('input[name="product_ids[]"]').each( function(index){
-            if($(this).prop('checked') == true){
-                checkdata1[index] = $(this).val();
-            }
-        });
+	var checkdata1 = [];
+	$("input[name='product_ids[]']:checked").each(function() {
+	    checkdata1.push($(this).val());
+	});
 	console.log(checkdata);
 	console.log(checkdata1);
 	});
