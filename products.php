@@ -9,7 +9,7 @@ try
 	      
 			$products = $shopify('GET /admin/products.json');
 			if($products){
-			echo '<form>';
+			echo '<form method="post" name="form" action="#">';
 			echo '<table cellspacing="10" cellpadding="10" border="1">';
 			echo '<thead><tr><th></th><th>Product Name</th><th>Content</th><th>Brand</th><th>Image</th></tr></thead>';
 			echo '<tbody><tr>';
