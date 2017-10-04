@@ -34,12 +34,14 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	$(document).ready(function(){
 		// Get products
 	function getproducts(){
-		var access_token='<?php echo $access_token ?>';
-		var shop='<?php echo $_REQUEST['shop'] ?>';
+		console.log('Get products');
+		var access_token = '<?php echo $access_token ?>';
+		var shop = '<?php echo $_REQUEST['shop'] ?>';
 		$.ajax({
-			url: '/products.php?access_token='+access_token+'&shop='+shop+'&limit='+limit+'&page_id='+page,
+			url: '/products.php?access_token='+access_token+'&shop='+shop,
 			success: function(data){
-				$('.content-container').html(data);	
+				$('.content-container').html(data);
+				console.log(data);
 			}
 								
 			
