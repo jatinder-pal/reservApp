@@ -9,7 +9,7 @@ try
 	      
 			$products = $shopify('GET /admin/products.json');
 			if($products){
-			echo '<div>';
+			echo '<form>';
 			echo '<table cellspacing="10" cellpadding="10" border="1">';
 			echo '<thead><tr><th></th><th>Product Name</th><th>Content</th><th>Brand</th><th>Image</th></tr></thead>';
 			echo '<tbody><tr>';
@@ -20,9 +20,10 @@ try
 				echo '<td>'.$Allproducts['vendor'].'</td>';
 				echo '<td><img src="'.$Allproducts["image"]["src"].'" alt="productimage" /></td>';
 			}
-			echo '</tr></tbody>';
+			echo '</tr>';
+			echo '<tr><td><input type="submit" value="Show button on Product Page" name="submit" /></td></tr></tbody>';
 			echo '</table>';
-			 echo '</div>';
+			 echo '</form>';
 			}
 	else{
 	echo "<div class='no-result'>No Products</div>";
