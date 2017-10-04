@@ -14,11 +14,11 @@ try
 			echo '<thead><tr><th></th><th>Product Name</th><th>Content</th><th>Brand</th><th>Image</th></tr></thead>';
 			echo '<tbody><tr>';
 			foreach($products as $Allproducts) {
-				echo '<td><input type="checkbox" name="'.$Allproducts->id.'" data-pro-handle="'.$Allproducts->handle.'" /></td>';
+				echo '<td><input type="checkbox" name="'.$Allproducts["id"].'" data-pro-handle="'.$Allproducts["handle"].'" /></td>';
 				echo '<td>'.$Allproducts['title'].'</td>';
-				echo '<td>'.$Allproducts->body_html.'</td>';
-				echo '<td>'.$Allproducts->vendor.'</td>';
-				echo '<td>'.$Allproducts->image['src'].'</td>';
+				echo '<td>'.$Allproducts['body_html'].'</td>';
+				echo '<td>'.$Allproducts['vendor'].'</td>';
+				//echo '<td>'.$Allproducts->image['src'].'</td>';
 			}
 			echo '</tr></tbody>';
 			echo '</table>';
