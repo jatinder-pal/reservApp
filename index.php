@@ -29,7 +29,12 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
  <body>
 <h2>Hello welcome to my app</h2>
 <div class="content-container"></div> 
-	 
+<?php
+if(isset($_REQUEST['submit'])){
+	$product_ids = $_REQUEST['product_ids'];
+	print_r($product_ids);
+}	 
+?>
 <script>
 // Get products
 function getproducts(){
