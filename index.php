@@ -45,7 +45,7 @@ function getproducts(){
 }
 $(document).ready(function(){
 	getproducts();
-	$('.saveproducts').on('click', function(e){
+	$('body .saveproducts').on('click', function(e){
 		console.log($('#getproducts').serialize());
 		console.log('data');
 		var checkdata = $('input[name=product_ids]:checked');
