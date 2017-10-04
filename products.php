@@ -18,7 +18,7 @@ try
 				echo '<td>'.$Allproducts['title'].'</td>';
 				echo '<td>'.$Allproducts['body_html'].'</td>';
 				echo '<td>'.$Allproducts['vendor'].'</td>';
-				echo '<td>'.$Allproducts['image']['src'].'</td>';
+				echo '<td><img src="'.$Allproducts["image"]["src"].'" alt="productimage" /></td>';
 			}
 			echo '</tr></tbody>';
 			echo '</table>';
