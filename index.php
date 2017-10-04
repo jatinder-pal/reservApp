@@ -59,7 +59,7 @@ $(document).ready(function(){
 		type: 'POST',
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop,
 		data: checkdata1,
-		dataType: "json",
+		dataType: "html",
 		success: function(data) { 
 			console.log(data);
 		}
