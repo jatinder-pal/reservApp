@@ -10,7 +10,7 @@ try
 			$products = $shopify('GET /admin/products.json');
 			if($products){
 			echo '<div>';
-			echo '<table>';
+			echo '<table cellspacing="10" cellpadding="10" border="1">';
 			echo '<thead><tr><th></th><th>Product Name</th><th>Content</th><th>Brand</th><th>Image</th></tr></thead>';
 			echo '<tbody><tr>';
 			foreach($products as $Allproducts) {
@@ -18,7 +18,7 @@ try
 				echo '<td>'.$Allproducts['title'].'</td>';
 				echo '<td>'.$Allproducts['body_html'].'</td>';
 				echo '<td>'.$Allproducts['vendor'].'</td>';
-				//echo '<td>'.$Allproducts->image['src'].'</td>';
+				echo '<td>'.$Allproducts['image']['src'].'</td>';
 			}
 			echo '</tr></tbody>';
 			echo '</table>';
