@@ -48,14 +48,23 @@ $(document).ready(function(){
 	
 	$('body').on('click', '.saveproducts', function(e){
 	var access_token = '<?php echo $access_token ?>';
-	var checkdata = $('#getproducts').serialize();
+	var shop = '<?php echo $_REQUEST['shop'] ?>';
+	//var checkdata = $('#getproducts').serialize();
 	var checkdata1 = [];
 	$("input[name='product_ids[]']:checked").each(function() {
 	    checkdata1.push($(this).val());
 	});
-	console.log(checkdata);
 	console.log(checkdata1);
+	$.ajax({
+		type: 'POST',
+		url: '/metafields.php?access_token='+access_token+'&shop='+shop,
+		data: checkdata1,
+		dataType: "json",
+		success: function(data) { 
+			console.log(data);
+		}
 	});
+    });
 });
 </script>	
 </body>
