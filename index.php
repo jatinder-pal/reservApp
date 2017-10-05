@@ -28,10 +28,31 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
  </head>
  <body>
 <h2>Hello welcome to my app</h2>
-<div class="content-container"></div> 
+<div class="content-container">
+	<div class="options">
+	<form method="post" name="form" id="getoptions" action="#">
+		<table cellspacing="10" cellpadding="10" border="1">
+			<thead>
+				<tr>
+				<th></th><th>Options</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr><td><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
+					<td><label for="product_page">Product Page</label></td></tr>
+				<tr><td><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
+					<td><label for="catalog_page">Catalog Page</label></td></tr>
+				<tr><td><input id="quick_view" type="checkbox" name="sel_options[]" value="quick_view" /></td>
+					<td><label for="quick_view">Quick View</label></td></tr>
+				<tr><td colspan="2"></td><input type="button" class="saveoptions" value="Show button on Product Page" name="submit" /></tr>
+			</tbody>
+		</table>
+	</form>
+	</div>
+</div> 
 <script>
 // Get products
-function getproducts(){
+/*function getproducts(){
 	console.log('Get products');
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
@@ -42,28 +63,26 @@ function getproducts(){
 			//console.log(data);
 		}
 	});
-}
+}*/
 $(document).ready(function(){
-	getproducts();
-	
-	$('body').on('click', '.saveproducts', function(e){
+	//getproducts();
+	$('body').on('click', '.saveoptions', function(e){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
-	//var checkdata = $('#getproducts').serialize();
 	var checkdata = [];
-	$("input[name='product_ids[]']:checked").each(function() {
+	$("input[name='sel_options[]']:checked").each(function() {
 	    checkdata.push($(this).val());
 	});
 	console.log(checkdata);
 	$.ajax({
 		type: 'POST',
-		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&productids='+checkdata,
+		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata,
 		dataType: "html",
 		success: function(data) { 
 			console.log(data);
 		}
 	});
-    });
+    	});
 });
 </script>	
 </body>
