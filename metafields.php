@@ -12,7 +12,7 @@ try
 		$metafield[] = array('namespace' => 'selectedproducts', 'key' => 'checkedids', 'value' => $productid,
 		'value_type' => 'integer');
 		print_r($metafield);
-		$curl_url = $shopify('POST /admin/products/'.$productid.'/metafields.json', array('metafields' => $metafield) );
+		$curl_url = $shopify('POST /admin/products/'.$productid.'/metafields.json', array('metafield' => $metafield) );
 		print_r($curl_url);
 		echo 'testtt';
 	}
