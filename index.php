@@ -80,11 +80,6 @@ $(document).ready(function(){
 		dataType: "html",
 		success: function(data) { 
 			console.log(data);
-			console.log(data['value']);
-			$.each(data, function(index, value){
-			  console.log(index);
-			  console.log(value);
-			});
 		}
 	});
     	});
