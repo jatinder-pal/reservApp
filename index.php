@@ -59,7 +59,9 @@ function fetchMetafield(){
 	$.ajax({
 		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
-			console.log(data);
+			//console.log(data);
+			var options = data.split(',');
+			console.log(options);
 		}
 	});
 }
