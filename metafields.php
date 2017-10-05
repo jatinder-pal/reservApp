@@ -9,10 +9,10 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {	
 	foreach($alloptions as $option){	
-		$metafield = array(array('namespace' => 'selectedoptions', 'key' => 'seloptions', 'value' => $option,
-		'value_type' => 'string'));
+		$metafield = array('namespace' => 'selectedoptions', 'key' => 'seloptions', 'value' => $option,
+		'value_type' => 'string');
 		$response = $shopify('POST /admin/metafields.json', array('metafield' => $metafield) );
-		print_r($response);
+		echo <pre>";print_r($response);
 		foreach($response as $response_option){
 		  echo $response_option;
 		}
