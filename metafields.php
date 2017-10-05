@@ -9,18 +9,18 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {	
 	print_r($productids);
-	/*foreach($productids as $productid){
-		$metafield = array('metafields' => array( array(
-			'namespace': 'selectedproducts',
-    			'key': 'checked',
-			'value' => $productid,
-			'value_type' => 'string',
-		      )));
+	foreach($productids as $productid){
+		$metafield = array('metafields' => array(
+		'namespace' => 'selectedproducts',
+		'key' => 'checked',
+		'value' => $productid,
+		'value_type' => 'string'
+		));
 
 		$curl_url = $shopify('POST /admin/products/'.$productid.'/metafields.json', $metafield );
 		print_r($curl_url);
 		echo 'testtt';
-	}*/
+	}
 }
 catch (shopify\ApiException $e)
 {
