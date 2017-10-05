@@ -44,13 +44,25 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<td><label for="catalog_page">Catalog Page</label></td></tr>
 				<tr><td><input id="quick_view" type="checkbox" name="sel_options[]" value="quick_view" /></td>
 					<td><label for="quick_view">Quick View</label></td></tr>
-				<tr><td colspan="2"></td><input type="button" class="saveoptions" value="Show button on Product Page" name="submit" /></tr>
+				<tr><td colspan="2"><input type="button" class="saveoptions" value="Show button on Product Page" name="submit" /></td></tr>
 			</tbody>
 		</table>
 	</form>
 	</div>
 </div> 
 <script>
+// Add Script
+function addScript(){ 
+	console.log('Add Script');
+	var access_token = '<?php echo $access_token ?>';
+	var shop = '<?php echo $_REQUEST['shop'] ?>';
+	$.ajax({
+		url: '/addScript.php?access_token='+access_token+'&shop='+shop,
+		success: function(data){
+			console.log(data);
+		}
+	});
+}
 // fetch Metafields
 function fetchMetafield(){
 	console.log('fetch Metafield');
@@ -59,6 +71,7 @@ function fetchMetafield(){
 	$.ajax({
 		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
+			if(data){
 			var options = data.split(',');
 			//console.log(options);
 			$.each(options, function(index, value){
@@ -69,6 +82,8 @@ function fetchMetafield(){
 				  $('input[name="sel_options[]"]').attr("checked","false");
 				}
 			});
+			addScript();
+			}
 		}
 	});
 }
@@ -88,6 +103,9 @@ $(document).ready(function(){
 		dataType: "html",
 		success: function(data) { 
 			console.log(data);
+			if(data){
+				addScript();
+			}
 		}
 	});
     	});
