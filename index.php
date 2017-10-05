@@ -59,16 +59,15 @@ function fetchMetafield(){
 	$.ajax({
 		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
-			//console.log(data);
 			var options = data.split(',');
-			console.log(options);
+			//console.log(options);
 			$.each(options, function(index, value){
 				console.log(value);
-				/*if($('input[name="sel_options[]"][value='+options+']')){
-				  $('input[name="sel_options[]"][value='+options+']').attr("checked","true");
+				if($('input[name="sel_options[]"][value='+value+']')){
+				  $('input[name="sel_options[]"][value='+value+']').attr("checked","true");
 				} else {
 				  $('input[name="sel_options[]"]').attr("checked","false");
-				}*/
+				}
 			});
 		}
 	});
