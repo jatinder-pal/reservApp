@@ -75,7 +75,7 @@ function fetchMetafield(){
 			var options = data.split(',');
 			//console.log(options);
 			$.each(options, function(index, value){
-				console.log(value);
+				//console.log(value);
 				if($('input[name="sel_options[]"][value='+value+']')){
 				  $('input[name="sel_options[]"][value='+value+']').attr("checked","true");
 				} else {
@@ -102,7 +102,7 @@ $(document).ready(function(){
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata,
 		dataType: "html",
 		success: function(data) { 
-			console.log(data);
+			//console.log(data);
 			if(data){
 				addScript(checkdata);
 			}
