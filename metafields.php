@@ -10,8 +10,7 @@ try
 		$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions,
 		'value_type' => 'string'));
 		$response = $shopify('POST /admin/metafields.json',$metafield);
-		print_r($response);
-		//print_r($response->value);
+		//print_r($response);
 		print_r($response['value']);
 }
 catch (shopify\ApiException $e)
