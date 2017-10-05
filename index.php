@@ -52,12 +52,12 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 </div> 
 <script>
 // Add Script
-function addScript(){ 
+function addScript(options){ 
 	console.log('Add Script');
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
-		url: '/addScript.php?access_token='+access_token+'&shop='+shop,
+		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options,
 		success: function(data){
 			console.log(data);
 		}
@@ -82,7 +82,7 @@ function fetchMetafield(){
 				  $('input[name="sel_options[]"]').attr("checked","false");
 				}
 			});
-			addScript();
+			addScript(data);
 			}
 		}
 	});
@@ -104,7 +104,7 @@ $(document).ready(function(){
 		success: function(data) { 
 			console.log(data);
 			if(data){
-				addScript();
+				addScript(checkdata);
 			}
 		}
 	});
