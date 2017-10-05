@@ -51,21 +51,20 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	</div>
 </div> 
 <script>
-// Get products
-/*function getproducts(){
-	console.log('Get products');
+// fetch Metafields
+function fetchMetafield(){
+	console.log('fetch Metafield');
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
-		url: '/products.php?access_token='+access_token+'&shop='+shop,
+		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
-			$('.content-container').html(data);
-			//console.log(data);
+			console.log(data);
 		}
 	});
-}*/
+}
 $(document).ready(function(){
-	//getproducts();
+	fetchMetafield();
 	$('body').on('click', '.saveoptions', function(e){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
