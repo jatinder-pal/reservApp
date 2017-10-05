@@ -79,7 +79,10 @@ $(document).ready(function(){
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata,
 		dataType: "html",
 		success: function(data) { 
-			console.log(data);
+			//console.log(data);
+			$(data).each(function(){
+			  console.log(data);
+			});
 		}
 	});
     	});
