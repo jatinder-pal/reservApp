@@ -69,7 +69,7 @@ function fetchMetafield(){
 				} else {
 				  $('input[name="sel_options[]"]').attr("checked","false");
 				}*/
-			}
+			});
 		}
 	});
 }
