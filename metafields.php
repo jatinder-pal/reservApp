@@ -12,7 +12,7 @@ try
 		$metafield = array( "metafield" => array(array('namespace' => 'selectedoptions', 'key' => 'seloptions', 'value' => $option,
 		'value_type' => 'string')));
 		$response = $shopify('POST /admin/metafields.json',$metafield);
-		echo <pre>";print_r($response);
+		print_r($response);
 		foreach($response as $response_option){
 		  echo $response_option;
 		}
