@@ -11,8 +11,11 @@ try
 	foreach($alloptions as $option){	
 		$metafield = array(array('namespace' => 'selectedoptions', 'key' => 'seloptions', 'value' => $option,
 		'value_type' => 'string'));
-		$curl_url = $shopify('POST /admin/metafields.json', array('metafield' => $metafield) );
-		print_r($curl_url);
+		$response = $shopify('POST /admin/metafields.json', array('metafield' => $metafield) );
+		print_r($response);
+		foreach($response as $response_option){
+		  echo $response_option;
+		}
 	}
 }
 catch (shopify\ApiException $e)
