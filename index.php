@@ -80,8 +80,9 @@ $(document).ready(function(){
 		dataType: "html",
 		success: function(data) { 
 			//console.log(data);
-			$.each(data, function(){
-			  console.log(data);
+			$.each(data, function(index, value){
+			  console.log(index);
+			  console.log(value);
 			});
 		}
 	});
