@@ -6,9 +6,15 @@ $access_token = $_REQUEST['access_token'];
 $alloptions = $_REQUEST['options'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
-{		
+{	
+	if($alloptions){
 	$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions,
 	'value_type' => 'string'));
+	} else {
+	$alloptions = "noData";
+	$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions,
+	'value_type' => 'string'));
+	}
 	$response = $shopify('POST /admin/metafields.json',$metafield);
 	//print_r($response);
 	echo $response['value'];
