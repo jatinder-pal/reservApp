@@ -7,7 +7,12 @@ $alloptions = $_REQUEST['options'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {		
-		print_r($alloptions);
+	print_r($alloptions);
+	$js_file = $_REQUEST['shop'].'addRevise.js';
+	echo $js_file;
+	$fields = array( "script_tag" => array('event' => 'onload', 'src' => $js_file));
+	$response = $shopify('POST /admin/script_tags.json',$fields);
+	print_r($response);
 }
 catch (shopify\ApiException $e)
 {
