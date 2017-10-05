@@ -65,7 +65,7 @@ function fetchMetafield(){
 			if($('input[name="sel_options[]"][value='+options+']')){
 			  $('input[name="sel_options[]"][value='+options+']').attr("checked","true");
 			} else {
-			  $('input[name="sel_options[]"]').attr("checked","false");
+			  //$('input[name="sel_options[]"]').attr("checked","false");
 			}
 		}
 	});
