@@ -4,11 +4,13 @@ require __DIR__.'/vendor/autoload.php';
 use phpish\shopify;
 $access_token = $_REQUEST['access_token'];
 $productids = $_REQUEST['productids'];
+$productids = explode(',', $productids);
+print_r($productids);
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
 	foreach($productids as $productid){
-		$metafield = array('metafields' => array(array(
+		$metafield = array('metafields' => array( array(
 			'namespace': 'selectedproducts',
     			'key': 'checked',
 			'value' => $productid,
