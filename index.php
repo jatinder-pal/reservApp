@@ -80,7 +80,7 @@ $(document).ready(function(){
 		dataType: "html",
 		success: function(data) { 
 			//console.log(data);
-			data.each(function(){
+			$.each(data, function(){
 			  console.log(data);
 			});
 		}
