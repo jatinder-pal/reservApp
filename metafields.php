@@ -3,16 +3,16 @@ require __DIR__.'/conf.php'; //Configuration
 require __DIR__.'/vendor/autoload.php';
 use phpish\shopify;
 $access_token = $_REQUEST['access_token'];
-$productids = $_REQUEST['productids'];
-$productids = explode(',', $productids);
+$alloptions = $_REQUEST['options'];
+$alloptions = explode(',', $alloptions);
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-	foreach($productids as $productid){	
-		$metafield = array(array('namespace' => 'selectedproducts', 'key' => 'checkedids', 'value' => $productid,
+	foreach($alloptions as $option){	
+		$metafield = array(array('namespace' => 'selectedoptions', 'key' => 'seloptions', 'value' => $option,
 		'value_type' => 'string'));
 		print_r($metafield);
-		$curl_url = $shopify('POST /admin/products/'.$productid.'/metafields.json', array('metafield' => $metafield) );
+		$curl_url = $shopify('POST /admin/metafields.json', array('metafield' => $metafield) );
 		print_r($curl_url);
 		echo 'testtt';
 	}
