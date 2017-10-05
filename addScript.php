@@ -9,7 +9,7 @@ try
 {		
 	print_r($alloptions);
 	if($alloptions){
-		$js_file = 'https://'.$_REQUEST['shop'].'/addRevise.js';
+		$js_file = 'addRevise.js';
 		echo $js_file;
 		$fields = array( "script_tag" => array('event' => 'onload', 'src' => $js_file));
 		$response = $shopify('POST /admin/script_tags.json',$fields);
