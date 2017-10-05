@@ -11,13 +11,19 @@ try
 	if($alloptions == 'noData'){
 		$data = $shopify('GET /admin/script_tags.json?src=https://revise-app.herokuapp.com/addRevise.js');
 		print_r($data);
-		echo $scriptid = $data['id'];
-		//$response = $shopify('DELETE /admin/script_tags/'.$scriptid.'.json');
-		//print_r($response);
-	} else {	
-		$fields = array( "script_tag" => array('event' => 'onload', 'src' => $js_file));
-		$response = $shopify('POST /admin/script_tags.json',$fields);
-		print_r($response);
+		foreach($data as $file){
+			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
+			print_r($response);
+		}
+	} else {
+		$data = $shopify('GET /admin/script_tags.json?src=https://revise-app.herokuapp.com/addRevise.js');
+		if(!$data){
+			$fields = array( "script_tag" => array('event' => 'onload', 'src' => $js_file));
+			$response = $shopify('POST /admin/script_tags.json',$fields);
+			print_r($response);
+		} else {
+			print_r($data);
+		}
 	}
 }
 catch (shopify\ApiException $e)
