@@ -9,8 +9,8 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {	
 	foreach($productids as $productid){	
-		$metafield[] = array('namespace' => 'selectedproducts', 'key' => 'checkedids', 'value' => $productid,
-		'value_type' => 'string');
+		$metafield = array(array('namespace' => 'selectedproducts', 'key' => 'checkedids', 'value' => $productid,
+		'value_type' => 'string'));
 		print_r($metafield);
 		$curl_url = $shopify('POST /admin/products/'.$productid.'/metafields.json', array('metafield' => $metafield) );
 		print_r($curl_url);
