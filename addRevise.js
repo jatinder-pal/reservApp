@@ -12,16 +12,20 @@ $.ajax({
       data = data.split(',');
       console.log(data);
       $.each(data, function(index, value){
-        alert(value);
         var url = window.location.href;
         if(url.indexOf('/products/') > -1 ){
           if($('.add_to_cart').length){
-            $('.add_to_cart').after('<p>testinggggg</p>');
+            $('.add_to_cart').after('<a href="#">Revise</a>');
           }
         }
         if(url.indexOf('/collections/') > -1 && value == 'catalog_page'){
           if($('.add_to_cart').length){
-            $('.add_to_cart').after('<p>testinggggg</p>');
+            $('.add_to_cart').after('<a href="#">Revise</a>');
+          }
+        }
+        if(value == 'quick_view'){
+          if($('.quick-shop .add_to_cart').length){
+            $('.quick-shop .add_to_cart').after('<a href="#">Revise</a>');
           }
         }
       });
