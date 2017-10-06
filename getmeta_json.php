@@ -9,12 +9,11 @@ try
 		$response = $shopify('GET /admin/metafields.json');
 		foreach($response as $options){
 			if($options['namespace'] == 'revisebutton'){
-			echo $options['value'];
+			//echo $options['value'];
 			$array = array(
 				'options' => $options['value']
 			);
 			echo $_REQUEST['callback']."(".json_encode($array).")";
-			//echo "{'fullname' : $options['value']}";
 			}
 		}
 }
