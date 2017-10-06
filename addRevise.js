@@ -3,10 +3,10 @@
 alert(123);
 var data = $("script[src*='addRevise.js']").attr('src').split('?')[1];
 $.ajax({
-  url: '/getmetafields.php?'+data,
-		success: function(data){
+  url: 'https://revise-app.herokuapp.com/getmetafields.php?'+data,
+  success: function(data){
       alert(data);
-    }
+  }
 });
 var url = window.location.href;
 if(url.indexOf('/products/') > -1){
