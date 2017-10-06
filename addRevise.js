@@ -13,7 +13,7 @@ $.ajax({
       console.log(data);
       $.each(data, function(index, value){
         var url = window.location.href;
-        if(url.indexOf('/products/') > -1 ){
+        if(url.indexOf('/products/') > -1 && value == 'product_page'){
           if($('.add_to_cart').length){
             $('.add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
