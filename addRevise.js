@@ -21,7 +21,7 @@ $.ajax({
           if($('.add_to_cart').length){
             $('.add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
-        } else if( url.indexOf('/collections/') > -1 && value == 'quick_view'){
+        } else if(value == 'quick_view'){
           if($('.quick-shop .add_to_cart').length){
             $('.quick-shop .add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
