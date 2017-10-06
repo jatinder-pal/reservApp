@@ -3,10 +3,10 @@
 alert(123);
 var data = $("script[src*='addRevise.js']").attr('src').split('?')[1];
 $.ajax({
+  crossDomain: true,
   url: 'https://revise-app.herokuapp.com/getmetafields.php?'+data,
   //dataType: "jsonp",
-  crossDomain: true,
-  header: {"Access-Control-Allow-Origin": "*"},
+  header: {"Access-Control-Allow-Origin": "https://sendd-shipping.myshopify.com"},
   success: function(response){
       alert(response);
       data = response.split(',');
