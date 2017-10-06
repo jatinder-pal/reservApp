@@ -17,6 +17,11 @@ $.ajax({
             $('.add_to_cart').after('<p>testinggggg</p>');
           }
         }
+        if(url.indexOf('/collections/') > -1 && value == 'catalog_page'){
+          if($('.add_to_cart').length){
+            $('.add_to_cart').after('<p>testinggggg</p>');
+          }
+        }
       });
   }
 });
