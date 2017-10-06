@@ -1,12 +1,7 @@
 <!--Revise.js-->
 (function(){
-var data = $("script[src*='addRevise.js']").attr('src').split('?')[1];
-var encodedUrl = encodeURIComponent('https://revise-app.herokuapp.com/getmetafields.php?'+data);
-$.get(encodedUrl, function(data) {
-    alert(123);
-    console.log(data);
-});  
-/*$.ajax({
+var data = $("script[src*='addRevise.js']").attr('src').split('?')[1]; 
+$.ajax({
   crossDomain: true,
   url: 'https://revise-app.herokuapp.com/getmetafields.php?'+data,
   dataType: "jsonp",
@@ -30,5 +25,5 @@ $.get(encodedUrl, function(data) {
         }
       });
   }
-});*/
+});
 })();
