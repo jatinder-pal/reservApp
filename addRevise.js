@@ -1,4 +1,4 @@
 <!--Revise.js-->
-$(document).ready(function(){
+(function(){
 alert(123);
-});
+})();
