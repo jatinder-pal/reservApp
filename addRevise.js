@@ -9,8 +9,8 @@ $.ajax({
   success: function(response){
       alert(response);
       alert(123);
-      data = response.split(',');
-      $.each(data, function(index, value){
+      //data = response.split(',');
+      /*$.each(data, function(index, value){
         alert(value);
         var url = window.location.href;
         if(url.indexOf('/products/') > -1 ){
@@ -23,7 +23,7 @@ $.ajax({
             $('.add_to_cart').after('<p>testinggggg</p>');
           }
         }
-      });
+      });*/
   }
 });
 })();
