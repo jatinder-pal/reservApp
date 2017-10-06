@@ -10,6 +10,7 @@ try
 	$js_file = 'https://revise-app.herokuapp.com/addRevise.js&id='.$access_token;
 	if($alloptions == 'noData'){
 		$data = $shopify('GET /admin/script_tags.json?src=https://revise-app.herokuapp.com/addRevise.js&id='.$access_token);
+		console.log($data);
 		foreach($data as $file){
 			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
 			print_r('Remove JS file');
