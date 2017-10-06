@@ -1,7 +1,7 @@
 <!--Revise.js-->
 (function(){
 alert(123);
-alert($(this).prop('src'));
+alert($("script[src*='addRevise.js']").attr('src'));
 $.ajax({
   
 });
