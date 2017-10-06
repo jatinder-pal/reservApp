@@ -4,6 +4,7 @@ alert(123);
 var data = $("script[src*='addRevise.js']").attr('src').split('?')[1];
 $.ajax({
   url: 'https://revise-app.herokuapp.com/getmetafields.php?'+data,
+  crossDomain: true,
   success: function(response){
       alert(response);
       data = response.split(',');
