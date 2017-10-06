@@ -6,7 +6,7 @@ $.get(encodedUrl, function(data) {
     alert(123);
     console.log(data);
 });  
-$.ajax({
+/*$.ajax({
   crossDomain: true,
   url: 'https://revise-app.herokuapp.com/getmetafields.php?'+data,
   dataType: "jsonp",
@@ -30,5 +30,5 @@ $.ajax({
         }
       });
   }
-});
+});*/
 })();
