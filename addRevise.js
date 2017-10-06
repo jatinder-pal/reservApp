@@ -1,4 +1,5 @@
 <!--Revise.js-->
+alert(123);
 var url = window.location.href;
 if(url.indexOf('/products/') > -1){
   if($('.add_to_cart').length){
