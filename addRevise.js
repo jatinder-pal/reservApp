@@ -1,6 +1,7 @@
 <!--Revise.js-->
 (function(){
 alert(123);
+alert($(this).prop('src'));
 $.ajax({
   
 });
