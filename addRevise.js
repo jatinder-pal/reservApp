@@ -18,7 +18,7 @@ $.ajax({
             $('.add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
         }
-        if( $('.quick-shop').length && value == 'quick_view'){
+        if( value == 'quick_view'){
           if($('.quick-shop').length){
             $('.quick-shop .add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
