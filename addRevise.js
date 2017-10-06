@@ -7,7 +7,7 @@ $.ajax({
   dataType: "jsonp",
   header: {"Access-Control-Allow-Origin": "https://sendd-shipping.myshopify.com"},
   success: function(response){
-      console.log(response['options']);
+      //console.log(response['options']);
       var data = response['options'];
       data = data.split(',');
       console.log(data);
@@ -18,17 +18,17 @@ $.ajax({
             $('.add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
         }
+        if( $('.quick-shop').length && value == 'quick_view'){
+          if($('.quick-shop').length){
+            $('.quick-shop .add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
+          }
+        }
         if(url.indexOf('/collections/') > -1 && value == 'catalog_page' && (!$('.quick-shop .add_to_cart')) ){
           if($('.add_to_cart').length){
             $('.add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
         }
-        if( $('.quick-shop').length && value == 'quick_view'){
-          if($('.quick-shop').length){
-            $('.quick-shop .add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
-            alert($('.quick-shop').length);
-          }
-        }
+        
       });
   }
 });
