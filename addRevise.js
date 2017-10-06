@@ -12,7 +12,7 @@ $.ajax({
       $.each(data, function(index, value){
         alert(value);
         var url = window.location.href;
-        if(url.indexOf('/products/') > -1 && value == 'product_page'){
+        if(url.indexOf('/products/') > -1 ){
           if($('.add_to_cart').length){
             $('.add_to_cart').after('<p>testinggggg</p>');
           }
