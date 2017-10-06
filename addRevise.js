@@ -1,7 +1,11 @@
 <!--Revise.js-->
 (function(){
-alert(123);
 var data = $("script[src*='addRevise.js']").attr('src').split('?')[1];
+var encodedUrl = encodeURIComponent('https://revise-app.herokuapp.com/getmetafields.php?'+data);
+$.get(encodedUrl, function(data) {
+    alert(123);
+    console.log(data);
+});  
 $.ajax({
   crossDomain: true,
   url: 'https://revise-app.herokuapp.com/getmetafields.php?'+data,
@@ -9,6 +13,7 @@ $.ajax({
   header: {"Access-Control-Allow-Origin": "https://sendd-shipping.myshopify.com"},
   success: function(response){
       alert(response);
+      alert(123);
       data = response.split(',');
       $.each(data, function(index, value){
         alert(value);
