@@ -10,6 +10,7 @@ try
 	$js_file = "https://revise-app.herokuapp.com/addRevise.js&id=$access_token";
 	if($alloptions == 'noData'){
 		$url = "/admin/script_tags.json?src=https://revise-app.herokuapp.com/addRevise.js&id=$access_token";
+		console.log($url);
 		$data = $shopify("GET $url");
 		console.log($data);
 		foreach($data as $file){
