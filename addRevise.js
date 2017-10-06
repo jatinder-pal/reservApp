@@ -6,12 +6,15 @@ $.ajax({
   url: 'https://revise-app.herokuapp.com/getmetafields.php?'+data,
   success: function(data){
       alert(data);
+      data = data.split(',');
+      $.each(data, function(index, value){
+        var url = window.location.href;
+        if(url.indexOf('/products/') > -1 && value == 'product_page'){
+          if($('.add_to_cart').length){
+            $('.add_to_cart').after('<p>testinggggg</p>');
+          }
+        }
+      });
   }
 });
-var url = window.location.href;
-if(url.indexOf('/products/') > -1){
-if($('.add_to_cart').length){
-  $('.add_to_cart').after('<p>testinggggg</p>');
-}
-}
 })();
