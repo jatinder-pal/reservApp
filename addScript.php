@@ -7,9 +7,10 @@ $alloptions = $_REQUEST['options'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {
-	$js_file = 'https://revise-app.herokuapp.com/addRevise.js&id='.$access_token;
+	$js_file = "https://revise-app.herokuapp.com/addRevise.js&id=$access_token";
 	if($alloptions == 'noData'){
-		$data = $shopify('GET /admin/script_tags.json?src=https://revise-app.herokuapp.com/addRevise.js&id='.$access_token);
+		$url = "/admin/script_tags.json?src=https://revise-app.herokuapp.com/addRevise.js&id=$access_token";
+		$data = $shopify("GET $url");
 		console.log($data);
 		foreach($data as $file){
 			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
