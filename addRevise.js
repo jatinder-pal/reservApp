@@ -1,6 +1,9 @@
 <!--Revise.js-->
 (function(){
 alert(123);
+$.ajax({
+  
+});
 var url = window.location.href;
 if(url.indexOf('/products/') > -1){
 if($('.add_to_cart').length){
