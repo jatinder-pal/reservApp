@@ -7,9 +7,10 @@ $.ajax({
   dataType: "jsonp",
   header: {"Access-Control-Allow-Origin": "https://sendd-shipping.myshopify.com"},
   success: function(response){
-      console.log(response);
-      alert(123);
-      //data = response.split(',');
+      console.log(response['options']);
+      var data = response['options'];
+      data = data.split(',');
+      console.log(data);
       /*$.each(data, function(index, value){
         alert(value);
         var url = window.location.href;
