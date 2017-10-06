@@ -15,17 +15,17 @@ $.ajax({
         var url = window.location.href;
         if(url.indexOf('/products/') > -1 ){
           if($('.add_to_cart').length){
-            $('.add_to_cart').after('<a href="#">Revise</a>');
+            $('.add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
         }
         if(url.indexOf('/collections/') > -1 && value == 'catalog_page'){
           if($('.add_to_cart').length){
-            $('.add_to_cart').after('<a href="#">Revise</a>');
+            $('.add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
         }
         if(value == 'quick_view'){
           if($('.quick-shop .add_to_cart').length){
-            $('.quick-shop .add_to_cart').after('<a href="#">Revise</a>');
+            $('.quick-shop .add_to_cart').after('<a href="#" style="background:#ececec;padding:10px;display:block;text-align:center;margin-top:10px;">Revise</a>');
           }
         }
       });
