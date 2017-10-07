@@ -104,10 +104,8 @@ $(document).ready(function(){
 	var Arraydata = {};
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
-	    Arraydata[$(this).val()] =  $('#'+getid+'_class').val();
+	    Arraydata[] =  $(this).val().':'.$('#'+getid+'_class').val();
 	});
-	//console.log(checkdata);
-	//console.log(classdata);
 	console.log(Arraydata);
 	$.ajax({
 		type: 'POST',
