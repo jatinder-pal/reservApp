@@ -136,7 +136,7 @@ $(document).ready(function(){
 	$('body').on('click', '.savecss', function(e){
 		var access_token = '<?php echo $access_token ?>';
 		var shop = '<?php echo $_REQUEST['shop'] ?>';
-		var csscode = $('#add_css').val();
+		var csscode = html_entity_decode($('#add_css').val());
 		//console.log(csscode);
 		$.ajax({
 			type: 'POST',
