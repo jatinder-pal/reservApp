@@ -106,7 +106,7 @@ $(document).ready(function(){
 	    var getid = $(this).attr('id');
 	    getid = getid+'_class';
 	    var key = $(this).val();
-	    var array[key] = $(getid).val();
+	    var array = {key: $(getid).val()};
 	    checkdata.push($(this).val());
 	    checkdata1.push(array);
 	});
