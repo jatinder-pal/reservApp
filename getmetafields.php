@@ -9,7 +9,7 @@ try
 		$response = $shopify('GET /admin/metafields.json');
 		foreach($response as $options){
 			if($options['namespace'] == 'revisebutton'){
-				echo $options['value'];
+				print_r($options['value']);
 			}
 		}
 }
