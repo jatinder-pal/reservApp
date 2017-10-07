@@ -131,6 +131,22 @@ $(document).ready(function(){
 		}
 	});
     	});
+	
+	//Save Custom CSS
+	$('body').on('click', '.savecss', function(e){
+		var access_token = '<?php echo $access_token ?>';
+		var shop = '<?php echo $_REQUEST['shop'] ?>';
+		var csscode = $('#add_css').val();
+		//console.log(csscode);
+		$.ajax({
+			type: 'POST',
+			url: '/AddCssFile.php?access_token='+access_token+'&shop='+shop+'&cssCode='+csscode,
+			dataType: "html",
+			success: function(data) { 
+				console.log(data);
+			}
+		});
+    	});
 });
 </script>	
 </body>
