@@ -83,7 +83,8 @@ function fetchMetafield(){
 			var options = data.split(',');
 			//console.log(options);
 			$.each(options, function(index, value){
-				//console.log(value);
+				console.log(value);
+				//value.split(':');
 				if($('input[name="sel_options[]"][value='+value+']')){
 				  $('input[name="sel_options[]"][value='+value+']').attr("checked","true");
 				} else {
@@ -100,22 +101,17 @@ $(document).ready(function(){
 	$('body').on('click', '.saveoptions', function(e){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
-	var checkdata = [];
-	var classdata = [];
-	var Array = {};
+	var Arraydata = {};
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
-	    //getid = '#'+getid+'_class';
-	    Array[$(this).val()] =  $('#'+getid+'_class').val();
-	    checkdata.push($(this).val());
-	    classdata.push($(getid).val());
+	    Arraydata[$(this).val()] =  $('#'+getid+'_class').val();
 	});
 	//console.log(checkdata);
 	//console.log(classdata);
-	console.log(Array);
+	console.log(Arraydata);
 	$.ajax({
 		type: 'POST',
-		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata+'&classes='+classdata,
+		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata,
 		dataType: "html",
 		success: function(data) { 
 			console.log(data);
