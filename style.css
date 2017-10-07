@@ -4,3 +4,7 @@ th, td {
 img {
     width: 100px;
 }
+textarea#add_css {
+    height: 200px;
+    width: 360px;
+}
