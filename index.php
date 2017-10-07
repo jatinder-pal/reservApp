@@ -101,10 +101,10 @@ $(document).ready(function(){
 	$('body').on('click', '.saveoptions', function(e){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
-	var Arraydata = {};
+	var Arraydata = [];
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
-	    Arraydata[] =  $(this).val().':'.$('#'+getid+'_class').val();
+	    Arraydata.push($(this).val().':'.$('#'+getid+'_class').val());
 	});
 	console.log(Arraydata);
 	$.ajax({
