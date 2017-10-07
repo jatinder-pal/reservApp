@@ -53,6 +53,18 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 		</table>
 	</form>
 	</div>
+	
+	<div class="customcss">
+	<form method="post" name="cssform" id="addcustomcss" action="#">
+		<table cellspacing="10" cellpadding="10" border="1">
+			<thead><tr><th>Custom CSS</th></tr></thead>
+			<tbody>
+			<tr><td><textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea></td></tr>
+			</tbody>
+		</table>
+	</form>
+	</div>
+	
 </div> 
 <script>
 // Add Script
