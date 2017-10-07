@@ -7,18 +7,11 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {		
 		$response = $shopify('GET /admin/metafields.json');
-		$option = '';
-		$class = '';
 		foreach($response as $options){
 			if($options['namespace'] == 'revisebutton'){
-				$option = $options['value'];
-			}
-			if($options['namespace'] == 'reviseclass'){
-				$class = $options['value'];
+				echo $options['value'];
 			}
 		}
-		$array = array( $option => $class);
-		echo json_encode($array);
 }
 catch (shopify\ApiException $e)
 {
