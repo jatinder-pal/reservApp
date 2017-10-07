@@ -12,8 +12,8 @@ $.ajax({
       data = data.split(',');
       $.each(data, function(index, value){
         var values = value.split(':');
-				value = values[0];
-				var classes = data[1];
+	value = values[0];
+	var classes = values[1];
         var url = window.location.href;
         if(url.indexOf('/products/') > -1 && value == 'product_page'){
           if($('.'+classes).length){
