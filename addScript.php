@@ -12,7 +12,7 @@ try
 	if($alloptions == 'noData'){
 		$data = $shopify("GET $url");
 		foreach($data as $file){
-			print_r($file);
+			//print_r($file);
 			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
 			print_r('Remove JS file');
 		}
@@ -21,9 +21,11 @@ try
 		if(!$data){
 			$fields = array( "script_tag" => array('event' => 'onload', 'src' => $js_file));
 			$response = $shopify('POST /admin/script_tags.json',$fields);
-			print_r($response);
+			//print_r($response);
+			print_r('Add JS file');
 		} else {
-			print_r($data);
+			//print_r($data);
+			print_r('Already exist JS file');
 		}
 	}
 }
