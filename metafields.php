@@ -8,7 +8,6 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {	
 	if($alloptions){
-	$alloptions = json_decode($alloptions);
 	print_r($alloptions);
 	$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions,
 	'value_type' => 'string'));
