@@ -34,17 +34,25 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 		<table cellspacing="10" cellpadding="10" border="1">
 			<thead>
 				<tr>
-				<th></th><th>Options</th>
+				<th></th><th>Options</th><th>Class name</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr><td><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
-					<td><label for="product_page">Product Page</label></td></tr>
+					<td><label for="product_page">Product Page</label></td>
+					<td><input id="product_page_class" type="text" name="product_page_class" value="" /></td>
+				</tr>
 				<tr><td><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
-					<td><label for="catalog_page">Catalog Page</label></td></tr>
+					<td><label for="catalog_page">Catalog Page</label></td>
+					<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
+				</tr>
 				<tr><td><input id="quick_view" type="checkbox" name="sel_options[]" value="quick_view" /></td>
-					<td><label for="quick_view">Quick View</label></td></tr>
-				<tr><td colspan="2"><input type="button" class="saveoptions" value="Show button on Product Page" name="submit" /></td></tr>
+					<td><label for="quick_view">Quick View</label></td>
+					<td><input id="quick_view_class" type="text" name="quick_view_class" value="" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" class="saveoptions" value="Show Revise button" name="submit" /></td>
+				</tr>
 			</tbody>
 		</table>
 	</form>
@@ -93,10 +101,16 @@ $(document).ready(function(){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	var checkdata = [];
+	var checkdata1 = [];
 	$("input[name='sel_options[]']:checked").each(function() {
+	    var getid = $(this).attr('id');
+	    var array[$(this).val()] = $(getid+'_class').val();
 	    checkdata.push($(this).val());
+	    checkdata1.push(array);
 	});
 	console.log(checkdata);
+	console.log(array);
+	console.log(checkdata1);
 	$.ajax({
 		type: 'POST',
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata,
