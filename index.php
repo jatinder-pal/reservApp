@@ -101,17 +101,16 @@ $(document).ready(function(){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	var checkdata = [];
-	var checkdata1 = [];
+	var classdata = [];
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
-	    getid = getid+'_class';
-	    var key = $(this).val();
-	    var array = {key: $(getid).val()};
+	    console.log(getid);
+	    getid = '#'+getid+'_class';
 	    checkdata.push($(this).val());
-	    checkdata1.push(array);
+	    classdata.push($(getid).val());
 	});
 	console.log(checkdata);
-	console.log(checkdata1);
+	console.log(classdata);
 	$.ajax({
 		type: 'POST',
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata,
