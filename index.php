@@ -104,7 +104,8 @@ $(document).ready(function(){
 	var checkdata1 = [];
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
-	    var array[$(this).val()] = $(getid+'_class').val();
+	    getid = getid+'_class';
+	    var array[$(this).val()] = $(getid).val();
 	    checkdata.push($(this).val());
 	    checkdata1.push(array);
 	});
