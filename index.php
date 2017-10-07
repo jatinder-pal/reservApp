@@ -84,11 +84,15 @@ function fetchMetafield(){
 			//console.log(options);
 			$.each(options, function(index, value){
 				console.log(value);
-				//value.split(':');
+				data = value.split(':');
+				value = data[0];
+				var classes = data[1];
 				if($('input[name="sel_options[]"][value='+value+']')){
 				  $('input[name="sel_options[]"][value='+value+']').attr("checked","true");
+				  $('input[id='+value+'_class]').val(classes);
 				} else {
 				  $('input[name="sel_options[]"]').attr("checked","false");
+				  $('input[id='+value+'_class]').val(" ");
 				}
 			});
 			addScript(data);
