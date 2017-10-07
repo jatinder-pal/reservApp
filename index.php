@@ -46,12 +46,8 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<td><label for="catalog_page">Catalog Page</label></td>
 					<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
 				</tr>
-				<tr><td><input id="quick_view" type="checkbox" name="sel_options[]" value="quick_view" /></td>
-					<td><label for="quick_view">Quick View</label></td>
-					<td><input id="quick_view_class" type="text" name="quick_view_class" value="" /></td>
-				</tr>
 				<tr>
-					<td colspan="2"><input type="button" class="saveoptions" value="Show Revise button" name="submit" /></td>
+				<td colspan="3"><input type="button" class="saveoptions" value="Show Revise button" name="submit" /></td>
 				</tr>
 			</tbody>
 		</table>
