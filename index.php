@@ -104,19 +104,18 @@ $(document).ready(function(){
 	var classdata = [];
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
-	    console.log(getid);
 	    getid = '#'+getid+'_class';
 	    checkdata.push($(this).val());
 	    classdata.push($(getid).val());
 	});
-	console.log(checkdata);
-	console.log(classdata);
+	//console.log(checkdata);
+	//console.log(classdata);
 	$.ajax({
 		type: 'POST',
-		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata,
+		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata+'&classes='+classdata,
 		dataType: "html",
 		success: function(data) { 
-			//console.log(data);
+			console.log(data);
 			if(data){
 				addScript(data);
 			}
