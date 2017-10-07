@@ -60,6 +60,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 			<thead><tr><th>Custom CSS</th></tr></thead>
 			<tbody>
 			<tr><td><textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea></td></tr>
+			<tr><td><input type="button" class="savecss" value="Save CSS" name="submit" /></td></tr>
 			</tbody>
 		</table>
 	</form>
