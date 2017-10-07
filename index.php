@@ -102,14 +102,17 @@ $(document).ready(function(){
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	var checkdata = [];
 	var classdata = [];
+	var Array = {};
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
-	    getid = '#'+getid+'_class';
+	    //getid = '#'+getid+'_class';
+	    Array[$(this).val()] =  $('#'+getid+'_class').val();
 	    checkdata.push($(this).val());
 	    classdata.push($(getid).val());
 	});
 	//console.log(checkdata);
 	//console.log(classdata);
+	console.log(Array);
 	$.ajax({
 		type: 'POST',
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+checkdata+'&classes='+classdata,
