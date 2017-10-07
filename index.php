@@ -83,7 +83,6 @@ function fetchMetafield(){
 			var options = data.split(',');
 			//console.log(options);
 			$.each(options, function(index, value){
-				console.log(value);
 				data = value.split(':');
 				value = data[0];
 				var classes = data[1];
@@ -110,13 +109,13 @@ $(document).ready(function(){
 	    var getid = $(this).attr('id');
 	    Arraydata.push($(this).val()+':'+$('#'+getid+'_class').val());
 	});
-	console.log(Arraydata);
+	//console.log(Arraydata);
 	$.ajax({
 		type: 'POST',
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata,
 		dataType: "html",
 		success: function(data) { 
-			console.log(data);
+			//console.log(data);
 			if(data){
 				addScript(data);
 			}
