@@ -104,14 +104,11 @@ $(document).ready(function(){
 	var checkdata1 = [];
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
-	    getid = getid+'_class';
-	    var key = $(this).val();
-	    var array = {key: $(getid).val()};
+	    var array = {$(this).val(): $(getid+'_class').val()};
 	    checkdata.push($(this).val());
 	    checkdata1.push(array);
 	});
 	console.log(checkdata);
-	console.log(array);
 	console.log(checkdata1);
 	$.ajax({
 		type: 'POST',
