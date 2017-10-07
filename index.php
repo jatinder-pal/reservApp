@@ -105,7 +105,8 @@ $(document).ready(function(){
 	$("input[name='sel_options[]']:checked").each(function() {
 	    var getid = $(this).attr('id');
 	    getid = getid+'_class';
-	    var array = {$(this).val(): $(getid).val()};
+	    var key = $(this).val();
+	    var array = {key: $(getid).val()};
 	    checkdata.push($(this).val());
 	    checkdata1.push(array);
 	});
