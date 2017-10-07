@@ -16,7 +16,7 @@ try
 	'value_type' => 'string'));
 	}
 	$response = $shopify('POST /admin/metafields.json',$metafield);
-	echo $response['value'];
+	print_r($response['value']);
 }
 catch (shopify\ApiException $e)
 {
