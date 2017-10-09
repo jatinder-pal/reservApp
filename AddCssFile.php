@@ -14,8 +14,12 @@ try
 		$data = array( "asset" => array('key' => 'assets/custom_reserve.css', 'value' => $cssCode )); 
 		$response = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$data);
 		//print_r($response);
-		$themefile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.liquid&theme_id='.$theme['id']);
-	  	print_r($themefile);
+		  
+		$themebackup = array( "asset" => array('key' => 'layout/theme.bak.liquid', 'source_key' => 'layout/theme.liquid' )); 
+		$themefilebackup = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themebackup);
+		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => "{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}" )); 
+		$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);
+		print_r($newthemedata);
 	  }
 	}
 }
