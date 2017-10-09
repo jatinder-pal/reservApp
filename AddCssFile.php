@@ -17,7 +17,7 @@ try
 		  
 		$themebackup = array( "asset" => array('key' => 'layout/theme.bak.liquid', 'source_key' => 'layout/theme.liquid' )); 
 		$themefilebackup = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themebackup);
-		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => "{{content_for_header}}{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}" )); 
+		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => "{{content_for_header}}{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}{{content_for_layout}}" )); 
 		$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);
 		print_r($newthemedata);
 	  }
