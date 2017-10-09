@@ -7,7 +7,7 @@ $cssCode = $_REQUEST['cssCode'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-	print_r($cssCode);
+	print_r($shopify);
 	$themes = $shopify('GET /admin/themes.json');
 	foreach($themes as $theme){
 	  if($theme['role'] == 'main') {
@@ -17,10 +17,12 @@ try
 		  
 		$themebackup = array( "asset" => array('key' => 'layout/theme.bak.liquid', 'source_key' => 'layout/theme.liquid' )); 
 		$themefilebackup = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themebackup);
-		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => "{{content_for_header}}{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}{{content_for_layout}}" )); 
-		$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);
-		print_r($newthemedata);
-	  }
+		  
+		$mycustom = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.liquid&theme_id='.$theme['id']);
+		$myfile = $mycustom['value'];  
+		  
+		//$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => "{{content_for_header}}{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}{{content_for_layout}}" )); 
+		//$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);  }
 	}
 }
 catch (shopify\ApiException $e)
