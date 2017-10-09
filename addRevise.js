@@ -1,4 +1,4 @@
-<!--Revise.js-->
+<!--Reserv.js-->
 (function(){
 var data = $("script[src*='addRevise.js']").attr('src').split('?')[1]; 
 $.ajax({
