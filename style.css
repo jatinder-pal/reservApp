@@ -5,7 +5,10 @@ img {
     width: 100px;
 }
 textarea#add_css {
-    height: 200px;
+    height: 250px;
+    width: 405px;
+}
+textarea#generate_code {
     width: 405px;
 }
 a.revise_button {
