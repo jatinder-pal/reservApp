@@ -8,6 +8,8 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {	
 	print_r($cssCode);
+	$response = $shopify('GET /admin/themes.json');
+	print_r($response);
 }
 catch (shopify\ApiException $e)
 {
