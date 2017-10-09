@@ -10,8 +10,10 @@ try
 	print_r($cssCode);
 	$themes = $shopify('GET /admin/themes.json');
 	foreach($themes as $theme){
-	  if($themes['role'] == 'main') {
+	  if($theme['role'] == 'main') {
+		echo $theme['id'];
 		$data = array( "asset" => array('key' => 'custom_reserve.css', 'key' => $cssCode )); 
+		print_r($data);
 		$response = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$data);
 		print_r($response);
 		//$shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=assets/custom_reserve.css&theme_id='.$theme['id']);
