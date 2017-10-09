@@ -21,8 +21,16 @@ try
 		$mycustom = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.liquid&theme_id='.$theme['id']);
 		$myfile = $mycustom['value'];  
 		  
+		$doc = new DOMDocument();
+		$doc->loadHTML($myfile);
+		$head = $doc->getElementsByTagName("head");
+		$head->parentNode->insertAfter("{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}", $head); 
+		$html = $doc->saveHTML();  
+		print_r($html);
+		  
 		//$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => "{{content_for_header}}{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}{{content_for_layout}}" )); 
 		//$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);  
+		
 	  }
 	}
 }
