@@ -10,9 +10,18 @@ try
 	$themes = $shopify('GET /admin/themes.json');
 	foreach($themes as $theme){
 	  if($theme['role'] == 'main') {
-		$data = array( "asset" => array('key' => 'assets/custom_reserve.css', 'value' => $cssCode )); 
-		$response = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$data);
 		  
+		if($cssCode){
+			$metafield = array( "metafield" => array('namespace' => 'revisecss', 'key' => 'csscode', 'value' => $cssCode,
+	'value_type' => 'string'));
+		} else {
+			$cssCode = "noCss";
+			$metafield = array( "metafield" => array('namespace' => 'revisecss', 'key' => 'csscode', 'value' => $cssCode,
+	'value_type' => 'string'));
+		}
+		$response = $shopify('POST /admin/metafields.json',$metafield);
+		$response['value'];
+
 		$url = "/admin/script_tags.json?src=https://reserv-app.herokuapp.com/addCssCode.js?access_token=$access_token";
 		$js_file = "https://reserv-app.herokuapp.com/addCssCode.js?access_token=$access_token";
 		$data = $shopify("GET $url");
