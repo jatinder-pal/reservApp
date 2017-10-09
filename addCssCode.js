@@ -7,7 +7,8 @@ $.ajax({
   dataType: "jsonp",
   header: {"Access-Control-Allow-Origin": "https://sendd-shipping.myshopify.com"},
   success: function(response){
-      console.log(response);
+     var csscode = response['options'];
+     $('head').append('<style>'+csscode+'</style>');
   }
 });
 })();
