@@ -28,8 +28,11 @@ try
 		$themehtml = $splitfile[0]."{{ 'custom_reserve.css' | asset_url | stylesheet_tag }} </head>".$splitfile[1];
 		  
 		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => $themehtml )); 
-		$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);  
-		print_r($newthemedata);
+		  
+		print_r($themedata);
+		  
+		$newthemefile = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);
+		print_r($newthemefile);
 		
 	  }
 	}
