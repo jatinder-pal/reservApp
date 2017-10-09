@@ -15,11 +15,11 @@ $.ajax({
 	value = values[0];
 	var classes = values[1];
         var url = window.location.href;
-        if(url.indexOf('/products/') > -1 && value == 'product_page' && url.indexOf('/collections/') === -1){
+        if(url.indexOf('/products/') > -1 && value == 'product_page'){
           if($('.'+classes).length){
             $('.'+classes).after('<a href="#" class="revise_button">Revise</a>');
           }
-        } else if(url.indexOf('/collections/') > -1 && value == 'catalog_page'){
+        } else if(url.indexOf('/collections/') > -1 && url.indexOf('/products/') === -1 && value == 'catalog_page'){
           if($('.'+classes).length){
             $('.'+classes).after('<a href="#" class="revise_button">Revise</a>');
           }
