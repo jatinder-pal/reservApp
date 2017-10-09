@@ -24,11 +24,12 @@ try
 		  
 		$themefile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.liquid&theme_id='.$theme['id']);
 		$myfile = $themefile['value'];
-		$splitContents = explode("</head>", $myfile);
-		print_r($splitContents);
-		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => $myfile."{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}" )); 
+		$splitfile = explode("</head>", $myfile);
+		$themehtml = $splitfile[0]."{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}".$splitfile[1];
+		  
+		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => $themehtml )); 
 		$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);  
-		//print_r($newthemedata);
+		print_r($newthemedata);
 		
 	  }
 	}
