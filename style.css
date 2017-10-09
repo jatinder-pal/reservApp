@@ -8,3 +8,11 @@ textarea#add_css {
     height: 200px;
     width: 360px;
 }
+a.revise_button {
+    background: #ececec;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
