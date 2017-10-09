@@ -17,11 +17,11 @@ $.ajax({
         var url = window.location.href;
         if(url.indexOf('/products/') > -1 && value == 'product_page'){
           if($('.'+classes).length){
-            $('.'+classes).after('<a href="#" class="revise_button">Revise</a>');
+            $('.'+classes).after('<a href="#" class="reserv_button">Reserv</a>');
           }
         } else if(url.indexOf('/collections/') > -1 && url.indexOf('/products/') === -1 && value == 'catalog_page'){
           if($('.'+classes).length){
-            $('.'+classes).after('<a href="#" class="revise_button">Revise</a>');
+            $('.'+classes).after('<a href="#" class="reserv_button">Reserv</a>');
           }
         }
         
