@@ -21,16 +21,14 @@ try
 			$themefilebackup = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themebackup);
 			echo 'Backupfile created';
 		}
-		  
-		$themefile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.liquid&theme_id='.$theme['id']);
+  
+		$themefile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=sections/header.liquid&theme_id='.$theme['id']);
 		$myfile = $themefile['value'];
-		$splitfile = explode("{{ content_for_header }}", $myfile);
-		$splitlayout = explode("{{ content_for_layout }}", $splitfile[1]);
-		//$themehtml = $splitfile[0].'{{ "custom_reserve.css" | asset_url | stylesheet_tag }} </head>'.$splitfile[1];
-		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => $splitfile[0].'{{ content_for_header }}{{ "custom_reserve.css" | asset_url | stylesheet_tag }}'.$splitlayout[0].'{{content_for_layout}}'.$splitlayout[1] ));
+		$splitfile = explode("</header>", $myfile);
+		$themehtml = $splitfile[0].'{{ "custom_reserve.css" | asset_url | stylesheet_tag }} </header>'.$splitfile[1];
+		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => $themehtml));
 		$newthemefile = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);
 		print_r($newthemefile);
-		
 	  }
 	}
 }
