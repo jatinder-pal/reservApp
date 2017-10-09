@@ -47,7 +47,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
 				</tr>
 				<tr>
-				<td colspan="3"><input type="button" class="saveoptions" value="Show Revise button" name="submit" /></td>
+				<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
 				</tr>
 			</tbody>
 		</table>
