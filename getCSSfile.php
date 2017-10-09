@@ -10,8 +10,8 @@ try
 	$themes = $shopify('GET /admin/themes.json');
 	foreach($themes as $theme){
 	  if($theme['role'] == 'main') {
-		  $response = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=assets/custom_reserve.css&theme_id='.$theme['id']);
-      print_r($response);
+	  	$response = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=assets/custom_reserve.css&theme_id='.$theme['id']);
+		print_r($response['value']);
 	  }
 	}
 }
