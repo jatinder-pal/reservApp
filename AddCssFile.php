@@ -7,24 +7,28 @@ $cssCode = $_REQUEST['cssCode'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-	print_r($shopify);
 	$themes = $shopify('GET /admin/themes.json');
 	foreach($themes as $theme){
 	  if($theme['role'] == 'main') {
 		$data = array( "asset" => array('key' => 'assets/custom_reserve.css', 'value' => $cssCode )); 
 		$response = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$data);
-		//print_r($response);
+		
+		$backupfile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.bak.liquid&theme_id='.$theme['id']);
+		if($backupfile){
+			echo 'Backupfile Already exist';
+		} else {
+			$themebackup = array( "asset" => array('key' => 'layout/theme.bak.liquid', 'source_key' => 'layout/theme.liquid' )); 
+			$themefilebackup = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themebackup);
+			echo 'Backupfile created';
+		}
 		  
-		$themebackup = array( "asset" => array('key' => 'layout/theme.bak.liquid', 'source_key' => 'layout/theme.liquid' )); 
-		$themefilebackup = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themebackup);
-		  
-		$mycustom = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.liquid&theme_id='.$theme['id']);
-		$myfile = $mycustom['value'];  
-
+		$themefile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.liquid&theme_id='.$theme['id']);
+		$myfile = $themefile['value'];
+		$splitContents = explode("</head>", $myfile);
+		print_r($splitContents);
 		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => $myfile."{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}" )); 
 		$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);  
-		  
-		print_r($newthemedata);
+		//print_r($newthemedata);
 		
 	  }
 	}
