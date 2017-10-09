@@ -7,12 +7,13 @@ $cssCode = $_REQUEST['cssCode'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-	$themes = $shopify('GET /admin/themes.json');
-	foreach($themes as $theme){
-	  if($theme['role'] == 'main') {
-	  	$response = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=assets/custom_reserve.css&theme_id='.$theme['id']);
-		print_r($response['value']);
-	  }
+	$response = $shopify('GET /admin/metafields.json');
+	foreach($response as $options){
+		if($options['namespace'] == 'revisecss'){
+			if($response['value'] != 'noCss'){
+				echo $options['value'];
+			}
+		}
 	}
 }
 catch (shopify\ApiException $e)
