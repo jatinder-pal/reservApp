@@ -22,7 +22,8 @@ try
 		$myfile = $mycustom['value'];  
 		  
 		//$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => "{{content_for_header}}{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}{{content_for_layout}}" )); 
-		//$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);  }
+		//$newthemedata = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);  
+	  }
 	}
 }
 catch (shopify\ApiException $e)
