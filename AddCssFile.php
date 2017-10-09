@@ -12,7 +12,7 @@ try
 	foreach($themes as $theme){
 	  if($theme['role'] == 'main') {
 		echo $theme['id'];
-		$data = array( "asset" => array('key' => 'custom_reserve.css', 'value' => $cssCode )); 
+		$data = array( "asset" => array('key' => 'assets/custom_reserve.css', 'value' => $cssCode )); 
 		print_r($data);
 		$response = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$data);
 		print_r($response);
