@@ -46,14 +46,15 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<td><label for="catalog_page">Catalog Page</label></td>
 					<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
 				</tr>
-				<tr><td>Do you want to add Resev button Automatic or Manual ?</td></tr>
+				<tr><td colspan="3">Do you want to add Resev button Automatic or Manual ?</td></tr>
 				<tr>
+					<td></td>
 					<td><label for="automatic_code">Automatic</label>
 					<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" /></td>
 					<td><label for="manual_code">Manual</label>
 					<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" /></td>
 				</tr>
-				<tr><td><textarea style="display:none;" class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
+				<tr><td colspan="3"><textarea style="display:none;" class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
 				<tr>
 				<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
 				</tr>
