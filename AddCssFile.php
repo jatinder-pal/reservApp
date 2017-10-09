@@ -8,8 +8,15 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {	
 	print_r($cssCode);
-	$response = $shopify('GET /admin/themes.json');
-	print_r($response);
+	$themes = $shopify('GET /admin/themes.json');
+	foreach($themes as $theme){
+	  if($themes['role'] == 'main') {
+		$data = array( "asset" => array('key' => 'custom_reserve.css', 'key' => $cssCode )); 
+		$response = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$data);
+		print_r($response);
+		//$shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=assets/custom_reserve.css&theme_id='.$theme['id']);
+	  }
+	}
 }
 catch (shopify\ApiException $e)
 {
