@@ -22,8 +22,8 @@ try
 		$myfile = $mycustom['value'];  
 		  
 		
-		$head = $myfile->getElementsByTagName("head");
-		$head->parentNode->insertAfter("{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}", $head); 
+		$body = $myfile->getElementsByTagName("body");
+		$head->parentNode->insertAfter("{{ 'custom_reserve.css' | asset_url | stylesheet_tag }}", $body); 
 		$html = $myfile->saveHTML();  
 		print_r($html);
 		  
