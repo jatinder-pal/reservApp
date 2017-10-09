@@ -108,8 +108,21 @@ function fetchMetafield(){
 		}
 	});
 }
+function fetchCssCode(){
+	console.log('fetch Metafield');
+	var access_token = '<?php echo $access_token ?>';
+	var shop = '<?php echo $_REQUEST['shop'] ?>';
+	$.ajax({
+		url: '/getCSSfile.php?access_token='+access_token+'&shop='+shop,
+		success: function(response){
+			$('#add_css').val(response);
+		}
+	});
+}
+
 $(document).ready(function(){
 	fetchMetafield();
+	fetchCssCode();
 	$('body').on('click', '.saveoptions', function(e){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
