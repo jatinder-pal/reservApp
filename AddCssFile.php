@@ -12,23 +12,19 @@ try
 	  if($theme['role'] == 'main') {
 		$data = array( "asset" => array('key' => 'assets/custom_reserve.css', 'value' => $cssCode )); 
 		$response = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$data);
-		
-		$backupfile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.bak.liquid&theme_id='.$theme['id']);
-		if($backupfile){
-			echo 'Backupfile Already exist';
+		  
+		$url = "/admin/script_tags.json?src=https://reserv-app.herokuapp.com/addCssCode.js?access_token=$access_token";
+		$js_file = "https://reserv-app.herokuapp.com/addCssCode.js?access_token=$access_token";
+		$data = $shopify("GET $url");
+		if(!$data){
+			$fields = array( "script_tag" => array('event' => 'onload', 'src' => $js_file));
+			$response = $shopify('POST /admin/script_tags.json',$fields);
+			//print_r($response);
+			print_r('Add JS file for CSS');
 		} else {
-			$themebackup = array( "asset" => array('key' => 'layout/theme.bak.liquid', 'source_key' => 'layout/theme.liquid' )); 
-			$themefilebackup = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themebackup);
-			echo 'Backupfile created';
+			//print_r($data);
+			print_r('Already exist JS file for CSS');
 		}
-  
-		$themefile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=sections/header.liquid&theme_id='.$theme['id']);
-		$myfile = $themefile['value'];
-		$splitfile = explode("</header>", $myfile);
-		$themehtml = $splitfile[0].'{{ "custom_reserve.css" | asset_url | stylesheet_tag }} </header>'.$splitfile[1];
-		$themedata = array( "asset" => array('key' => 'sections/header.liquid', 'value' => $themehtml));
-		$newthemefile = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);
-		print_r($newthemefile);
 	  }
 	}
 }
