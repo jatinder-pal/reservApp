@@ -25,12 +25,8 @@ try
 		$themefile = $shopify('GET /admin/themes/'.$theme['id'].'/assets.json?asset[key]=layout/theme.liquid&theme_id='.$theme['id']);
 		$myfile = $themefile['value'];
 		$splitfile = explode("</head>", $myfile);
-		$themehtml = $splitfile[0]."{{ 'custom_reserve.css' | asset_url | stylesheet_tag }} </head>".$splitfile[1];
-		  
-		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => $themehtml )); 
-		  
-		print_r($themedata);
-		  
+		$themehtml = $splitfile[0].'{{ "custom_reserve.css" | asset_url | stylesheet_tag }} </head>'.$splitfile[1];
+		$themedata = array( "asset" => array('key' => 'layout/theme.liquid', 'value' => $themehtml ));
 		$newthemefile = $shopify('PUT /admin/themes/'.$theme['id'].'/assets.json',$themedata);
 		print_r($newthemefile);
 		
