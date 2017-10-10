@@ -1,6 +1,6 @@
 <!--Reserv.js-->
 (function(){
-var data = $("script[src*='addRevise.js']").attr('src').split('?')[1]; 
+var data = $("script[src*='addReserv.js']").attr('src').split('?')[1]; 
 $.ajax({
   crossDomain: true,
   url: 'https://reserv-app.herokuapp.com/getmeta_json.php?'+data,
