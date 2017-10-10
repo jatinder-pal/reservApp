@@ -86,8 +86,10 @@ function addScript(options){
 		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options,
 		success: function(data){
 			console.log(data);
-			if(data.indexOf('https://reserv-app.herokuapp.com/addReserv.js') > -1){
-				$('.generate_code').val(data);
+			if('input[name="automatic_manual_code"][value="manual_code"]:checked'){
+				$('#generate_code').show().val(data);
+			} else if('input[name="automatic_manual_code"][value="automatic_code"]:checked') {
+				$('#generate_code').hide().val(" ");
 			}
 		}
 	});
@@ -134,11 +136,7 @@ function fetchCssCode(){
 }
 
 $(document).ready(function(){
-	if('input[value="manual_code"]:checked'){
-		$('#generate_code').show();
-	} else if('input[value="automatic_code"]:checked') {
-		$('#generate_code').hide();
-	}
+	
 	$('#manual_code').click(function(){
 		$('#generate_code').slideDown();
 	});
