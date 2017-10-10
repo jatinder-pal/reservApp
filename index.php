@@ -86,7 +86,7 @@ function addScript(options){
 		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options,
 		success: function(data){
 			console.log(data);
-			if(data.indexOf('https://reserv-app.herokuapp.com/addReserv.js') > -1){
+			if($(data).indexOf('https://reserv-app.herokuapp.com/addReserv.js') > -1){
 				//$('.generate_code').val('<script src='+data+'></script>');
 	 		}
 		}
