@@ -31,8 +31,8 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 <div class="content-container">
 <div id="tabs">
   <ul>
-    <li><a href="#register">Nunc tincidunt</a></li>
-    <li><a href="#settings">Proin dolor</a></li>
+    <li><a href="#register">Registration</a></li>
+    <li><a href="#settings">Settings</a></li>
   </ul>
   <div id="register">
     <form method="post" name="registerform" id="registerform" action="#">
