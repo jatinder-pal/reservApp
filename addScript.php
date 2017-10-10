@@ -11,7 +11,9 @@ try
 	$alloptions = explode('===',$alloptions);
 	$alloptions = $alloptions[0];
 	$auto_manual = $alloptions[1];
+	echo '<br/>options==>';
 	print_r($alloptions);
+	echo '<br/>auto_manual==>';
 	print_r($auto_manual);
 	$url = "/admin/script_tags.json?src=https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token";
 	$js_file = "https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token";
