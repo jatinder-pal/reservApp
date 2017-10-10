@@ -22,8 +22,7 @@ try
 	
 	$response = $shopify('POST /admin/metafields.json',$metafield);
 	$response_auto_manual = $shopify('POST /admin/metafields.json',$auto_manual_field);
-	echo $response['value'];
-	echo $response_auto_manual['value'];
+	echo $response['value'].'==='.$response_auto_manual['value'];
 }
 catch (shopify\ApiException $e)
 {
