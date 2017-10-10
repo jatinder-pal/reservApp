@@ -97,7 +97,7 @@ function fetchMetafield(){
 	$.ajax({
 		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
-			print_r(data);
+			console.log(data);
 			var options = data.split('===');
 			var auto_manual = options[1];
 			options = options[0].split(',');
