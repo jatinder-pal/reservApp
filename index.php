@@ -19,12 +19,13 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="https://use.fontawesome.com/988a7dc35f.js"></script>
 	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet" type="text/css"/>  
 	<link href="style.css" rel="stylesheet" type="text/css"/>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
 <h2>Hello welcome to my app</h2>
@@ -37,12 +38,12 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
   <div id="register">
     <form method="post" name="registerform" id="registerform" action="#">
 		<table cellspacing="10" cellpadding="10" border="1">
-			<thead><tr><th>Register</th></tr></thead>
+			<thead><tr><th colspan="2">Register</th></tr></thead>
 			<tbody>
 			<tr><td>Name:</td><td><input type="text" id="name" class="form-control" name="name" /></td></tr>
 			<tr><td>Email:</td><td><input type="email" id="email" class="form-control" name="email" /></td></tr>
 			<tr><td>Password:</td><td><input type="password" id="password" class="form-control" name="password" /></td></tr>
-			<tr><td><input type="button" class="form-control btn" value="Register" name="submit" /></td></tr>
+			<tr><td colspan="2"><input type="button" class="form-control btn" value="Register" name="submit" /></td></tr>
 			</tbody>
 		</table>
 	</form>
