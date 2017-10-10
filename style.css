@@ -10,6 +10,7 @@ textarea#add_css {
 }
 textarea#generate_code {
     width: 405px;
+    height: 110px;
 }
 a.revise_button {
     background: #ececec;
