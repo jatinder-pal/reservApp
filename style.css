@@ -22,17 +22,15 @@ a.revise_button {
 }
 .ui-tabs.ui-tabs-vertical {
     padding: 0;
-    width: 42em;
+    width: 90%;
 }
 .ui-tabs.ui-tabs-vertical .ui-widget-header {
     border: none;
 }
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav {
     float: left;
-    width: 10em;
-    background: #CCC;
-    border-radius: 4px 0 0 4px;
-    border-right: 1px solid gray;
+    width: 25%;
+    background: #fff;
 }
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
     clear: left;
@@ -54,17 +52,12 @@ a.revise_button {
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
     cursor: pointer;
 }
-.ui-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
-    margin-bottom: 0.2em;
-    padding-bottom: 0;
-    border-right: 1px solid white;
-}
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav li:last-child {
     margin-bottom: 10px;
 }
 .ui-tabs.ui-tabs-vertical .ui-tabs-panel {
     float: left;
-    width: 28em;
+    width: 65%;
     border-left: 1px solid gray;
     border-radius: 0;
     position: relative;
