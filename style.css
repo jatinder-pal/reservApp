@@ -20,6 +20,25 @@ a.revise_button {
     text-align: center;
     margin-top: 10px;
 }
+.ui-tabs-active .ui-tabs-anchor {
+    background: #1b627f;
+    border: #1b627f;
+}
+input[type=button] {
+    background: #1b627f;
+    width: auto;
+    color: #fff;
+    font-size: 20px;
+}
+input[type=button] {
+    background: #1b627f;
+    width: auto;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px;
+    text-transform: uppercase;
+    border: #1b627f;
+}
 .ui-tabs.ui-tabs-vertical {
     padding: 0;
     width: 90%;
