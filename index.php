@@ -86,6 +86,7 @@ function addScript(options){
 		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options,
 		success: function(data){
 			console.log(data);
+			$('.generate_code').val(data);
 		}
 	});
 }
