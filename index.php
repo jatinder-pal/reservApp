@@ -79,7 +79,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 <script>
 // Add Script
 function addScript(options){ 
-	console.log('Add Script');
+	console.log(options);
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
