@@ -7,11 +7,15 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {		
 		$response = $shopify('GET /admin/metafields.json');
+		$revisebutton = ''; $automanualfield = '';
 		foreach($response as $options){
 			if($options['namespace'] == 'revisebutton'){
-				echo $options['value'];
+				$revisebutton = $options['value'];
+			} else if($options['namespace'] == 'automanualfield'){
+				$automanualfield = $options['value'];
 			}
 		}
+		echo $revisebutton.'==='.$automanualfield;
 }
 catch (shopify\ApiException $e)
 {
