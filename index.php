@@ -97,9 +97,12 @@ function fetchMetafield(){
 	$.ajax({
 		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
-			if(data){
 			var options = data.split(',');
 			//console.log(options);
+			options = options.split('===');
+			options = options[0];
+			var auto_manual = options[1];
+			$('input[name="automatic_manual_code"][value='+auto_manual+']').attr("checked","true");
 			$.each(options, function(index, value){
 				data = value.split(':');
 				value = data[0];
@@ -113,7 +116,6 @@ function fetchMetafield(){
 				}
 			});
 			addScript(data);
-			}
 		}
 	});
 }
