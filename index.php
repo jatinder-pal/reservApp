@@ -108,9 +108,9 @@ function fetchMetafield(){
 			options = options[0].split(',');
 			$('input[name="automatic_manual_code"][value='+auto_manual+']').attr("checked","true");
 			$.each(options, function(index, value){
-				data = value.split(':');
-				value = data[0];
-				var classes = data[1];
+				var value_data = value.split(':');
+				value = value_data[0];
+				var classes = value_data[1];
 				if($('input[name="sel_options[]"][value='+value+']')){
 				  $('input[name="sel_options[]"][value='+value+']').attr("checked","true");
 				  $('input[id='+value+'_class]').val(classes);
