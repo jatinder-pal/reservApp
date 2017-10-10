@@ -7,8 +7,8 @@ $alloptions = $_REQUEST['options'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-	print_r($alloptions);
 	$alloptions = explode('===',$alloptions);
+	print_r($alloptions);
 	$alloptions = $alloptions[0];
 	$auto_manual = $alloptions[1];
 	echo '<br/>options==>';
