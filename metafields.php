@@ -4,6 +4,7 @@ require __DIR__.'/vendor/autoload.php';
 use phpish\shopify;
 $access_token = $_REQUEST['access_token'];
 $alloptions = $_REQUEST['options'];
+$auto_manual = $_REQUEST['auto_manual'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
@@ -15,8 +16,14 @@ try
 	$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions,
 	'value_type' => 'string'));
 	}
+	
+	$auto_manual_field = array( "metafield" => array('namespace' => 'automanualfield', 'key' => 'automanual', 'value' => $auto_manual,
+	'value_type' => 'string'));
+	
 	$response = $shopify('POST /admin/metafields.json',$metafield);
+	$response_auto_manual = $shopify('POST /admin/metafields.json',$auto_manual_field);
 	echo $response['value'];
+	echo $response_auto_manual['value'];
 }
 catch (shopify\ApiException $e)
 {
