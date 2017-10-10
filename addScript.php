@@ -6,10 +6,13 @@ $access_token = $_REQUEST['access_token'];
 $alloptions = $_REQUEST['options'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
-{
+{	
+	print_r($alloptions);
 	$alloptions = explode('===',$alloptions);
 	$alloptions = $alloptions[0];
 	$auto_manual = $alloptions[1];
+	print_r($alloptions);
+	print_r($auto_manual);
 	$url = "/admin/script_tags.json?src=https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token";
 	$js_file = "https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token";
 	if($auto_manual == 'automatic_code') {
