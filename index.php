@@ -86,9 +86,9 @@ function addScript(options){
 		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options,
 		success: function(data){
 			console.log(data);
-			if('input[name="automatic_manual_code"][value="manual_code"]:checked'){
+			if('input#manual_code:checked'){
 				$('#generate_code').show().val(data);
-			} else if('input[name="automatic_manual_code"][value="automatic_code"]:checked') {
+			} else if('input#automatic_code:checked') {
 				$('#generate_code').hide().val(" ");
 			}
 		}
