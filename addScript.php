@@ -36,9 +36,8 @@ try
 	} else if($auto_manual == 'manual_code') {
 		$data = $shopify("GET $url"); 
 		foreach($data as $file){
-			//print_r($file);
 			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
-			print_r('Remove JS file on Manual selection');
+			//print_r('Remove JS file on Manual selection');
 		}
 		echo "https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token&shop=".$_REQUEST['shop'];
 	}
