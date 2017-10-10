@@ -28,8 +28,10 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<h2>Hello welcome to my app</h2>
-	<div class="logo"><img src="images/ReservStoreLogo.jpg" /></div>
+<div class="logo">
+	<h2>Hello welcome to my app</h2>
+	<img class="logo_img" src="images/ReservStoreLogo.jpg" alt="ReservStoreLogo.jpg" />
+</div>
 <div class="content-container">
 <div id="tabs">
   <ul>
