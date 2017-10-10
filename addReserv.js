@@ -23,12 +23,7 @@ $.ajax({
           }
         } else if(url.indexOf('/collections/') > -1 && url.indexOf('/products/') === -1 && value == 'catalog_page'){
           if($('.'+classes).length){
-	    if(window.location.href.indexOf('/collections/all') > -1){
-	     var collection_url = window.location.href.split('/all');
-	     collection_url = collection_url[0]+'/products.json';
-	    } else {
-	    	var collection_url = window.location.href+'/products.json';
-	    }
+	    var collection_url = window.location.href+'/products.json';
 	    console.log(collection_url);
             $('.'+classes).after('<a href="#" class="reserv_button">RESERV - The New Layaway</a>');
           }
