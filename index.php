@@ -136,7 +136,7 @@ function fetchCssCode(){
 $(document).ready(function(){
 	if('input[value="manual_code"]:checked'){
 		$('#generate_code').show();
-	} else {
+	} else if('input[value="automatic_code"]:checked') {
 		$('#generate_code').hide();
 	}
 	$('#manual_code').click(function(){
