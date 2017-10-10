@@ -37,15 +37,16 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
   </ul>
   <div id="register">
     <form method="post" name="registerform" id="registerform" action="#">
-		<table cellspacing="10" cellpadding="10" border="1">
-			<thead><tr><th colspan="2">Register</th></tr></thead>
-			<tbody>
-			<tr><td>Name:</td><td><input type="text" id="name" class="form-control" name="name" /></td></tr>
-			<tr><td>Email:</td><td><input type="email" id="email" class="form-control" name="email" /></td></tr>
-			<tr><td>Password:</td><td><input type="password" id="password" class="form-control" name="password" /></td></tr>
-			<tr><td colspan="2"><input type="button" class="btn" value="Register" name="submit" /></td></tr>
-			</tbody>
-		</table>
+		<div class="registeration-form">
+			<h3>Register</h3>
+    	    <label for="name">Name:</label>
+			<p><input type="text" id="name" class="form-control" name="name"></p>
+			<label for="email">Email:</label>
+			<p><input type="email" id="email" class="form-control" name="email"></p>
+			<label for="password">Password:</label>
+			<p><input type="password" id="password" class="form-control" name="password"></p>
+			<p><input type="button" class="btn" value="Register" name="submit"></p>
+		</div>
 	</form>
   </div>
   <div id="settings">
