@@ -50,7 +50,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 				<tr>
 					<td></td>
 					<td><label for="automatic_code">Automatic</label>
-					<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" /></td>
+					<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked /></td>
 					<td><label for="manual_code">Manual</label>
 					<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" /></td>
 				</tr>
@@ -137,9 +137,9 @@ $(document).ready(function(){
 	$('#automatic_code').click(function(){
 		$('#generate_code').slideUp();
 	});
-	
 	fetchMetafield();
 	fetchCssCode();
+	
 	$('body').on('click', '.saveoptions', function(e){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
@@ -148,13 +148,14 @@ $(document).ready(function(){
 	    var getid = $(this).attr('id');
 	    Arraydata.push($(this).val()+':'+$('#'+getid+'_class').val());
 	});
+	var auto_manual = $("input[name='automatic_manual_code']:checked").val();
 	//console.log(Arraydata);
 	$.ajax({
 		type: 'POST',
-		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata,
+		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata+'&auto_manual='+auto_manual,
 		dataType: "html",
 		success: function(data) { 
-			//console.log(data);
+			console.log(data);
 			if(data){
 				addScript(data);
 			}
