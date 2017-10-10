@@ -12,13 +12,13 @@ textarea#generate_code {
     width: 405px;
     height: 110px;
 }
-a.revise_button {
-    background: #ececec;
-    padding: 10px;
-    width: 100%;
-    display: block;
+.logo {
     text-align: center;
-    margin-top: 10px;
+    margin: 10px;
+    color: #1b627f;
+}
+img.logo_img {
+    width: 250px;
 }
 .ui-tabs-active .ui-tabs-anchor {
     background: #1b627f;
@@ -41,7 +41,7 @@ input[type=button] {
 }
 .ui-tabs.ui-tabs-vertical {
     padding: 0;
-    width: 90%;
+    width: 100%;
 }
 .ui-tabs.ui-tabs-vertical .ui-widget-header {
     border: none;
