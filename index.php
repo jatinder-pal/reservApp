@@ -79,16 +79,16 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 <script>
 // Add Script
 function addScript(options){ 
-	console.log(options);
+	//console.log(options);
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
 		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options,
 		success: function(data){
 			console.log(data);
-			if('input#manual_code:checked'){
+			if($("#manual_code").is(':checked')){
 				$('#generate_code').show().val(data);
-			} else if('input#automatic_code:checked') {
+			} else if($("#automatic_code").is(':checked')){
 				$('#generate_code').hide().val(" ");
 			}
 		}
@@ -96,7 +96,7 @@ function addScript(options){
 }
 // fetch Metafields
 function fetchMetafield(){
-	console.log('fetch Metafield');
+	//console.log('fetch Metafield');
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
@@ -124,7 +124,7 @@ function fetchMetafield(){
 	});
 }
 function fetchCssCode(){
-	console.log('fetch CSS Code');
+	//console.log('fetch CSS Code');
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
@@ -136,7 +136,6 @@ function fetchCssCode(){
 }
 
 $(document).ready(function(){
-	
 	$('#manual_code').click(function(){
 		$('#generate_code').slideDown();
 	});
