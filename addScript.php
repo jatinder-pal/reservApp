@@ -34,12 +34,13 @@ try
 			}
 		}
 	} else if($auto_manual == 'manual_code') {
+		$shop = $_REQUEST['shop'];
 		$data = $shopify("GET $url"); 
 		foreach($data as $file){
 			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
 			//print_r('Remove JS file on Manual selection');
 		}
-		echo "https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token&shop=".$_REQUEST['shop'];
+		echo "<script src='https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token&shop=$shop'></script>";
 	}
 }
 catch (shopify\ApiException $e)
