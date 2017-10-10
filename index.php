@@ -43,7 +43,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 			<tr><td>Name:</td><td><input type="text" id="name" class="form-control" name="name" /></td></tr>
 			<tr><td>Email:</td><td><input type="email" id="email" class="form-control" name="email" /></td></tr>
 			<tr><td>Password:</td><td><input type="password" id="password" class="form-control" name="password" /></td></tr>
-			<tr><td colspan="2"><input type="button" class="form-control btn" value="Register" name="submit" /></td></tr>
+			<tr><td colspan="2"><input type="button" class="btn" value="Register" name="submit" /></td></tr>
 			</tbody>
 		</table>
 	</form>
