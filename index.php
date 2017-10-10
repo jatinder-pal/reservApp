@@ -97,11 +97,10 @@ function fetchMetafield(){
 	$.ajax({
 		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
-			console.log(data);
+			//console.log(data);
 			var options = data.split('===');
 			var auto_manual = options[1];
 			options = options[0].split(',');
-			//console.log(options);
 			$('input[name="automatic_manual_code"][value='+auto_manual+']').attr("checked","true");
 			$.each(options, function(index, value){
 				data = value.split(':');
@@ -120,7 +119,7 @@ function fetchMetafield(){
 	});
 }
 function fetchCssCode(){
-	console.log('fetch Metafield');
+	console.log('fetch CSS Code');
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
@@ -157,7 +156,7 @@ $(document).ready(function(){
 		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata+'&auto_manual='+auto_manual,
 		dataType: "html",
 		success: function(data) { 
-			console.log(data);
+			//console.log(data);
 			if(data){
 				addScript(data);
 			}
