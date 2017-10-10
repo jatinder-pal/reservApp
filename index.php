@@ -97,11 +97,10 @@ function fetchMetafield(){
 	$.ajax({
 		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
-			var options = data.split(',');
-			//console.log(options);
-			options = options.split('===');
-			options = options[0];
+			var options = data.split('===');
 			var auto_manual = options[1];
+			options = options[0].split(',');
+			//console.log(options);
 			$('input[name="automatic_manual_code"][value='+auto_manual+']').attr("checked","true");
 			$.each(options, function(index, value){
 				data = value.split(':');
