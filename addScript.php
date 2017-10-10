@@ -8,13 +8,9 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {	
 	$alloptions = explode('===',$alloptions);
-	print_r($alloptions);
-	$alloptions = $alloptions[0];
 	$auto_manual = $alloptions[1];
-	echo '<br/>options==>';
-	print_r($alloptions);
-	echo '<br/>auto_manual==>';
-	print_r($auto_manual);
+	$alloptions = $alloptions[0];
+	
 	$url = "/admin/script_tags.json?src=https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token";
 	$js_file = "https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token";
 	if($auto_manual == 'automatic_code') {
@@ -44,7 +40,7 @@ try
 			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
 			print_r('Remove JS file on Manual selection');
 		}
-		//echo "https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token&shop=".$_REQUEST['shop'];
+		echo "https://reserv-app.herokuapp.com/addReserv.js?access_token=$access_token&shop=".$_REQUEST['shop'];
 	}
 }
 catch (shopify\ApiException $e)
