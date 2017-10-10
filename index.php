@@ -54,7 +54,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<td><label for="manual_code">Manual</label>
 					<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" /></td>
 				</tr>
-				<tr><td colspan="3"><textarea style="display:none;" class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
+				<tr><td colspan="3"><textarea class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
 				<tr>
 				<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
 				</tr>
@@ -86,6 +86,9 @@ function addScript(options){
 		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options,
 		success: function(data){
 			console.log(data);
+			if(data.indexOf('https://reserv-app.herokuapp.com/addReserv.js') > -1){
+				$('.generate_code').val('<script src="'+data+'" type="text/javascript"></script>');
+	 		}
 		}
 	});
 }
@@ -131,13 +134,18 @@ function fetchCssCode(){
 }
 
 $(document).ready(function(){
-	
+	if('input[value="manual_code"]:checked'){
+		$('#generate_code').show();
+	} else {
+		$('#generate_code').hide();
+	}
 	$('#manual_code').click(function(){
 		$('#generate_code').slideDown();
 	});
 	$('#automatic_code').click(function(){
 		$('#generate_code').slideUp();
 	});
+	
 	fetchMetafield();
 	fetchCssCode();
 	
