@@ -9,72 +9,91 @@ use phpish\shopify;
 error_reporting(E_ALL);
  //print_r($_SESSION); 
 ini_set('display_errors', 1);
-
 if((isset($_REQUEST['shop'])) && (isset($_REQUEST['code'])) && $_REQUEST['shop']!='' && $_REQUEST['code']!='' )
 {
 	$_SESSION['shop']=$_REQUEST['shop'];
 	$_SESSION['code']=$_REQUEST['code'];
 }
 $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHOPIFY_APP_SHARED_SECRET, $_REQUEST['code']);
-
 ?>
 <html>
 <head>
- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet"> 
- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<script src="https://use.fontawesome.com/988a7dc35f.js"></script>
-<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet" type="text/css"/>  
-<link href="style.css" rel="stylesheet" type="text/css"/>
- </head>
- <body>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet"> 
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://use.fontawesome.com/988a7dc35f.js"></script>
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet" type="text/css"/>  
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
 <h2>Hello welcome to my app</h2>
 <div class="content-container">
-	<div class="options">
-	<form method="post" name="form" id="getoptions" action="#">
+<div id="tabs">
+  <ul>
+    <li><a href="#register">Nunc tincidunt</a></li>
+    <li><a href="#settings">Proin dolor</a></li>
+  </ul>
+  <div id="register">
+    <form method="post" name="registerform" id="registerform" action="#">
 		<table cellspacing="10" cellpadding="10" border="1">
-			<thead>
-				<tr>
-				<th></th><th>Options</th><th>Class name</th>
-				</tr>
-			</thead>
+			<thead><tr><th>Register</th></tr></thead>
 			<tbody>
-				<tr><td><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
-					<td><label for="product_page">Product Page</label></td>
-					<td><input id="product_page_class" type="text" name="product_page_class" value="" /></td>
-				</tr>
-				<tr><td><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
-					<td><label for="catalog_page">Catalog Page</label></td>
-					<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
-				</tr>
-				<tr><td colspan="3">Do you want to add Resev button Automatic or Manual ?</td></tr>
-				<tr>
-					<td></td>
-					<td><label for="automatic_code">Automatic</label>
-					<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked /></td>
-					<td><label for="manual_code">Manual</label>
-					<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" /></td>
-				</tr>
-				<tr><td colspan="3"><textarea class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
-				<tr>
-				<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
-				</tr>
+			<tr><td>Name:</td><td><input type="text" id="name" class="form-control" name="name" /></td></tr>
+			<tr><td>Email:</td><td><input type="email" id="email" class="form-control" name="email" /></td></tr>
+			<tr><td>Password:</td><td><input type="password" id="password" class="form-control" name="password" /></td></tr>
+			<tr><td><input type="button" class="form-control btn" value="Register" name="submit" /></td></tr>
 			</tbody>
 		</table>
 	</form>
+  </div>
+  <div id="settings">
+    <div class="options">
+		<form method="post" name="form" id="getoptions" action="#">
+			<table cellspacing="10" cellpadding="10" border="1">
+				<thead>
+					<tr>
+					<th></th><th>Options</th><th>Class name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
+						<td><label for="product_page">Product Page</label></td>
+						<td><input id="product_page_class" type="text" name="product_page_class" value="" /></td>
+					</tr>
+					<tr><td><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
+						<td><label for="catalog_page">Catalog Page</label></td>
+						<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
+					</tr>
+					<tr><td colspan="3">Do you want to add Resev button Automatic or Manual ?</td></tr>
+					<tr>
+						<td></td>
+						<td><label for="automatic_code">Automatic</label>
+						<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked /></td>
+						<td><label for="manual_code">Manual</label>
+						<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" /></td>
+					</tr>
+					<tr><td colspan="3"><textarea class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
+					<tr>
+					<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
 	</div>
-	
 	<div class="customcss">
-	<form method="post" name="cssform" id="addcustomcss" action="#">
-		<table cellspacing="10" cellpadding="10" border="1">
-			<thead><tr><th>Custom CSS</th></tr></thead>
-			<tbody>
-			<tr><td><textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea></td></tr>
-			<tr><td><input type="button" class="savecss" value="Save CSS" name="submit" /></td></tr>
-			</tbody>
-		</table>
-	</form>
+		<form method="post" name="cssform" id="addcustomcss" action="#">
+			<table cellspacing="10" cellpadding="10" border="1">
+				<thead><tr><th>Custom CSS</th></tr></thead>
+				<tbody>
+				<tr><td><textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea></td></tr>
+				<tr><td><input type="button" class="savecss" value="Save CSS" name="submit" /></td></tr>
+				</tbody>
+			</table>
+		</form>
 	</div>
-	
+  </div>
+</div>
 </div> 
 <script>
 // Add Script
@@ -134,7 +153,6 @@ function fetchCssCode(){
 		}
 	});
 }
-
 $(document).ready(function(){
 	$('#manual_code').click(function(){
 		$('#generate_code').slideDown();
