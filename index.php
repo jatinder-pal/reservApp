@@ -87,7 +87,7 @@ function addScript(options){
 		success: function(data){
 			console.log(data);
 			if(data.indexOf('https://reserv-app.herokuapp.com/addReserv.js') > -1){
-				$('.generate_code').val('<script src="'+data+'" type="text/javascript"></script>');
+				$('.generate_code').val('<script src='+data+'></script>');
 	 		}
 		}
 	});
