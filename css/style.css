@@ -1,0 +1,84 @@
+th, td {
+    padding: 10px;
+}
+img {
+    width: 100px;
+}
+textarea#add_css {
+    height: 250px;
+    width: 405px;
+}
+textarea#generate_code {
+    width: 405px;
+    height: 110px;
+}
+a.revise_button {
+    background: #ececec;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.ui-tabs-active .ui-tabs-anchor {
+    background: #1b627f;
+    border: #1b627f;
+}
+input[type=button] {
+    background: #1b627f;
+    width: auto;
+    color: #fff;
+    font-size: 20px;
+}
+input[type=button] {
+    background: #1b627f;
+    width: auto;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px;
+    text-transform: uppercase;
+    border: #1b627f;
+}
+.ui-tabs.ui-tabs-vertical {
+    padding: 0;
+    width: 90%;
+}
+.ui-tabs.ui-tabs-vertical .ui-widget-header {
+    border: none;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav {
+    float: left;
+    width: 25%;
+    background: #fff;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
+    clear: left;
+    width: 100%;
+    margin: 0.2em 0;
+    border: 1px solid gray;
+    border-width: 1px 0 1px 1px;
+    border-radius: 4px 0 0 4px;
+    overflow: hidden;
+    position: relative;
+    right: -2px;
+    z-index: 2;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {
+    display: block;
+    width: 100%;
+    padding: 0.6em 1em;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
+    cursor: pointer;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li:last-child {
+    margin-bottom: 10px;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+    float: left;
+    width: 65%;
+    border-left: 1px solid gray;
+    border-radius: 0;
+    position: relative;
+    left: -1px;
+}
