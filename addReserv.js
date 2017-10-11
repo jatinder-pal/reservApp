@@ -73,14 +73,10 @@ $.ajax({
 			}
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
 			console.log(link);
-			var count = index + 1;
-			if(count == 1){
-			alert($('body .'+classes+':nth-child('+index+')'));
-			$('body .'+classes+':first-child').after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
-			} else{
-			alert($('body .'+classes+':nth-child('+index+')'));
-			$('body .'+classes+':nth-child('+index+')').after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
-			}
+			alert($('body .'+classes).length);
+			console.log($('body .'+classes+':nth-child('+index+')'));
+				
+			$('body .'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 			});
 			
 		}
