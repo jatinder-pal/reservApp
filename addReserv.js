@@ -81,24 +81,25 @@ $.ajax({
           }
         } else if(url.indexOf('/cart') > -1 && value == 'cart_page'){
           if($('.'+classes).length){
-	   var product_url = window.location.href+'.json';
-	    console.log(product_url);
+	   	var cart_url = window.location.href+'.json';
 		$.ajax({
 		type: 'get',
-		url: product_url,
+		url: cart_url,
 		dataType: "jsonp",
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
-			var product = response.products;
-			$.each(product, function(index){
-			var id = product[index].id;
-			var name = product[index].title;
-			var desc = product[index].body_html;
-			var price = product[index].variants[0].price;
-			var shipping = product[index].variants[0].requires_shipping;
-			var tax = product[index].variants[0].taxable;
-			if(product[index].images.length){
-				var image = product[index].images[0].src;
+			console.log(response);
+			var items = response.items;
+			console.log(items);
+			$.each(items, function(index){
+			var id = items[index].id;
+			var name = items[index].title;
+			var desc = items[index].body_html;
+			var price = items[index].variants[0].price;
+			var shipping = items[index].variants[0].requires_shipping;
+			var tax = items[index].variants[0].taxable;
+			if(items[index].images.length){
+				var image = items[index].images[0].src;
 			} else {
 				var image = "";
 			}
