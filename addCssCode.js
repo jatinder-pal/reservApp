@@ -5,7 +5,7 @@ $.ajax({
   crossDomain: true,
   url: 'https://reserv-app.herokuapp.com/getCss_json.php?'+data,
   dataType: "jsonp",
-  header: {"Access-Control-Allow-Origin": "https://sendd-shipping.myshopify.com"},
+  header: {"Access-Control-Allow-Origin": "*"},
   success: function(response){
      var csscode = response['options'];
      $('head').append('<style>'+csscode+'</style>');
