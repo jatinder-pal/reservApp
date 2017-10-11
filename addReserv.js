@@ -43,7 +43,7 @@ $.ajax({
 				var image = product.image.src;
 			}
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
-			$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
+			$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 		}
 		});
           }
@@ -59,7 +59,6 @@ $.ajax({
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){ 
 			var product = response.products;
-			var link = "";
 			$.each(product, function(index){
 			var id = product[index].id;
 			var name = product[index].title;
@@ -72,10 +71,11 @@ $.ajax({
 			} else {
 				var image = "";
 			}
-			link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
-			});
+			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
 			console.log(link);
-			$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
+			$('product-'+id+' .'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+			});
+			
 		}
 		});
           }
