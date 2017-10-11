@@ -26,9 +26,14 @@ $.ajax({
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
 			//console.log(response);
-			console.log(response['product']);
+			//console.log(response['product']);
 			console.log(response.product.id);
-			console.log(response['product']['image']['src']);
+			console.log(response.product.title);
+			console.log(response.product.body_html);
+			console.log(response.product.variants[0].price);
+			console.log(response.product.variants[0].requires_shipping);
+			console.log(response.product.variants[0].taxable);
+			console.log(response.product.image.src);
 			$('.'+classes).after('<a href="#" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
 		}
 		});
