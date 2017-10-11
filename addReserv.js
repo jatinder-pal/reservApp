@@ -18,7 +18,7 @@ $.ajax({
         if(url.indexOf('/products/') > -1 && value == 'product_page'){
           if($('.'+classes).length){
 	    var product_url = window.location.href+'.json';
-	    console.log(product_url); 
+	    console.log(product_url);
 		$.ajax({
 		crossDomain: true,
 		url: product_url,
