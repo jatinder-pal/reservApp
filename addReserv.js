@@ -54,7 +54,9 @@ $.ajax({
 		dataType: "jsonp",
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
+			console.log(response);
 			var product = response.product;
+			console.log(product);
 			$.each(product, function(index){
 			console.log(product[index]);
 			var id = product[index].id;
