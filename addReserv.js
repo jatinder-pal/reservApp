@@ -90,20 +90,14 @@ $.ajax({
 		success: function(response){
 			console.log(response);
 			var items = response.items;
-			console.log(items);
 			$.each(items, function(index){
-			var id = items[index].id;
-			var name = items[index].title;
-			var desc = items[index].body_html;
-			var price = items[index].variants[0].price;
-			var shipping = items[index].variants[0].requires_shipping;
-			var tax = items[index].variants[0].taxable;
-			if(items[index].images.length){
-				var image = items[index].images[0].src;
-			} else {
-				var image = "";
-			}
-			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
+			var id = items[index].product_id;
+			var name = items[index].product_title;
+			var desc = items[index].product_description;
+			var price = items[index].price;
+			var shipping = items[index].requires_shipping;
+			var image = items[index].image;
+			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping;
 			console.log(link);
 			$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 			});
