@@ -55,8 +55,7 @@ $.ajax({
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
 			console.log(response); 
-			var product = response.product;
-			console.log(product);
+			var product = response.products;
 			$.each(product, function(index){
 			console.log(product[index]);
 			var id = product[index].id;
@@ -68,10 +67,10 @@ $.ajax({
 			var image = product[index].image.src;
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
 			console.log(link);
+			$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
 			});
 		}
 		});
-            $('.'+classes).after('<a href="#" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
           }
         }
         
