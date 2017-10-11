@@ -20,15 +20,16 @@ $.ajax({
 	    var product_url = window.location.href+'.json';
 	    console.log(product_url);
 		$.ajax({
-		crossDomain: true,
+		type: 'get',
 		url: product_url,
 		dataType: "jsonp",
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
+			alert(response);
 			console.log(response);
+			$('.'+classes).after('<a href="#" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
 		}
 		});
-            $('.'+classes).after('<a href="#" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
           }
         } else if(url.indexOf('/collections/') > -1 && url.indexOf('/products/') === -1 && value == 'catalog_page'){
           if($('.'+classes).length){
