@@ -17,7 +17,12 @@ $.ajax({
         var url = window.location.href;
         if(url.indexOf('/products/') > -1 && value == 'product_page'){
           if($('.'+classes).length){
-	    var product_url = window.location.href+'.json';
+	    if(window.location.href.indexOf('?variant=') > -1){
+		var product_url = window.location.href.split('?variant='); 
+		product_url = product_url[0]+'.json';
+	    } else {
+	    	var product_url = window.location.href+'.json';
+	    }
 	    console.log(product_url);
 		$.ajax({
 		type: 'get',
@@ -51,6 +56,7 @@ $.ajax({
 		success: function(response){
 			var product = response.product;
 			$.each(product, function(index){
+			console.log(product[index]);
 			var id = product[index].id;
 			var name = product[index].title;
 			var desc = product[index].body_html;
