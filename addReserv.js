@@ -73,7 +73,9 @@ $.ajax({
 			}
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
 			console.log(link);
-			$('.product-'+id+' .'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+			if($('.'+classes).after('.reserv_button').length == 0) {
+				$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+			}
 			});
 			
 		}
