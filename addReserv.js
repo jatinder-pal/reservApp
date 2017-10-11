@@ -102,7 +102,7 @@ $.ajax({
 			itemsarray.push(link);
 			});
 			var Allitems = itemsarray.join(" | ");
-			console.log(Allitems);
+			alert(Allitems);
 			$('.'+classes).after('<a href="'+Allitems+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 		}
 		});
