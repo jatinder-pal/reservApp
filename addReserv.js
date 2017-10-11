@@ -37,7 +37,7 @@ $.ajax({
 			var price = product.variants[0].price;
 			var shipping = product.variants[0].requires_shipping;
 			var tax = product.variants[0].taxable;
-			if(product.image.src){
+			if(product.image){
 				var image = product.image.src;
 			} else {
 				var image = "";
@@ -66,7 +66,7 @@ $.ajax({
 			var price = product[index].variants[0].price;
 			var shipping = product[index].variants[0].requires_shipping;
 			var tax = product[index].variants[0].taxable;
-			if(product[index].images[0].src){
+			if(product[index].images){
 				var image = product[index].images[0].src;
 			} else {
 				var image = "";
