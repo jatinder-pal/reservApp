@@ -37,11 +37,7 @@ $.ajax({
 			var price = product.variants[0].price;
 			var shipping = product.variants[0].requires_shipping;
 			var tax = product.variants[0].taxable;
-			if(product.image.length){
-				var image = product.image.src;
-			} else {
-				var image = "";
-			}
+			var image = product.image.src;
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
 			$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
 		}
