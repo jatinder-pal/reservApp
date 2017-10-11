@@ -26,6 +26,7 @@ $.ajax({
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
 			console.log(response);
+			console.log(response['product']);
 			$('.'+classes).after('<a href="#" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
 		}
 		});
