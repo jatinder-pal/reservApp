@@ -1,6 +1,6 @@
 <!--Add CSS Code-->
 (function(){
-var data = $("script[src*='addRevise.js']").attr('src').split('?')[1]; 
+var data = $("script[src*='addCssCode.js']").attr('src').split('?')[1]; 
 $.ajax({
   crossDomain: true,
   url: 'https://reserv-app.herokuapp.com/getCss_json.php?'+data,
