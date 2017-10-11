@@ -25,7 +25,6 @@ $.ajax({
 		dataType: "jsonp",
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
-			alert(response);
 			console.log(response);
 			$('.'+classes).after('<a href="#" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
 		}
