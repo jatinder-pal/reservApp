@@ -59,6 +59,7 @@ $.ajax({
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){ 
 			var product = response.products;
+			var proarray = [];
 			$.each(product, function(index){
 			var id = product[index].id;
 			var name = product[index].title;
@@ -72,12 +73,14 @@ $.ajax({
 				var image = "";
 			}
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
-			console.log(link);
-			alert($('body .'+classes).length);
-			console.log($('body .'+classes+':nth-child('+index+')'));
-				
-			$('body .'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+			proarray.push(link);
 			});
+			
+			var count = $('body .'+classes).length;
+			for(var i=1;i<=count;i++){
+			console.log($('body .'+classes));
+			}
+			//$('body .'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 			
 		}
 		});
