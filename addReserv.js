@@ -88,9 +88,9 @@ $.ajax({
 		dataType: "jsonp",
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
-			console.log(response);
+			//console.log(response);
 			var items = response.items;
-			var array = [];
+			var itemsarray = [];
 			$.each(items, function(index){
 			var id = items[index].product_id;
 			var name = items[index].product_title;
@@ -99,9 +99,10 @@ $.ajax({
 			var shipping = items[index].requires_shipping;
 			var image = items[index].image;
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping;
-			array.push(link);
+			itemsarray.push(link);
 			});
-			var Allitems = array.join(" | "); 
+			var Allitems = itemsarray.join(" | ");
+			console.log(Allitems);
 			$('.'+classes).after('<a href="'+Allitems+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 		}
 		});
