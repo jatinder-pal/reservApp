@@ -25,8 +25,10 @@ $.ajax({
 		dataType: "jsonp",
 		header: {"Access-Control-Allow-Origin": "*"},
 		success: function(response){
-			console.log(response);
+			//console.log(response);
 			console.log(response['product']);
+			console.log(response.product.id);
+			console.log(response['product']['image']['src']);
 			$('.'+classes).after('<a href="#" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
 		}
 		});
