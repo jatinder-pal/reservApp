@@ -79,7 +79,7 @@ $.ajax({
 			var count = $('body .'+classes).length;
 			for(var i=1;i<=count;i++){
 			console.log($('body .'+classes));
-			$('body .'+classes).after('<a href="'+proarray[i]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+			$('.'+classes).after('<a href="'+proarray[i]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 			}
 		}
 		});
