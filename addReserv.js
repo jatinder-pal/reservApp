@@ -79,6 +79,36 @@ $.ajax({
 		}
 		});
           }
+        } else if(url.indexOf('/cart') > -1 && value == 'cart_page'){
+          if($('.'+classes).length){
+	   var product_url = window.location.href+'.json';
+	    console.log(product_url);
+		$.ajax({
+		type: 'get',
+		url: product_url,
+		dataType: "jsonp",
+		header: {"Access-Control-Allow-Origin": "*"},
+		success: function(response){
+			var product = response.products;
+			$.each(product, function(index){
+			var id = product[index].id;
+			var name = product[index].title;
+			var desc = product[index].body_html;
+			var price = product[index].variants[0].price;
+			var shipping = product[index].variants[0].requires_shipping;
+			var tax = product[index].variants[0].taxable;
+			if(product[index].images.length){
+				var image = product[index].images[0].src;
+			} else {
+				var image = "";
+			}
+			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
+			console.log(link);
+			$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+			});
+		}
+		});
+          }
         }
         
       });
