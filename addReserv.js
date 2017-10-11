@@ -71,6 +71,7 @@ $.ajax({
 			} else {
 				var image = "";
 			}
+			alert($('body .'+classes).length);
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
 			console.log(link);
 			$('.'+classes+':nth-child('+index+')').after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
