@@ -78,7 +78,7 @@ $.ajax({
 			
 			$('body .'+classes).each(function(index){
 			  $(this).after('<a href="'+proarray[index]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
-			}
+			});
 		}
 		});
           }
