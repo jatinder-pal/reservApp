@@ -72,7 +72,7 @@ $.ajax({
 			} else {
 				var image = "";
 			}
-			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
+			link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping+'&tax='+tax;
 			});
 			console.log(link);
 			$('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV <br/><span>The New Layaway</span></a>');
