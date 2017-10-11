@@ -76,10 +76,8 @@ $.ajax({
 			proarray.push(link);
 			});
 			
-			var count = $('body .'+classes).length;
-			console.log($('body .'+classes));
-			for(var i=0;i<count;i++){
-			$('.'+classes).after('<a href="'+proarray[i]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+			$('body .'+classes).each(function(index){
+			  $(this).after('<a href="'+proarray[index]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 			}
 		}
 		});
