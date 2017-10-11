@@ -69,6 +69,10 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td><label for="catalog_page">Catalog Page</label></td>
 						<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
 					</tr>
+					<tr><td><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" /></td>
+						<td><label for="cart_page">Catalog Page</label></td>
+						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td>
+					</tr>
 					<tr><td colspan="3">Do you want to add Resev button Automatic or Manual ?</td></tr>
 					<tr>
 						<td></td>
