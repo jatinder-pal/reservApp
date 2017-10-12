@@ -121,7 +121,7 @@
                                     var desc = items[index].product_description;
                                     var price = items[index].price;
                                     var image = items[index].image;
-                                    var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping;
+                                    var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                     itemsarray.push(link);
                                 });
                                 var Allitems = itemsarray.join("|");
