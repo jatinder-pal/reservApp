@@ -54,10 +54,9 @@
                         var limit = $('body .'+classes).length;
                         var current_page = 1;
                         if (url.indexOf('?page=') > -1) {
-                            console.log(url);
-                            var current_page = url[1];
-                            console.log(url[0]);
-                            var main_url = url[0];
+                            var urlArray = url.split('?page=');
+                            var current_page = urlArray[1];
+                            var main_url = urlArray[0];
                         } else {
                             var main_url = url;
                             var current_page = 1;
