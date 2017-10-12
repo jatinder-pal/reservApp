@@ -56,8 +56,13 @@
                         if (url.indexOf('?page=') > -1) {
                             var urlArray = url.split('?page=');
                             var current_page = urlArray[1];
+                            if(current_page == 1){
+                                limit = $('body .'+classes).length;
+                                $.cookie('limit', limit);
+                            } else {
+                                limit = $.cookie('limit');
+                            }
                             var main_url = urlArray[0];
-                            limit = $.cookie('limit');
                         } else {
                             var main_url = url;
                             var current_page = 1;
