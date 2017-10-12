@@ -52,7 +52,6 @@
                 } else if (url.indexOf('/collections/') > -1 && url.indexOf('/products/') === -1 && value == 'catalog_page') {
                     if ($('.' + classes).length) {
                         var limit = $('body .'+classes).length;
-                        alert($('body .'+classes).length);
                         var current_page = 1;
                         if (url.indexOf('?page=') > -1) {
                             var current_page = url[1];
@@ -62,6 +61,7 @@
                             var current_page = 1;
                         }
                         var collection_url = main_url+'/products.json?limit='+limit+'&page='+current_page;
+                        console.log(collection_url);
                         $.ajax({
                             crossDomain: true,
                             url: collection_url,
@@ -86,8 +86,9 @@
                                     var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                     proarray.push(link);
                                 });
-
+                                console.log($('body .'+classes));
                                 $('body .'+classes).each(function(index) {
+                                    console.log($(this));
                                     $(this).after('<a href="'+proarray[index]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                                 });
                             }
