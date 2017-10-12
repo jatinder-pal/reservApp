@@ -104,7 +104,7 @@ $.ajax({
 			var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price+'&shipping='+shipping;
 			itemsarray.push(link);
 			});
-			var Allitems = itemsarray.join(" | ");
+			var Allitems = itemsarray.join("|");
 			$('.'+classes).after('<a href="'+Allitems+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
 		}
 		});
