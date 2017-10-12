@@ -84,11 +84,11 @@
                                         var image = "";
                                     }
                                     var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                    console.log(link);
                                     proarray.push(link);
                                 });
-                                console.log($('body .'+classes));
+                                console.log(proarray);
                                 $('body .'+classes).each(function(index) {
-                                    console.log($(this));
                                     $(this).after('<a href="'+proarray[index]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                                 });
                             }
