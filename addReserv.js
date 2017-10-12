@@ -56,10 +56,12 @@
                         var current_page = 1;
                         if (url.indexOf('?page=') > -1) {
                             var current_page = url[1];
+                            var main_url = url[0];
                         } else {
+                            var main_url = url;
                             var current_page = 1;
                         }
-                        var collection_url = window.location.href +'/products.json?limit='+limit+'&page='+current_page;
+                        var collection_url = main_url+'/products.json?limit='+limit+'&page='+current_page;
                         $.ajax({
                             crossDomain: true,
                             url: collection_url,
