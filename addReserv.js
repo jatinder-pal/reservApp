@@ -52,15 +52,17 @@
                 } else if (url.indexOf('/collections/') > -1 && url.indexOf('/products/') === -1 && value == 'catalog_page') {
                     if ($('.' + classes).length) {
                         var current_page = 1;
-                        var limit = 2;
+                        var limit = 0;
                         if (url.indexOf('?page=') > -1) {
                             var urlArray = url.split('?page=');
                             var current_page = urlArray[1];
                             var main_url = urlArray[0];
+                            limit = $.cookie('limit');
                         } else {
                             var main_url = url;
                             var current_page = 1;
                             limit = $('body .'+classes).length;
+                            $.cookie('limit', limit);
                         }
                         var collection_url = main_url+'/products.json?limit='+limit+'&page='+current_page;
                         console.log(collection_url);
