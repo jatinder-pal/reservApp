@@ -54,7 +54,6 @@
                         var limit = $('body .'+classes).length;
                         alert($('body .'+classes).length);
                         var current_page = 1;
-                        var totalproducts = response.collection.products_count;
                         if (url.indexOf('?page=') > -1) {
                             var current_page = url[1];
                         } else {
