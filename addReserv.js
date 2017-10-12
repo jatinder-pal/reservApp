@@ -51,56 +51,43 @@
                     }
                 } else if (url.indexOf('/collections/') > -1 && url.indexOf('/products/') === -1 && value == 'catalog_page') {
                     if ($('.' + classes).length) {
-                        var currentpage = window.location.href + '/frontpage.json';
                         var limit = $('body .'+classes).length;
                         alert($('body .'+classes).length);
                         var current_page = 1;
+                        var totalproducts = response.collection.products_count;
+                        if (url.indexOf('?page=') > -1) {
+                            var current_page = url[1];
+                        } else {
+                            var current_page = 1;
+                        }
+                        var collection_url = window.location.href +'/products.json?limit='+limit+'&page='+current_page;
                         $.ajax({
                             crossDomain: true,
-                            url: currentpage,
+                            url: collection_url,
                             async: false,
                             dataType: "jsonp",
                             header: {
                                 "Access-Control-Allow-Origin": "*"
                             },
                             success: function(response) {
-                                var totalproducts = response.collection.products_count;
-                                total_pages = Math.ceil(totalproducts / limit);
-                                if (url.indexOf('?page=') > -1) {
-                                    var current_page = url[1];
-                                } else {
-                                    var current_page = 1;
-                                }
-                                var collection_url = window.location.href +'/products.json?limit='+limit+'&page='+current_page;
-                                $.ajax({
-                                    crossDomain: true,
-                                    url: collection_url,
-                                    async: false,
-                                    dataType: "jsonp",
-                                    header: {
-                                        "Access-Control-Allow-Origin": "*"
-                                    },
-                                    success: function(response) {
-                                        var product = response.products;
-                                        var proarray = [];
-                                        $.each(product, function(index) {
-                                            var id = product[index].id;
-                                            var name = product[index].title;
-                                            var desc = product[index].body_html;
-                                            var price = product[index].variants[0].price;
-                                            if (product[index].images.length) {
-                                                var image = product[index].images[0].src;
-                                            } else {
-                                                var image = "";
-                                            }
-                                            var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
-                                            proarray.push(link);
-                                        });
-
-                                        $('body .'+classes).each(function(index) {
-                                            $(this).after('<a href="'+proarray[index]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
-                                        });
+                                var product = response.products;
+                                var proarray = [];
+                                $.each(product, function(index) {
+                                    var id = product[index].id;
+                                    var name = product[index].title;
+                                    var desc = product[index].body_html;
+                                    var price = product[index].variants[0].price;
+                                    if (product[index].images.length) {
+                                        var image = product[index].images[0].src;
+                                    } else {
+                                        var image = "";
                                     }
+                                    var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                    proarray.push(link);
+                                });
+
+                                $('body .'+classes).each(function(index) {
+                                    $(this).after('<a href="'+proarray[index]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                                 });
                             }
                         });
