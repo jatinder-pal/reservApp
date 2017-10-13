@@ -46,7 +46,7 @@
                                 if(variant_title == "Default Title"){
                                     name = name;
                                 } else {
-                                    name = name+'-'+variant_title;
+                                    name = name+' - '+variant_title;
                                 }
                                 if (variant_image_id != null) {
                                     var image = "";
@@ -109,7 +109,7 @@
                                     if(variant_title == "Default Title"){
                                         name = name;
                                     } else {
-                                        name = name+'-'+variant_title;
+                                        name = name+' - '+variant_title;
                                     }
                                     var image = "";
                                     if (variant_featured_image != null) {
