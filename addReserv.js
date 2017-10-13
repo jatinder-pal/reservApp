@@ -48,7 +48,7 @@
                                 } else {
                                     name = product_name+' - '+variant_title;
                                 }
-								var image = "";
+				var image = "";
                                 if (variant_image_id != null) {
                                     $.each(product.images, function(index){
                                       if(product.images[index].id == variant_image_id){
@@ -63,14 +63,7 @@
                                 $('body').on('click','.reserv_button',function(e){
                                    e.preventDefault();
 				   var _this = $(this);
-                                   var variantid = 0;
-                                   var formdata = $(this).parents('form').serialize();
-                                   var formdata = formdata.split('&');
-                                   $.each(formdata,function(index){
-                                       if(formdata[index].indexOf('id=') > -1){
-                                          variantid = formdata[index].split('=')[1];
-                                       }
-                                   });
+                                   var variantid = $('select[name="id"]').val();
 				   $.each(product.variants, function(index){
 					   if(product.variants[index].id == variantid){
 						var newid = product.variants[index].id;
