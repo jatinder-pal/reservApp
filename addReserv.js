@@ -36,16 +36,17 @@
                             success: function(response) {
                                 var product = response.product;
                                 var product_id = product.id;
-                                var name = product.title;
+                                var product_name = product.title;
                                 var desc = product.body_html;
                                 var id = product.variants[0].id;
                                 var price = product.variants[0].price;
                                 var variant_image_id = product.variants[0].image_id;
                                 var variant_title = product.variants[0].title;
+				var name = "";
                                 if(variant_title == "Default Title"){
-                                    name = name;
+                                    name = product_name;
                                 } else {
-                                    name = name+' - '+variant_title;
+                                    name = product_name+' - '+variant_title;
                                 }
 								var image = "";
                                 if (variant_image_id != null) {
@@ -77,9 +78,9 @@
 						var v_imgid = product.variants[index].image_id;
 						var v_title = product.variants[index].title;
 						if(v_title == "Default Title"){
-							name = name;
+							name = product_name;
 						} else {
-							name = name+' - '+v_title;
+							name = product_name+' - '+v_title;
 						}
 						if (v_imgid != null) {
 							$.each(product.images, function(index){
