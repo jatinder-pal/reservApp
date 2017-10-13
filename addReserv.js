@@ -35,6 +35,7 @@
                             },
                             success: function(response) {
                                 var product = response.product;
+                                console.log(product);
                                 var id = product.id;
                                 var name = product.title;
                                 var desc = product.body_html;
@@ -44,6 +45,7 @@
                                 } else {
                                     var image = product.image.src;
                                 }
+                                console.log($('.'+classes).parents('form').serialize());
                                 var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                             }
