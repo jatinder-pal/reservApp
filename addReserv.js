@@ -57,14 +57,19 @@
                                 } else {
                                     var image = product.image.src;
                                 }
-                                //console.log($('.'+classes).parents('form').serialize());
                                 var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                                 $('body').on('click','.reserv_button',function(e){
                                     e.preventDefault();
-                                   console.log('testtt'); 
-                                   console.log($(this).parents('form').serialize());
-                                   alert(123);
+                                    var variantid = 0;
+                                   var formdata = $(this).parents('form').serialize();
+                                   var formdata = formdata.split('&');
+                                   $.each(formdata,function(index){
+                                       if(formdata[index].indexOf('id=') > -1){
+                                          variantid = formdata[index].split('=')[1];
+                                       }
+                                   });
+                                   alert(variantid);
                                 });
                             }
                         });
