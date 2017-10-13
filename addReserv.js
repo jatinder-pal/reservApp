@@ -61,6 +61,9 @@
                                 console.log($('.'+classes).parents('form').serialize());
                                 var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+                                $('.'+classes).click(function(){
+                                   alert(123);
+                                });
                             }
                         });
                     }
