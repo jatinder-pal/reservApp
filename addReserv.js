@@ -99,16 +99,27 @@
                                 console.log(product);
                                 var proarray = [];
                                 $.each(product, function(index) {
-                                    var id = product[index].id;
+                                    var product_id = product[index].id;
                                     var name = product[index].title;
                                     var desc = product[index].body_html;
+                                    var id = product[index].variants[0].id;
                                     var price = product[index].variants[0].price;
-                                    if (product[index].images.length) {
-                                        var image = product[index].images[0].src;
+                                    var variant_featured_image = product[index].variants[0].featured_image;
+                                    var variant_title = product[index].variants[0].title;
+                                    if(variant_title == "Default Title"){
+                                        name = name;
                                     } else {
-                                        var image = "";
+                                        name = name+' '+variant_title;
                                     }
-                                    var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                    var image = "";
+                                    if (variant_featured_image != null) {
+                                        image = product[index].variants[0].featured_image.src;
+                                    } else {
+                                        if (product[index].images.length) {
+                                           image = product[index].images[0].src;
+                                        }
+                                    }
+                                    var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                     proarray.push(link);
                                 });
                                 $('body .'+classes).each(function(index) {
