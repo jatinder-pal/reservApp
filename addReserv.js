@@ -139,9 +139,9 @@
                                 "Access-Control-Allow-Origin": "*"
                             },
                             success: function(response) {
-                                //console.log(response);
                                 var items = response.items;
                                 var itemsarray = [];
+                                console.log(items);
                                 $.each(items, function(index) {
                                     var id = items[index].product_id;
                                     var name = items[index].product_title;
