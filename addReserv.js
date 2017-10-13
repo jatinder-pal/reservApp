@@ -143,12 +143,13 @@
                                 var itemsarray = [];
                                 console.log(items);
                                 $.each(items, function(index) {
-                                    var id = items[index].product_id;
-                                    var name = items[index].product_title;
+                                    var id = items[index].id;
+                                    var product_id = items[index].product_id;
+                                    var name = items[index].title;
                                     var desc = items[index].product_description;
                                     var price = items[index].price;
                                     var image = items[index].image;
-                                    var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                    var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                     itemsarray.push(link);
                                 });
                                 var Allitems = itemsarray.join("|");
