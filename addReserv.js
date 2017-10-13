@@ -96,6 +96,7 @@
                             },
                             success: function(response) {
                                 var product = response.products;
+                                console.log(product);
                                 var proarray = [];
                                 $.each(product, function(index) {
                                     var id = product[index].id;
