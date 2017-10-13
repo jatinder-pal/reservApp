@@ -35,7 +35,7 @@
                             },
                             success: function(response) {
                                 var product = response.product;
-                                console.log(product);
+                                console.log(product); 
                                 var id = product.id;
                                 var name = product.title;
                                 var desc = product.body_html;
