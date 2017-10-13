@@ -63,6 +63,7 @@
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                                 $('body').on('click','.reserv_button',function(){
                                    alert(123);
+                                   console.log($(this).parent('form').serialize());
                                 });
                             }
                         });
