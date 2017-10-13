@@ -61,7 +61,7 @@
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                                 $('body').on('click','.reserv_button',function(e){
                                    e.preventDefault();
-								   var _this = $(this);
+				   var _this = $(this);
                                    var variantid = 0;
                                    var formdata = $(this).parents('form').serialize();
                                    var formdata = formdata.split('&');
@@ -70,30 +70,30 @@
                                           variantid = formdata[index].split('=')[1];
                                        }
                                    });
-								   $.each(product.variants, function(index){
-									   if(product.variants[index].id == variantid){
-										var newid = product.variants[index].id;
-										var newprice = product.variants[index].price;
-										var v_imgid = product.variants[index].image_id;
-										var v_title = product.variants[index].title;
-										if(v_title == "Default Title"){
-											name = name;
-										} else {
-											name = name+' - '+v_title;
-										}
-										if (v_imgid != null) {
-											$.each(product.images, function(index){
-											  if(product.images[index].id == v_imgid){
-												image = product.images[index].src;
-											  }
-											});
-										} else {
-											var image = product.image.src;
-										}
-										var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
-										_this.attr('href',newlink);
-									   }
-								   });
+				   $.each(product.variants, function(index){
+					   if(product.variants[index].id == variantid){
+						var newid = product.variants[index].id;
+						var newprice = product.variants[index].price;
+						var v_imgid = product.variants[index].image_id;
+						var v_title = product.variants[index].title;
+						if(v_title == "Default Title"){
+							name = name;
+						} else {
+							name = name+' - '+v_title;
+						}
+						if (v_imgid != null) {
+							$.each(product.images, function(index){
+							  if(product.images[index].id == v_imgid){
+								image = product.images[index].src;
+							  }
+							});
+						} else {
+							var image = product.image.src;
+						}
+						var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+						_this.attr('href',newlink);
+					   }
+				     });
                                 });
                             }
                         });
