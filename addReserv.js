@@ -36,14 +36,18 @@
                             success: function(response) {
                                 var product = response.product;
                                 console.log(product); 
-                                //var id = product.id;
+                                var product_id = product.id;
                                 var name = product.title;
                                 var desc = product.body_html;
                                 var id = product.variants[0].id;
                                 var price = product.variants[0].price;
                                 var variant_image_id = product.variants[0].image_id;
                                 var variant_title = product.variants[0].title;
-                                name = name+' '+variant_title;
+                                if(variant_title == "Default Title"){
+                                    name = name;
+                                } else {
+                                    name = name+' '+variant_title;
+                                }
                                 if (variant_image_id != null) {
                                     var image = "";
                                     $.each(product.images, function(index){
@@ -54,9 +58,8 @@
                                 } else {
                                     var image = product.image.src;
                                 }
-                                                               
                                 console.log($('.'+classes).parents('form').serialize());
-                                var link = 'id='+id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                             }
                         });
