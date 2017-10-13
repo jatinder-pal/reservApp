@@ -35,7 +35,6 @@
                             },
                             success: function(response) {
                                 var product = response.product;
-                                console.log(product); 
                                 var product_id = product.id;
                                 var name = product.title;
                                 var desc = product.body_html;
@@ -58,11 +57,13 @@
                                 } else {
                                     var image = product.image.src;
                                 }
-                                console.log($('.'+classes).parents('form').serialize());
+                                //console.log($('.'+classes).parents('form').serialize());
                                 var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
-                                $('body').on('click','.reserv_button',function(){
-                                   console.log($(this).parent('form').serialize());
+                                $('body').on('click','.reserv_button',function(e){
+                                    e.preventDefault();
+                                   console.log('testtt'); 
+                                   console.log($(this).parents('form').serialize());
                                    alert(123);
                                 });
                             }
@@ -100,7 +101,6 @@
                             },
                             success: function(response) {
                                 var product = response.products;
-                                console.log(product);
                                 var proarray = [];
                                 $.each(product, function(index) {
                                     var product_id = product[index].id;
@@ -145,7 +145,6 @@
                             success: function(response) {
                                 var items = response.items;
                                 var itemsarray = [];
-                                console.log(items);
                                 $.each(items, function(index) {
                                     var id = items[index].id;
                                     var product_id = items[index].product_id;
