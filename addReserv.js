@@ -86,6 +86,7 @@
 						}
 						var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
 						_this.attr('href',newlink);
+						window.location.href = newlink;
 					   }
 				     });
                                 });
