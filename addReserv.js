@@ -182,7 +182,7 @@
 								image = product[i].variants[index].featured_image.src;
 							} else {
 							    if (product[i].images.length) {
-							       image = product[i].images[index].src;
+							       image = product[i].images[0].src;
 							    }
 							}
 							var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
