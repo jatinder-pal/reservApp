@@ -160,18 +160,19 @@
 				  	console.log(_this);
 					var variantid = $(this).parents('form').find('[name="id"]').val();
 					$.each(product, function(index) {
+						var product_id = product[index].id;
+						var desc = product[index].body_html;
+						var product_name = product[index].title;
+						var name = "";
+						 console.log(product[index].variants);
 						$.each(product[index].variants, function(index){
-						   console.log(product[index].variants);
+						   console.log(product[index].variants[index].id);
 						   if(product[index].variants[index].id == variantid){
-							var product_id = product[index].id;
-							var desc = product[index].body_html;
 							var id = product[index].variants[index].id;
 							var newid = product[index].variants[index].id;
 							var newprice = product[index].variants[index].price;
 							var v_featured_image = product[index].variants[0].featured_image;
 							var v_title = product[index].variants[index].title;
-							var product_name = product[index].title;
-							var name = "";
 							if(v_title == "Default Title"){
 								name = product_name;
 							} else {
