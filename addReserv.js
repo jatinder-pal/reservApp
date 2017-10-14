@@ -161,6 +161,7 @@
 					var variantid = $(this).parents('form').find('[name="id"]').val();
 					$.each(product, function(index) {
 						$.each(product[index].variants, function(index){
+						   console.log(product[index].variants);
 						   if(product[index].variants[index].id == variantid){
 							var product_id = product[index].id;
 							var desc = product[index].body_html;
