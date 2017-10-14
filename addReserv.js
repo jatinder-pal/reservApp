@@ -164,13 +164,11 @@
 						var desc = product[i].body_html;
 						var product_name = product[i].title;
 						var name = "";
-						 console.log(product[i].variants);
 						$.each(product[i].variants, function(index){
-						   console.log(product[i].variants[index].id);
 						   if(product[i].variants[index].id == variantid){
 							var id = variantid;
 							var newprice = product[i].variants[index].price;
-							var v_featured_image = product[i].variants[0].featured_image;
+							var v_featured_image = product[i].variants[index].featured_image;
 							var v_title = product[i].variants[index].title;
 							if(v_title == "Default Title"){
 								name = product_name;
@@ -187,7 +185,8 @@
 							}
 							var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
 							_this.attr('href',newlink);
-							window.location.href = newlink;
+							console.log(newlink);
+							//window.location.href = newlink;
 						   }
 						});
 					});
