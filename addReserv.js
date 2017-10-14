@@ -181,7 +181,7 @@
 							if (v_featured_image != null) {
 								image = product[i].variants[index].featured_image.src;
 							} else {
-							    if (product[index].images.length) {
+							    if (product[i].images.length) {
 							       image = product[i].images[index].src;
 							    }
 							}
