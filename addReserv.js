@@ -84,7 +84,7 @@
 						} else {
 							var image = product.image.src;
 						}
-						var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+						var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
 						_this.attr('href',newlink);
 						window.location.href = newlink;
 					   }
@@ -128,16 +128,17 @@
                                 var proarray = [];
                                 $.each(product, function(index) {
                                     var product_id = product[index].id;
-                                    var name = product[index].title;
+                                    var product_name = product[index].title;
                                     var desc = product[index].body_html;
                                     var id = product[index].variants[0].id;
                                     var price = product[index].variants[0].price;
                                     var variant_featured_image = product[index].variants[0].featured_image;
                                     var variant_title = product[index].variants[0].title;
+				    var name = "";
                                     if(variant_title == "Default Title"){
-                                        name = name;
+                                        name = product_name;
                                     } else {
-                                        name = name+' - '+variant_title;
+                                        name = product_name+' - '+variant_title;
                                     }
                                     var image = "";
                                     if (variant_featured_image != null) {
@@ -158,9 +159,37 @@
 				   	var _this = $(this);
 				  	console.log(_this);
 					var variantid = $(this).parents('form').find('[name="id"]').val();
-					console.log(variantid);
-				});
-                            }
+					$.each(product[index].variants, function(index){
+					   if(product[index].variants[index].id == variantid){
+						var product_id = product[index].id;
+						var desc = product[index].body_html;
+						var id = product[index].variants[index].id;
+						var newid = product[index].variants[index].id;
+						var newprice = product[index].variants[index].price;
+						var v_featured_image = product[index].variants[0].featured_image;
+						var v_title = product[index].variants[index].title;
+					   	var product_name = product[index].title;
+						var name = "";
+						if(v_title == "Default Title"){
+							name = product_name;
+						} else {
+							name = product_name+' - '+v_title;
+						}
+						var image = "";
+						if (v_featured_image != null) {
+							image = product[index].variants[0].featured_image.src;
+						} else {
+						    if (product[index].images.length) {
+						       image = product[index].images[0].src;
+						    }
+						}
+			     			var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
+						_this.attr('href',newlink);
+						window.location.href = newlink;
+					   }
+					});
+				  });
+                             }
                         });
                     }
                 } else if (url.indexOf('/cart') > -1 && value == 'cart_page') {
