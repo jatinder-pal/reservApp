@@ -86,7 +86,7 @@
 						}
 						var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
 						_this.attr('href',newlink);
-						window.location.href = newlink;
+						//window.location.href = newlink;
 					   }
 				     });
                                 });
@@ -186,7 +186,7 @@
 							var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
 							_this.attr('href',newlink);
 							//console.log(newlink);
-							window.location.href = newlink;
+							//window.location.href = newlink;
 						   }
 						});
 					});
