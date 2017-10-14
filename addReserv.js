@@ -159,19 +159,19 @@
 				   	var _this = $(this);
 				  	console.log(_this);
 					var variantid = $(this).parents('form').find('[name="id"]').val();
-					$.each(product, function(index) {
-						var product_id = product[index].id;
-						var desc = product[index].body_html;
-						var product_name = product[index].title;
+					$.each(product, function(i) {
+						var product_id = product[i].id;
+						var desc = product[i].body_html;
+						var product_name = product[i].title;
 						var name = "";
-						 console.log(product[index].variants);
-						$.each(product[index].variants, function(index){
-						   console.log(product[index].variants[index].id);
-						   if(product[index].variants[index].id == variantid){
+						 console.log(product[i].variants);
+						$.each(product[i].variants, function(index){
+						   console.log(product[i].variants[index].id);
+						   if(product[i].variants[index].id == variantid){
 							var id = variantid;
-							var newprice = product[index].variants[index].price;
-							var v_featured_image = product[index].variants[0].featured_image;
-							var v_title = product[index].variants[index].title;
+							var newprice = product[i].variants[index].price;
+							var v_featured_image = product[i].variants[0].featured_image;
+							var v_title = product[i].variants[index].title;
 							if(v_title == "Default Title"){
 								name = product_name;
 							} else {
@@ -179,10 +179,10 @@
 							}
 							var image = "";
 							if (v_featured_image != null) {
-								image = product[index].variants[0].featured_image.src;
+								image = product[i].variants[index].featured_image.src;
 							} else {
 							    if (product[index].images.length) {
-							       image = product[index].images[0].src;
+							       image = product[i].images[index].src;
 							    }
 							}
 							var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
