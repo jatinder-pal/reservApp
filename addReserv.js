@@ -157,7 +157,7 @@
 					e.preventDefault();
 				   	var _this = $(this);
 				  	console.log(_this);
-					var variantid = $('select[name="id"]').val();
+					var variantid = $('[name="id"]').val();
 					console.log(variantid);
 				});
                             }
