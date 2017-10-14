@@ -157,7 +157,7 @@
 					e.preventDefault();
 				   	var _this = $(this);
 				  	console.log(_this);
-					var variantid = $('[name="id"]').val();
+					var variantid = $(this).parents('form').find('[name="id"]').val();
 					console.log(variantid);
 				});
                             }
