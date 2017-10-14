@@ -159,34 +159,36 @@
 				   	var _this = $(this);
 				  	console.log(_this);
 					var variantid = $(this).parents('form').find('[name="id"]').val();
-					$.each(product[index].variants, function(index){
-					   if(product[index].variants[index].id == variantid){
-						var product_id = product[index].id;
-						var desc = product[index].body_html;
-						var id = product[index].variants[index].id;
-						var newid = product[index].variants[index].id;
-						var newprice = product[index].variants[index].price;
-						var v_featured_image = product[index].variants[0].featured_image;
-						var v_title = product[index].variants[index].title;
-					   	var product_name = product[index].title;
-						var name = "";
-						if(v_title == "Default Title"){
-							name = product_name;
-						} else {
-							name = product_name+' - '+v_title;
-						}
-						var image = "";
-						if (v_featured_image != null) {
-							image = product[index].variants[0].featured_image.src;
-						} else {
-						    if (product[index].images.length) {
-						       image = product[index].images[0].src;
-						    }
-						}
-			     			var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
-						_this.attr('href',newlink);
-						window.location.href = newlink;
-					   }
+					$.each(product, function(index) {
+						$.each(product[index].variants, function(index){
+						   if(product[index].variants[index].id == variantid){
+							var product_id = product[index].id;
+							var desc = product[index].body_html;
+							var id = product[index].variants[index].id;
+							var newid = product[index].variants[index].id;
+							var newprice = product[index].variants[index].price;
+							var v_featured_image = product[index].variants[0].featured_image;
+							var v_title = product[index].variants[index].title;
+							var product_name = product[index].title;
+							var name = "";
+							if(v_title == "Default Title"){
+								name = product_name;
+							} else {
+								name = product_name+' - '+v_title;
+							}
+							var image = "";
+							if (v_featured_image != null) {
+								image = product[index].variants[0].featured_image.src;
+							} else {
+							    if (product[index].images.length) {
+							       image = product[index].images[0].src;
+							    }
+							}
+							var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
+							_this.attr('href',newlink);
+							window.location.href = newlink;
+						   }
+						});
 					});
 				  });
                              }
