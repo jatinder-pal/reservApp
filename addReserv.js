@@ -168,8 +168,7 @@
 						$.each(product[index].variants, function(index){
 						   console.log(product[index].variants[index].id);
 						   if(product[index].variants[index].id == variantid){
-							var id = product[index].variants[index].id;
-							var newid = product[index].variants[index].id;
+							var id = variantid;
 							var newprice = product[index].variants[index].price;
 							var v_featured_image = product[index].variants[0].featured_image;
 							var v_title = product[index].variants[index].title;
