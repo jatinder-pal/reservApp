@@ -154,9 +154,11 @@
                                     $(this).after('<a href="'+proarray[index]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
                                 });
 				$('body').on('click','.reserv_button',function(e){
-                                   e.preventDefault();
-				   var _this = $(this);
-				  console.log(_this);
+					e.preventDefault();
+				   	var _this = $(this);
+				  	console.log(_this);
+					var variantid = $('select[name="id"]').val();
+					console.log(variantid);
 				});
                             }
                         });
