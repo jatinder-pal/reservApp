@@ -215,7 +215,7 @@ $(document).ready(function(){
 			dataType: "html",
 			success: function(data) { 
 				console.log(data);
-				_this.after('<p class="css_success_msg">CSS code successfully updated!</p>').fadeOut(2000);
+				_this.after('<p class="css_success_msg">CSS code successfully updated!</p>');
 				$('body .css_success_msg').fadeOut(2000);
 			}
 		});
