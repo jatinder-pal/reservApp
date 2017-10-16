@@ -195,7 +195,8 @@ $(document).ready(function(){
 			//console.log(data);
 			if(data){
 				addScript(data);
-				_this.after('<p>Successfully Updated!</p>').fadeOut(2000);
+				_this.after('<p class="code_success_msg">Successfully Updated!</p>');
+				$('body .code_success_msg').fadeOut(2000);
 			}
 		}
 	});
@@ -214,7 +215,8 @@ $(document).ready(function(){
 			dataType: "html",
 			success: function(data) { 
 				console.log(data);
-				_this.after('<p>CSS code successfully updated!</p>').fadeOut(2000);
+				_this.after('<p class="css_success_msg">CSS code successfully updated!</p>').fadeOut(2000);
+				$('body .css_success_msg').fadeOut(2000);
 			}
 		});
     	});
