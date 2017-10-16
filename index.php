@@ -177,6 +177,7 @@ $(document).ready(function(){
 	fetchCssCode();
 	
 	$('body').on('click', '.saveoptions', function(e){
+	var _this = $(this);
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	var Arraydata = [];
@@ -194,6 +195,7 @@ $(document).ready(function(){
 			//console.log(data);
 			if(data){
 				addScript(data);
+				_this.after('<p>Successfully Updated!</p>').fadeOut(2000);
 			}
 		}
 	});
@@ -201,6 +203,7 @@ $(document).ready(function(){
 	
 	//Save Custom CSS
 	$('body').on('click', '.savecss', function(e){
+		var _this = $(this);
 		var access_token = '<?php echo $access_token ?>';
 		var shop = '<?php echo $_REQUEST['shop'] ?>';
 		var csscode = escape($('#add_css').val());
@@ -211,6 +214,7 @@ $(document).ready(function(){
 			dataType: "html",
 			success: function(data) { 
 				console.log(data);
+				_this.after('<p>CSS code successfully updated!</p>').fadeOut(2000);
 			}
 		});
     	});
