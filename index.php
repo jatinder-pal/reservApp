@@ -59,11 +59,11 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 				<tbody>
 				<tr><td colspan="3">Do you want to add Resev button Automatic or Manual ?</td></tr>
 					<tr>
-						<td style="width: 2%;">
+						<td style="width:2%;">
 							<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked />
 							<label for="automatic_code">Automatic</label>
 						</td>
-						<td style="width: 2%;"><input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" />
+						<td style="width:2%;"><input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" />
 						<label for="manual_code">Manual</label>
 						</td>
 						
