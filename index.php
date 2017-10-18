@@ -66,7 +66,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td><input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" />
 						<label for="manual_code">Manual</label>
 						</td>
-						<td>&nbsp;</td>
+						
 					</tr>
 					<tr>
 						
@@ -75,6 +75,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<tr><td><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
 						<td><label for="product_page">Product Page</label></td>
 						<td><input id="product_page_class" type="text" name="product_page_class" value="" /></td>
+						<td>&nbsp;</td>
 					</tr>
 					<tr><td><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
 						<td><label for="catalog_page">Catalog Page</label></td>
