@@ -68,6 +68,9 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						</td>
 						
 					</tr>
+			</table>
+			<table cellspacing="10" cellpadding="10" border="1">
+				<tbody>
 					<tr class="1">
 						<td>&nbsp;</td>
 						<td>Options</td><td>Enter Unique class of "Add to Cart" button</td>
@@ -85,7 +88,10 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td><label for="cart_page">Cart Page</label></td>
 						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td
 					</tr>
-					
+				</tbody>
+			</table>
+					<table cellspacing="10" cellpadding="10" border="1">
+						<tbody>
 					<tr><td colspan="3"><textarea class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
 					<tr>
 					<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
