@@ -114,3 +114,4 @@ input[type=button] {
     border: 0 !important;
     border-color: #fff !important;
 }
+#settings  label{font-weight:400;}
