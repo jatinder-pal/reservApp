@@ -59,12 +59,14 @@ input[type=button] {
     clear: none;
     width: auto;
     margin: 0.2em 0;
-    border: none;
+    border: none!important;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
     right: 0;
     z-index: 2;
+    background:none!important;
+    
 }
 .ui-tabs-active .ui-tabs-anchor {
     background: #606ec6;
