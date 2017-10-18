@@ -56,12 +56,18 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
     <div class="options">
 		<form method="post" name="form" id="getoptions" action="#">
 			<table cellspacing="10" cellpadding="10" border="1">
-				<thead>
-					<tr>
-					<th></th><th>Options</th><th>Enter Unique class of "Add to Cart" button</th>
-					</tr>
-				</thead>
 				<tbody>
+				<tr><td colspan="3">Do you want to add Resev button Automatic or Manual ?</td></tr>
+					<tr>
+						<td></td>
+						<td><label for="automatic_code">Automatic</label>
+						<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked /></td>
+						<td><label for="manual_code">Manual</label>
+						<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" /></td>
+					</tr>
+					<tr>
+					<td>&nbsp;</td><td>Options</td><td>Enter Unique class of "Add to Cart" button</td>
+					</tr>
 					<tr><td><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
 						<td><label for="product_page">Product Page</label></td>
 						<td><input id="product_page_class" type="text" name="product_page_class" value="" /></td>
@@ -74,14 +80,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td><label for="cart_page">Cart Page</label></td>
 						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td>
 					</tr>
-					<tr><td colspan="3">Do you want to add Resev button Automatic or Manual ?</td></tr>
-					<tr>
-						<td></td>
-						<td><label for="automatic_code">Automatic</label>
-						<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked /></td>
-						<td><label for="manual_code">Manual</label>
-						<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" /></td>
-					</tr>
+					
 					<tr><td colspan="3"><textarea class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
 					<tr>
 					<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
