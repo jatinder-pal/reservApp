@@ -113,5 +113,10 @@ input[type=button] {
     background: none;
     border: 0 !important;
     border-color: #fff !important;
+    width:100%;
 }
 #settings  label{font-weight:400;}
+#settings tr:nth-child(3) {
+    border-top: 1px solid #cfcfcf;
+    width: 100%;
+}
