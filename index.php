@@ -66,7 +66,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td><input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" />
 						<label for="manual_code">Manual</label>
 						</td>
-						<td></td>
+						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						
