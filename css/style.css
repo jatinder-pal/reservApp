@@ -129,3 +129,12 @@ input[type=button] {
     font-weight: 400;
     line-height: 25px;
 }
+#settings input.saveoptions {
+    border-radius: 4px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: normal;
+    background:#606ec6;
+    color:#fff;
+    border:1px solid #4a59b4;
+}
