@@ -17,7 +17,7 @@ textarea#generate_code {
     margin: 0;
     color: #1b627f;
     background: #1b627f;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 img.logo_img {
     width: 250px;
@@ -44,14 +44,14 @@ input[type=button] {
 .ui-tabs.ui-tabs-vertical {
     padding: 0;
     width: 100%;
+    background:#f5f6f8;
 }
 .ui-tabs.ui-tabs-vertical .ui-widget-header {
     border: none;
 }
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav {
     float: left;
-    width: 25%;
-    background: #fff;
+    width: 100%;
 }
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
     clear: left;
@@ -78,11 +78,10 @@ input[type=button] {
 }
 .ui-tabs.ui-tabs-vertical .ui-tabs-panel {
     float: left;
-    width: 65%;
-    border-left: 1px solid gray;
+    width: 100%;
+    border-left: none;
     border-radius: 0;
     position: relative;
-    left: -1px;
 }
 .code_success_msg, .css_success_msg {
     margin-top: 10px;
