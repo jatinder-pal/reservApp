@@ -117,8 +117,8 @@ input[type=button] {
    
 }
 #settings  label{font-weight:400;}
-#settings tr:nth-child(3) {
+/*#settings tr:nth-child(3) {
     border-top: 1px solid #cfcfcf;
     width: 100%;
-}
+}*/
 #settings{padding:0;}
