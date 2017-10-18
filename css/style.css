@@ -173,8 +173,8 @@ input[type=button] {
 .atc input[type=radio] + label:before, .optn input[type=radio] + label:before {
     content: "";
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     vertical-align: middle;
     margin-right: 8px;
     background-color: #f5f6f8;
