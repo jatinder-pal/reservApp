@@ -144,4 +144,12 @@ input[type=button] {
     font-weight: normal;
     background:#606ec6;
     color:#fff;
+    font-size: 14px;
     border:1px solid #4a59b4;}
+.customcss textarea#add_css {
+    height: 220px;
+    width: 100%;
+    padding: 0 20px 0;
+    font-weight: 400;
+    font-size: 14px;
+}
