@@ -72,7 +72,9 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						
 					<td>Options</td><td>Enter Unique class of "Add to Cart" button</td>
 						<td>&nbsp;</td>
-						td>&nbsp;</td>
+						<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			<td>&nbsp;</td>
 					</tr>
 					<tr><td><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
 						<td><label for="product_page">Product Page</label></td>
