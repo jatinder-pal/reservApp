@@ -71,29 +71,24 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<tr>
 						
 					<td>Options</td><td>Enter Unique class of "Add to Cart" button</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
 		            </tr>
 					<tr><td><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
 						<td><label for="product_page">Product Page</label></td>
 						<td><input id="product_page_class" type="text" name="product_page_class" value="" /></td>
-						<td>&nbsp;</td>
 					</tr>
 					<tr><td><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
 						<td><label for="catalog_page">Catalog Page</label></td>
 						<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
-					<td>&nbsp;</td>
 					</tr>
 					<tr><td><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" /></td>
 						<td><label for="cart_page">Cart Page</label></td>
-						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td>
-						<td>&nbsp;</td>
+						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td
 					</tr>
 					
 					<tr><td colspan="3"><textarea class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
 					<tr>
 					<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
-					<td>&nbsp;</td>
+
 					</tr>
 				</tbody>
 			</table>
