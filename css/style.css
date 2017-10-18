@@ -14,8 +14,10 @@ textarea#generate_code {
 }
 .logo {
     text-align: center;
-    margin: 10px;
+    margin: 0;
     color: #1b627f;
+    background: #1b627f;
+    padding: 20px 0;
 }
 img.logo_img {
     width: 250px;
