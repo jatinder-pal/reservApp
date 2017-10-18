@@ -171,26 +171,29 @@ input[type=button] {
     border: 1px solid #c4cdd4;
 }
 .atc input[type=radio] + label:before, .optn input[type=radio] + label:before {
-    content: "";  
-    display: inline-block;  
-    width: 15px;  
-    height: 15px;  
-    vertical-align:middle;
-    margin-right: 8px;  
-    background-color: #aaa;  
-    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
-    border-radius: 8px;  
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-right: 8px;
+    background-color: #f5f6f8;
+    box-shadow: 0;
+    border-radius: 8px;
+    border: 1px solid #c9d2d9;
 }
 .atc input[type=radio]:checked + label:before, .optn input[type=radio]:checked + label:before{
     content: "\2022"; /* Bullet */
-    color:white;
-    background-color: #666; 
+    color:#606ec6;
     font-size:1.8em;
     text-align:center;
     line-height:14px;
     text-shadow:0px 0px 3px #eee;
+    border: 1px solid #c9d2d9;
 }
 .atc label, .optn label {
     margin-left: -19px;
-    margin-top: -2px;
+    margin-top: -4px;
+    position:relative;
+    top:-3px;
 }
