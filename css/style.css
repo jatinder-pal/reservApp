@@ -72,11 +72,15 @@ input[type=button] {
     background: #606ec6;
     border: 1px solid #4a59b6;
 }
+.ui-tabs-panel {
+    margin-top: 40px;
+}
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {
     display: block;
     width: 100%;
     padding: 0.6em 1em;
 }
+
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
     cursor: pointer;
 }
@@ -101,4 +105,12 @@ input[type=button] {
     margin-top: 10px;
     color: #008000;
     font-weight: bolder;
+}
+#settings td {
+    font-weight: bold;
+}
+#settings table {
+    background: none;
+    border: 0 !important;
+    border-color: #fff !important;
 }
