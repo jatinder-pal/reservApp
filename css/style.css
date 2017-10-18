@@ -114,7 +114,7 @@ input[type=button] {
     border: 0 !important;
     border-color: #fff !important;
     width:100%;
-    padding:30px;
+    margin:30px;
 }
 #settings  label{font-weight:400;}
 #settings tr:nth-child(3) {
