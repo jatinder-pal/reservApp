@@ -69,8 +69,6 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						
 					</tr>
 					<tr class="1">
-						
-						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td>Options</td><td>Enter Unique class of "Add to Cart" button</td>
 						
