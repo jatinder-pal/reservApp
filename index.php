@@ -65,6 +65,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td><label for="manual_code">Manual</label>
 						<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" /></td>
 					</tr>
+					<hr>
 					<tr>
 					<td>&nbsp;</td><td>Options</td><td>Enter Unique class of "Add to Cart" button</td>
 					</tr>
