@@ -228,7 +228,7 @@ $(document).ready(function(){
 			console.log(data);
 		}
 		});
-	});
+	}); 
 	
 	$('body').on('click', '.saveoptions', function(e){
 		var _this = $(this);
