@@ -4,6 +4,10 @@ th, td {
 img {
     width: 100px;
 }
+input.getmerchantApi.disabled {
+    background: #dcdcdc;
+    color: #1c1c1c;
+}
 textarea#add_css {
     height: 250px;
     width: 485px;
