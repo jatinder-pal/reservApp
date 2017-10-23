@@ -221,7 +221,7 @@ function termcondition(){
 	
 // fetch MerchantApi
 function fetchMerchantApi(data){
-	data = $.parseJSON(data);
+	data = JSON.stringify(data);
 	console.log(data);
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
@@ -263,9 +263,8 @@ $(document).ready(function(){
 		$.ajax({
 		type: 'POST',
 		url: '/getmerchantApi.php?access_token='+access_token+'&shop='+shop+'&term_condition='+term_and_condition,
-		dataType: 'jsonp',
-		success: function(data) { 
-			console.log(data);
+		dataType: 'html',
+		success: function(data) {
 			fetchMerchantApi(data);
 		}
 		}); 
