@@ -59,7 +59,7 @@
                                     image = product.image.src;
                                 }
                                 var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
-                                $('.'+classes).after('<a href="'+link+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+                                $('.'+classes).after('<a href="'+link+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
                                 $('body').on('click','.reserv_button',function(e){
                                    e.preventDefault();
 				   var _this = $(this);
