@@ -7,7 +7,7 @@ $merchantId = $_REQUEST['merchantId'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-	print_r($merchantId);
+	echo $merchantId;
 }
 catch (shopify\ApiException $e)
 {
