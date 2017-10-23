@@ -7,7 +7,7 @@ $term_condition = $_REQUEST['term_condition'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-  echo $term_condition;
+        echo $term_condition;
 	if($term_condition){
 	  //$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions,
 	'value_type' => 'string'));
