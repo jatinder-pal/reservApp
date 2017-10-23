@@ -230,7 +230,7 @@ function fetchMerchantApi(data){
 		crossDomain: true,
 		type: 'POST',
 		url: 'http://testreserveservices.azurewebsites.net/api/account/register/store/merchant',
-		dataType: "json",
+		dataType: "jsonp",
 		contentType: 'application/json',
 		data: sendData,
 		header: {
