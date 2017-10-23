@@ -231,8 +231,9 @@ function fetchMerchantApi(data){
 		crossDomain: true,
 		type: 'POST',
 		dataType: 'json',
+		processData: false,
 		contentType: 'application/json',
-		data: sendData,
+		data: JSON.stringify(sendData),
 		header: {
 		    "Access-Control-Allow-Origin": "*",
 		},
