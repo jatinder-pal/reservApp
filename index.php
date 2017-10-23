@@ -223,9 +223,9 @@ function termcondition(){
 function fetchMerchantApi(data){
 	console.log(data);
 	console.log(data['name']);
-	$.each(data, function(key, index){
+	$.each(data, function(key, value){
 	  console.log('key=='+key);
-	  console.log(data[index]);
+	  console.log(key + ": " + value);
 	});
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
