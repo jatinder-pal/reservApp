@@ -7,19 +7,20 @@ $term_condition = $_REQUEST['term_condition'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-        echo $term_condition;
 	if($term_condition){
-	  //$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions, 'value_type' => 'string'));
+	  $metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'termcondition', 'value' => $term_condition, 'value_type' => 'string'));
 	} else {
-	  //$alloptions = "noData";
-	  //$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions, 'value_type' => 'string'));
+	  $term_condition = "noTerms";
+	  $metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'termcondition', 'value' => $term_condition, 'value_type' => 'string'));
 	}
+	$response = $shopify('POST /admin/metafields.json',$metafield);
+	if($response){
+	  $shopData = $shopify('GET /admin/shop.json');
+	}
+	print_r($response);
+	print_r($shopData);
+	//echo $response['value'].'==='.
 	
-	//$auto_manual_field = array( "metafield" => array('namespace' => 'automanualfield', 'key' => 'automanual', 'value' => $auto_manual, 'value_type' => 'string'));
-	
-	//$response = $shopify('POST /admin/metafields.json',$metafield);
-	//$response = $shopify('GET /admin/shop.json');
-	//$response_auto_manual = $shopify('POST /admin/metafields.json',$auto_manual_field);
 }
 catch (shopify\ApiException $e)
 {
