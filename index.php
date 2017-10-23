@@ -221,7 +221,7 @@ function termcondition(){
 	
 // fetch MerchantApi
 function fetchMerchantApi(data){
-	//data = JSON.parse(JSON.stringify(data));
+	data = JSON.parse(JSON.stringify(data));
 	alert(data);
 	console.log(data);
 	var access_token = '<?php echo $access_token ?>';
