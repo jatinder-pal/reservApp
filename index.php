@@ -240,7 +240,7 @@ function fetchMerchantApi(data){
 		success: function(response){
 			console.log(response);
 			console.log(response.success);
-			if(response.success){
+			if(response.success && response.merchantId){
 			  $.ajax({
 				type: 'POST',
 				url: '/saveMerchantApi.php?access_token='+access_token+'&shop='+shop+'&merchantId='+response.merchantId,
@@ -249,6 +249,8 @@ function fetchMerchantApi(data){
 					console.log(response1);
 				}
 			  });
+			} else {
+			 alert('No Merchant ID generated!');
 			}
 		}
 	});
