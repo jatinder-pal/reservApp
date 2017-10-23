@@ -7,7 +7,16 @@ $merchantId = $_REQUEST['merchantId'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
-	echo $merchantId;
+	$response = $shopify('GET /admin/metafields.json');
+	foreach($response as $options){
+		if($options['namespace'] == 'genarateMerchantId'){
+			echo $getMerchantId = $options['value'];
+		} else {
+			$metafield = array( "metafield" => array('namespace' => 'genarateMerchantId', 'key' => 'merchantId', 'value' => $merchantId, 'value_type' => 'string'));
+			$response = $shopify('POST /admin/metafields.json',$metafield);
+			echo $response['value'];
+		}
+	}
 }
 catch (shopify\ApiException $e)
 {
