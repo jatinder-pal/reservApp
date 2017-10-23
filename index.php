@@ -66,14 +66,13 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 			    <div class="modal-content">
 			      <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				<h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
 			      </div>
 			      <div class="modal-body">
-				Checkbox is checked
+				Dummy Content is here
 			      </div>
 			      <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
+				      
 			      </div>
 			    </div>
 			  </div>
@@ -243,7 +242,7 @@ $(document).ready(function(){
 		var term_and_condition = $("input[name='term_and_condition']:checked").val();
 		$.ajax({
 		type: 'POST',
-		url: '/getmechantApi.php?access_token='+access_token+'&shop='+shop+'&term_condition='+term_and_condition,
+		url: '/getmerchantApi.php?access_token='+access_token+'&shop='+shop+'&term_condition='+term_and_condition,
 		dataType: 'html',
 		success: function(data) { 
 			console.log(data);
