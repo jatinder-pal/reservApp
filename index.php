@@ -23,6 +23,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/988a7dc35f.js"></script>
 	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet" type="text/css"/>  
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -55,10 +56,28 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
   <div id="settings">
 		<div class="generate_key">
 			<form method="post" name="merchantform" id="getmerchantApi" action="#">
-				<input id="term_and_condition" type="checkbox" name="term_and_condition" value="term_condition" />
+				<input id="term_and_condition" type="checkbox" name="term_and_condition" data-target="#termModal" value="term_condition" />
 				<label for="manual_code">Please confirm these Term and Conditions</label>
 				<input type="button" class="getmerchantApi" value="Get Merchant API" name="submit" />
 			</form>
+			<!-- Modal -->
+			<div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			      </div>
+			      <div class="modal-body">
+				Checkbox is checked
+			      </div>
+			      <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		</div>
 	  
 		<div class="options">
@@ -192,6 +211,7 @@ function termcondition(){
     var checked = $('#term_and_condition').is(':checked');
     if (checked) {
 	//alert('checked');
+	$('#myModal').modal();
 	$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
     } else {
 	//alert('unchecked');
