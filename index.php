@@ -219,6 +219,25 @@ function termcondition(){
     }
 }
 	
+// fetch MerchantApi
+function fetchMerchantApi(data){
+	console.log(data);
+	var access_token = '<?php echo $access_token ?>';
+	var shop = '<?php echo $_REQUEST['shop'] ?>';
+	$.ajax({
+		crossDomain: true,
+		type: 'POST',
+		url: 'http://testreserveservices.azurewebsites.net/api/account/register/store/merchant',
+		dataType: "jsonp",
+		header: {
+		    "Access-Control-Allow-Origin": "*",
+		},
+		success: function(response){
+			console.log(response);
+		}
+	});
+}
+	
 $(document).ready(function(){
 	$('#manual_code').click(function(){
 		$('#generate_code').slideDown();
@@ -246,6 +265,7 @@ $(document).ready(function(){
 		dataType: 'html',
 		success: function(data) { 
 			console.log(data);
+			fetchMerchantApi(data);
 		}
 		}); 
 	}); 
