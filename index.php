@@ -57,10 +57,10 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 		<div class="generate_key">
 			<form method="post" name="merchantform" id="getmerchantApi" action="#">
 				<input id="term_and_condition" type="checkbox" name="term_and_condition" data-target="#termModal" value="term_condition" />
-				<label for="manual_code">Please confirm these Term and Conditions</label>
+				<label for="manual_code">Please confirm these Terms and Conditions</label>
 				<input type="button" class="getmerchantApi" value="Get Merchant API" name="submit" />
 			</form>
-			<!-- Modal -->
+			<!-- Terms and Condition Modal -->
 			<div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
 			    <div class="modal-content">
@@ -78,6 +78,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 			    </div>
 			  </div>
 			</div>
+			<!-- Terms and Condition Modal -->
 		</div>
 	  
 		<div class="options">
