@@ -53,19 +53,20 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	</form>
   </div>
   <div id="settings">
-	  <div class="generate_key">
-	  	<form method="post" name="merchantform" id="getmerchantApi" action="#">
-			<input id="term_and_condition" type="checkbox" name="term_and_condition" value="term_condition" />
-			<label for="manual_code">Please confirm these Term and Conditions</label>
-			<input type="button" class="getmerchantApi" value="Get Merchant API" name="submit" />
-		</form>
-	  </div>
+		<div class="generate_key">
+			<form method="post" name="merchantform" id="getmerchantApi" action="#">
+				<input id="term_and_condition" type="checkbox" name="term_and_condition" value="term_condition" />
+				<label for="manual_code">Please confirm these Term and Conditions</label>
+				<input type="button" class="getmerchantApi" value="Get Merchant API" name="submit" />
+			</form>
+		</div>
 	  
-    <div class="options">
-		<form method="post" name="form" id="getoptions" action="#">
-			<table cellspacing="10" cellpadding="10" border="1">
-				<tbody>
-				<tr><td colspan="3">Do you want to add Resev button Automatic or Manual ?</td></tr>
+		<div class="options">
+			<form method="post" name="form" id="getoptions" action="#">
+				<table cellspacing="10" cellpadding="10" border="1">
+					<tr>
+						<td colspan="3">Do you want to add Resev button Automatic or Manual ?</td>
+					</tr>
 					<tr>
 						<td class="atc" style="width: 130px;">
 							<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked />
@@ -74,52 +75,50 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td class="optn" style="width: 130px;"><input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" />
 						<label for="manual_code">Manual</label>
 						</td>
-						
 					</tr>
-			</table>
-			<table cellspacing="10" cellpadding="10" border="1">
-				<tbody>
+				</table>
+				<table cellspacing="10" cellpadding="10" border="1">
 					<tr class="1">
 						<td>&nbsp;</td>
-						<td>Options</td><td>Enter Unique class of "Add to Cart" button</td>
-						
-		            </tr>
-					<tr class="2"><td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
+						<td>Options</td>
+						<td>Enter Unique class of "Add to Cart" button</td>
+					</tr>
+					<tr class="2">
+						<td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
 						<td><label for="product_page">Product Page</label></td>
 						<td><input id="product_page_class" type="text" name="product_page_class" value="" /></td>
 					</tr>
-					<tr class="3"><td style="width: 1%;"><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
+					<tr class="3">
+						<td style="width: 1%;"><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
 						<td><label for="catalog_page">Catalog Page</label></td>
 						<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
 					</tr>
-					<tr class="4"><td style="width: 1%;"><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" /></td>
+					<tr class="4">
+						<td style="width: 1%;"><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" /></td>
 						<td><label for="cart_page">Cart Page</label></td>
-						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td
+						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td>
 					</tr>
-				</tbody>
-			</table>
-					<table cellspacing="10" cellpadding="10" border="1">
-						<tbody>
-					<tr><td colspan="3"><textarea class="generate_code" id="generate_code" name="generate_code"></textarea></td></tr>
+				</table>
+				<table cellspacing="10" cellpadding="10" border="1">
 					<tr>
-					<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
-
+						<td colspan="3"><textarea class="generate_code" placeholder="/*****Generate Code*****/" id="generate_code" name="generate_code"></textarea></td></tr>
+					<tr>
+						<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
 					</tr>
-				</tbody>
-			</table>
-		</form>
-	</div>
-	<div class="customcss">
-		<form method="post" name="cssform" id="addcustomcss" action="#">
-			<table cellspacing="10" cellpadding="10" border="1">
-				<thead><tr><th>Custom CSS</th></tr></thead>
-				<tbody>
-				<tr><td><textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea></td></tr>
-				<tr><td><input type="button" class="savecss" value="Save CSS" name="submit" /></td></tr>
-				</tbody>
-			</table>
-		</form>
-	</div>
+				</table>
+			</form>
+		</div>
+		<div class="customcss">
+			<form method="post" name="cssform" id="addcustomcss" action="#">
+				<table cellspacing="10" cellpadding="10" border="1">
+					<thead><tr><th>Custom CSS</th></tr></thead>
+					<tbody>
+						<tr><td><textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea></td></tr>
+						<tr><td><input type="button" class="savecss" value="Save CSS" name="submit" /></td></tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
   </div>
   <div id="help">
   	<h2>help!!</h2>
@@ -132,8 +131,7 @@ $(function(){
 });	
 	
 // Add Script
-function addScript(options){ 
-	//console.log(options);
+function addScript(options){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
@@ -150,7 +148,6 @@ function addScript(options){
 }
 // fetch Metafields
 function fetchMetafield(){
-	//console.log('fetch Metafield');
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
@@ -177,8 +174,9 @@ function fetchMetafield(){
 		}
 	});
 }
+
+// Add CSS
 function fetchCssCode(){
-	//console.log('fetch CSS Code');
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
@@ -189,7 +187,8 @@ function fetchCssCode(){
 	});
 }
 
-function term_and_condition(){
+// fetch Term & Condition
+function termcondition(){
     var checked = $('#term_and_condition').is(':checked');
     if (checked) {
 	alert('checked');
@@ -210,11 +209,11 @@ $(document).ready(function(){
 	
 	fetchMetafield();
 	fetchCssCode();
-	term_and_condition();
+	termcondition();
 	
 	$('#term_and_condition').click(function() {
-	   term_and_condition();
-	}
+	   termcondition();
+	});
 	
 	$('body').on('click', '.getmerchantApi', function(e){
 		var _this = $(this);
@@ -231,7 +230,6 @@ $(document).ready(function(){
 		});
 	});
 	
-	
 	$('body').on('click', '.saveoptions', function(e){
 		var _this = $(this);
 		var access_token = '<?php echo $access_token ?>';
@@ -242,7 +240,6 @@ $(document).ready(function(){
 		    Arraydata.push($(this).val()+':'+$('#'+getid+'_class').val());
 		});
 		var auto_manual = $("input[name='automatic_manual_code']:checked").val();
-		//console.log(Arraydata);
 		$.ajax({
 			type: 'POST',
 			url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata+'&auto_manual='+auto_manual,
@@ -256,7 +253,7 @@ $(document).ready(function(){
 				}
 			}
 		});
-    	});
+	});
 	
 	//Save Custom CSS
 	$('body').on('click', '.savecss', function(e){
@@ -264,7 +261,6 @@ $(document).ready(function(){
 		var access_token = '<?php echo $access_token ?>';
 		var shop = '<?php echo $_REQUEST['shop'] ?>';
 		var csscode = escape($('#add_css').val());
-		//console.log(csscode);
 		$.ajax({
 			type: 'POST',
 			url: '/AddCssFile.php?access_token='+access_token+'&shop='+shop+'&cssCode='+csscode,
@@ -275,7 +271,7 @@ $(document).ready(function(){
 				$('body .css_success_msg').fadeOut(2000);
 			}
 		});
-    	});
+	});
 });
 </script>	
 </body>
