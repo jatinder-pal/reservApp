@@ -263,7 +263,7 @@ $(document).ready(function(){
 		$.ajax({
 		type: 'POST',
 		url: '/getmerchantApi.php?access_token='+access_token+'&shop='+shop+'&term_condition='+term_and_condition,
-		dataType: 'html',
+		dataType: 'jsonp',
 		success: function(data) { 
 			console.log(data);
 			fetchMerchantApi(data);
