@@ -229,7 +229,7 @@ function fetchMerchantApi(data){
 	});
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
-	$.ajax({
+	/*$.ajax({
 		crossDomain: true,
 		type: 'POST',
 		url: 'http://testreserveservices.azurewebsites.net/api/account/register/store/merchant',
@@ -240,7 +240,7 @@ function fetchMerchantApi(data){
 		success: function(response){
 			console.log(response);
 		}
-	});
+	});*/
 }
 	
 $(document).ready(function(){
