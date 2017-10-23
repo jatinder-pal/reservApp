@@ -228,9 +228,9 @@ function fetchMerchantApi(data){
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
 		crossDomain: true,
-		type: 'POST',
 		url: 'http://testreserveservices.azurewebsites.net/api/account/register/store/merchant',
-		dataType: "jsonp",
+		type: 'POST',
+		dataType: 'jsonp',
 		contentType: 'application/json',
 		data: sendData,
 		header: {
