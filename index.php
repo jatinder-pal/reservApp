@@ -239,7 +239,7 @@ function fetchMerchantApi(data){
 		},
 		success: function(response){
 			console.log(response);
-			if(response.success == 'true'){
+			if(response.success == true){
 			  $.ajax({
 				type: 'POST',
 				url: '/saveMerchantApi.php?access_token='+access_token+'&shop='+shop+'&merchantId='+response.merchantId,
