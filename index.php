@@ -192,10 +192,10 @@ function termcondition(){
     var checked = $('#term_and_condition').is(':checked');
     if (checked) {
 	alert('checked');
-	$('.getmerchantApi').removeAttr('disabled');
+	$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
     } else {
 	alert('unchecked');
-	$('.getmerchantApi').attr('disabled', 'disabled');
+	$('.getmerchantApi').attr('disabled', 'disabled').addClass('disabled');
     }
 }
 	
