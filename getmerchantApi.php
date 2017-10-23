@@ -10,7 +10,7 @@ try
 	if($term_condition){
 	  $shopData = $shopify('GET /admin/shop.json');
 	}
-	print_r($shopData);
+	print_r(json_encode($shopData));
 }
 catch (shopify\ApiException $e)
 {
