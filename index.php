@@ -223,13 +223,15 @@ function termcondition(){
 function fetchMerchantApi(data){
 	data = $.parseJSON(data);
 	var sendData = { "merchantName": data.shop_owner, "EmailAddress": data.email, "phone": data.phone, "website": data.domain, "address1": data.address1, "city": data.city, "zipCode": data.zip, "stateConst": data.province_code};
+	console.log(sendData);
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
 		crossDomain: true,
 		type: 'POST',
 		url: 'http://testreserveservices.azurewebsites.net/api/account/register/store/merchant',
-		dataType: "jsonp",
+		dataType: "json",
+		contentType: 'application/json',
 		data: sendData,
 		header: {
 		    "Access-Control-Allow-Origin": "*",
