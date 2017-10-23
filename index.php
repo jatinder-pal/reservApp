@@ -222,6 +222,8 @@ function termcondition(){
 // fetch MerchantApi
 function fetchMerchantApi(data){
 	console.log(data);
+	console.log(data['name']);
+	//console.log('data-->'+data.name);
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
