@@ -223,7 +223,7 @@ function termcondition(){
 function fetchMerchantApi(data){
 	console.log(data);
 	console.log(data['name']);
-	console.log('data-->'+data.serializeArray());
+	console.log(data.name);
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
 	$.ajax({
