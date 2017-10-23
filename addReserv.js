@@ -152,7 +152,7 @@
                                     proarray.push(link);
                                 });
                                 $('body .'+classes).each(function(index) {
-                                    $(this).after('<a href="'+proarray[index]+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+                                    $(this).after('<a href="'+proarray[index]+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
                                 });
 				$('body').on('click','.reserv_button',function(e){
 					e.preventDefault();
@@ -218,7 +218,7 @@
                                     itemsarray.push(link);
                                 });
                                 var Allitems = itemsarray.join("|");
-                                $('.'+classes).after('<a href="'+Allitems+'" class="reserv_button">RESERV<br/><span>The New Layaway</span></a>');
+                                $('.'+classes).after('<a href="'+Allitems+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
                             }
                         });
                     }
