@@ -9,18 +9,16 @@ try
 {	
         echo $term_condition;
 	if($term_condition){
-	  //$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions,
-	'value_type' => 'string'));
+	  //$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions, 'value_type' => 'string'));
 	} else {
 	  //$alloptions = "noData";
-	  //$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions,
-	'value_type' => 'string'));
+	  //$metafield = array( "metafield" => array('namespace' => 'revisebutton', 'key' => 'seloptions', 'value' => $alloptions, 'value_type' => 'string'));
 	}
 	
-	//$auto_manual_field = array( "metafield" => array('namespace' => 'automanualfield', 'key' => 'automanual', 'value' => $auto_manual,
-	'value_type' => 'string'));
+	//$auto_manual_field = array( "metafield" => array('namespace' => 'automanualfield', 'key' => 'automanual', 'value' => $auto_manual, 'value_type' => 'string'));
 	
 	//$response = $shopify('POST /admin/metafields.json',$metafield);
+	//$response = $shopify('GET /admin/shop.json');
 	//$response_auto_manual = $shopify('POST /admin/metafields.json',$auto_manual_field);
 }
 catch (shopify\ApiException $e)
