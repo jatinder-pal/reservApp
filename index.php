@@ -221,23 +221,33 @@ function termcondition(){
 	
 // fetch MerchantApi
 function fetchMerchantApi(data){
-	console.log($.parseJSON(data));
 	data = $.parseJSON(data);
-	console.log(data.name);
+	var sendData = { "merchantName": data.shop_owner, "EmailAddress": data.email, "phone": data.phone, "website": data.domain, "address1": data.address1, "city": data.city, "zipCode": data.zip, "stateConst": data.province_code};
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
-	/*$.ajax({
+	$.ajax({
 		crossDomain: true,
 		type: 'POST',
 		url: 'http://testreserveservices.azurewebsites.net/api/account/register/store/merchant',
 		dataType: "jsonp",
+		data: sendData,
 		header: {
 		    "Access-Control-Allow-Origin": "*",
 		},
 		success: function(response){
 			console.log(response);
+			if(response.success == 'true'){
+			  $.ajax({
+				type: 'POST',
+				url: '/saveMerchantApi.php?access_token='+access_token+'&shop='+shop+'&merchantId='+response.merchantId,
+				dataType: "html",
+				success: function(response1) { 
+					console.log(response1);
+				}
+			  });
+			}
 		}
-	});*/
+	});
 }
 	
 $(document).ready(function(){
