@@ -34,10 +34,33 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 <div class="content-container">
 <div id="tabs">
   <ul>
+    <li><a href="#register">Dashboard</a></li>
     <li><a href="#settings">Settings</a></li>
     <li><a href="#help">Help</a></li>
   </ul>
+  <div id="register">
+    <form method="post" name="registerform" id="registerform" action="#">
+		<div class="registeration-form">
+			<h3>Register</h3>
+    	    <label for="name">Name:</label>
+			<p><input type="text" id="name" class="form-control" name="name"></p>
+			<label for="email">Email:</label>
+			<p><input type="email" id="email" class="form-control" name="email"></p>
+			<label for="password">Password:</label>
+			<p><input type="password" id="password" class="form-control" name="password"></p>
+			<p><input type="button" class="btn" value="Register" name="submit"></p>
+		</div>
+	</form>
+  </div>
   <div id="settings">
+	  <div class="generate_key">
+	  	<form method="post" name="merchantform" id="getmerchantApi" action="#">
+			<input id="term_and_condition" type="checkbox" name="term_and_condition" value="term_condition" />
+			<label for="manual_code">Please confirm these Term and Conditions</label>
+			<input type="button" class="getmerchantApi" value="Get Merchant API" name="submit" />
+		</form>
+	  </div>
+	  
     <div class="options">
 		<form method="post" name="form" id="getoptions" action="#">
 			<table cellspacing="10" cellpadding="10" border="1">
@@ -165,6 +188,18 @@ function fetchCssCode(){
 		}
 	});
 }
+
+function term_and_condition(){
+    var checked = $('#term_and_condition').is(':checked');
+    if (checked) {
+	alert('checked');
+	$('.getmerchantApi').removeAttr('disabled');
+    } else {
+	alert('unchecked');
+	$('.getmerchantApi').attr('disabled', 'disabled');
+    }
+}
+	
 $(document).ready(function(){
 	$('#manual_code').click(function(){
 		$('#generate_code').slideDown();
@@ -175,31 +210,52 @@ $(document).ready(function(){
 	
 	fetchMetafield();
 	fetchCssCode();
+	term_and_condition();
+	
+	$('#term_and_condition').click(function() {
+	   term_and_condition();
+	}
+	
+	$('body').on('click', '.getmerchantApi', function(e){
+		var _this = $(this);
+		var access_token = '<?php echo $access_token ?>';
+		var shop = '<?php echo $_REQUEST['shop'] ?>';
+		var term_and_condition = $("input[name='term_and_condition']:checked").val();
+		$.ajax({
+		type: 'POST',
+		url: '/getmechantApi.php?access_token='+access_token+'&shop='+shop+'&term_condition='+term_and_condition,
+		dataType: 'html',
+		success: function(data) { 
+			console.log(data);
+		}
+		});
+	});
+	
 	
 	$('body').on('click', '.saveoptions', function(e){
-	var _this = $(this);
-	var access_token = '<?php echo $access_token ?>';
-	var shop = '<?php echo $_REQUEST['shop'] ?>';
-	var Arraydata = [];
-	$("input[name='sel_options[]']:checked").each(function() {
-	    var getid = $(this).attr('id');
-	    Arraydata.push($(this).val()+':'+$('#'+getid+'_class').val());
-	});
-	var auto_manual = $("input[name='automatic_manual_code']:checked").val();
-	//console.log(Arraydata);
-	$.ajax({
-		type: 'POST',
-		url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata+'&auto_manual='+auto_manual,
-		dataType: "html",
-		success: function(data) { 
-			//console.log(data);
-			if(data){
-				addScript(data);
-				_this.after('<p class="code_success_msg">Successfully Updated!</p>');
-				$('body .code_success_msg').fadeOut(2000);
+		var _this = $(this);
+		var access_token = '<?php echo $access_token ?>';
+		var shop = '<?php echo $_REQUEST['shop'] ?>';
+		var Arraydata = [];
+		$("input[name='sel_options[]']:checked").each(function() {
+		    var getid = $(this).attr('id');
+		    Arraydata.push($(this).val()+':'+$('#'+getid+'_class').val());
+		});
+		var auto_manual = $("input[name='automatic_manual_code']:checked").val();
+		//console.log(Arraydata);
+		$.ajax({
+			type: 'POST',
+			url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata+'&auto_manual='+auto_manual,
+			dataType: "html",
+			success: function(data) { 
+				//console.log(data);
+				if(data){
+					addScript(data);
+					_this.after('<p class="code_success_msg">Successfully Updated!</p>');
+					$('body .code_success_msg').fadeOut(2000);
+				}
 			}
-		}
-	});
+		});
     	});
 	
 	//Save Custom CSS
