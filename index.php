@@ -265,6 +265,7 @@ function showMerchantmsg(){
 		success: function(response) {
 			console.log(response);
 			$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
+			termcondition();
 		}
 	 });
 }
@@ -280,10 +281,7 @@ $(document).ready(function(){
 	fetchMetafield();
 	fetchCssCode();
 	termcondition();
-	
-	if ($('#term_and_condition').is(':checked')) {
-	  showMerchantmsg();
-	}
+  	showMerchantmsg();
 	
 	$('#term_and_condition').click(function() {
 	    var checked = $(this).is(':checked');
