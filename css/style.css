@@ -323,8 +323,8 @@ tbody tr:first-child::after{
     top: 0;
     width: 18px;
     height: 18px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border: 1px solid #606ec6;
+    border-radius: 2px;
     background: #fff;
 }
 #getoptions [type="checkbox"]:checked + label:after,
@@ -333,11 +333,10 @@ tbody tr:first-child::after{
 	font-family: fontawesome;
     width: 12px;
     height: 12px;
-    background: #F87DA9;
     position: absolute;
     top: 4px;
     left: 4px;
-    border-radius: 10px;
+    border-radius: 2px;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
