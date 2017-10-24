@@ -242,3 +242,22 @@ tbody tr:first-child {
     border-bottom: 1px solid #e8e9ed;
     border-top: 1px solid #e8e9ed;
 }
+
+#product_page, #manual_code {
+    visibility: hidden;
+    margin-left: 0px;
+}
+#product_page + label::before, #manual_code + label::before {
+	content: "";
+	background: #eee;
+	padding: 7px;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	border: 1px solid #cbcbcb;
+	top: 3px;
+}
+input[type="checkbox"]:checked#product_page label::before, input[type="checkbox"]:checked#manual_code + label::before {
+	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	padding: 20px
+}
