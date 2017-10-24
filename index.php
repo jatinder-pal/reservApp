@@ -205,16 +205,6 @@ function fetchCssCode(){
 		}
 	});
 }
-
-// fetch Term & Condition
-function termcondition(){
-    var checked = $('#term_and_condition').is(':checked');
-    if (checked) {
-	$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
-    } else {
-	$('.getmerchantApi').attr('disabled', 'disabled').addClass('disabled');
-    }
-}
 	
 // fetch MerchantApi
 function fetchMerchantApi(data){
@@ -265,7 +255,8 @@ function showMerchantmsg(){
 		success: function(response) {
 			console.log(response);
 			$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
-			termcondition();
+			$('#term_and_condition').attr('checked', true);
+			$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
 		}
 	 });
 }
@@ -280,7 +271,6 @@ $(document).ready(function(){
 	
 	fetchMetafield();
 	fetchCssCode();
-	termcondition();
   	showMerchantmsg();
 	
 	$('#term_and_condition').click(function() {
