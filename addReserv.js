@@ -11,9 +11,9 @@
         success: function(response) {
             console.log(response['data']);
             var data = response['data'];
-	    var getnewdata = data.split('==');
-	    var getMerchantID = getnewdata[0];
-	    data = getnewdata[1];
+			var getnewdata = data.split('==');
+			var getMerchantID = getnewdata[0];
+			data = getnewdata[1];
             data = data.split(',');
             $.each(data, function(index, value) {
                 var values = value.split(':');
@@ -45,13 +45,13 @@
                                 var price = product.variants[0].price;
                                 var variant_image_id = product.variants[0].image_id;
                                 var variant_title = product.variants[0].title;
-				var name = "";
+								var name = "";
                                 if(variant_title == "Default Title"){
                                     name = product_name;
                                 } else {
                                     name = product_name+' - '+variant_title;
                                 }
-				var image = "";
+								var image = "";
                                 if (variant_image_id != null) {
                                     $.each(product.images, function(index){
                                       if(product.images[index].id == variant_image_id){
@@ -61,37 +61,37 @@
                                 } else {
                                     image = product.image.src;
                                 }
-                                var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&productname='+name+'&image='+image+'&description='+desc+'&price='+price;
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
                                 $('body').on('click','.reserv_button',function(e){
-                                   e.preventDefault();
-				   var _this = $(this);
-                                   var variantid = $('select[name="id"]').val();
-				   $.each(product.variants, function(index){
-					   if(product.variants[index].id == variantid){
-						var newid = product.variants[index].id;
-						var newprice = product.variants[index].price;
-						var v_imgid = product.variants[index].image_id;
-						var v_title = product.variants[index].title;
-						if(v_title == "Default Title"){
-							name = product_name;
-						} else {
-							name = product_name+' - '+v_title;
-						}
-						if (v_imgid != null) {
-							$.each(product.images, function(index){
-							  if(product.images[index].id == v_imgid){
-								image = product.images[index].src;
-							  }
-							});
-						} else {
-							var image = product.image.src;
-						}
-						var newlink = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
-						_this.attr('href',newlink);
-						//window.location.href = newlink;
-					   }
-				     });
+									e.preventDefault();
+									var _this = $(this);
+									var variantid = $('select[name="id"]').val();
+									$.each(product.variants, function(index){
+									   if(product.variants[index].id == variantid){
+										var newid = product.variants[index].id;
+										var newprice = product.variants[index].price;
+										var v_imgid = product.variants[index].image_id;
+										var v_title = product.variants[index].title;
+										if(v_title == "Default Title"){
+											name = product_name;
+										} else {
+											name = product_name+' - '+v_title;
+										}
+										if (v_imgid != null) {
+											$.each(product.images, function(index){
+											  if(product.images[index].id == v_imgid){
+												image = product.images[index].src;
+											  }
+											});
+										} else {
+											var image = product.image.src;
+										}
+										var newlink = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&productname='+name+'&image='+image+'&description='+desc+'&price='+newprice;
+										_this.attr('href',newlink);
+										window.location.href = newlink;
+									   }
+									});
                                 });
                             }
                         });
@@ -137,7 +137,7 @@
                                     var price = product[index].variants[0].price;
                                     var variant_featured_image = product[index].variants[0].featured_image;
                                     var variant_title = product[index].variants[0].title;
-				    var name = "";
+									var name = "";
                                     if(variant_title == "Default Title"){
                                         name = product_name;
                                     } else {
@@ -151,50 +151,49 @@
                                            image = product[index].images[0].src;
                                         }
                                     }
-                                    var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                    var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&productname='+name+'&image='+image+'&description='+desc+'&price='+price;
                                     proarray.push(link);
                                 });
                                 $('body .'+classes).each(function(index) {
                                     $(this).after('<a href="'+proarray[index]+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
                                 });
-				$('body').on('click','.reserv_button',function(e){
-					e.preventDefault();
-				   	var _this = $(this);
-				  	console.log(_this);
-					var variantid = $(this).parents('form').find('[name="id"]').val();
-					$.each(product, function(i) {
-						var product_id = product[i].id;
-						var desc = product[i].body_html;
-						var product_name = product[i].title;
-						var name = "";
-						$.each(product[i].variants, function(index){
-						   if(product[i].variants[index].id == variantid){
-							var id = variantid;
-							var newprice = product[i].variants[index].price;
-							var v_featured_image = product[i].variants[index].featured_image;
-							var v_title = product[i].variants[index].title;
-							if(v_title == "Default Title"){
-								name = product_name;
-							} else {
-								name = product_name+' - '+v_title;
+								$('body').on('click','.reserv_button',function(e){
+									e.preventDefault();
+									var _this = $(this);
+									console.log(_this);
+									var variantid = $(this).parents('form').find('[name="id"]').val();
+									$.each(product, function(i) {
+										var product_id = product[i].id;
+										var desc = product[i].body_html;
+										var product_name = product[i].title;
+										var name = "";
+										$.each(product[i].variants, function(index){
+										   if(product[i].variants[index].id == variantid){
+											var id = variantid;
+											var newprice = product[i].variants[index].price;
+											var v_featured_image = product[i].variants[index].featured_image;
+											var v_title = product[i].variants[index].title;
+											if(v_title == "Default Title"){
+												name = product_name;
+											} else {
+												name = product_name+' - '+v_title;
+											}
+											var image = "";
+											if (v_featured_image != null) {
+												image = product[i].variants[index].featured_image.src;
+											} else {
+												if (product[i].images.length) {
+												   image = product[i].images[0].src;
+												}
+											}
+											var newlink = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&productname='+name+'&image='+image+'&description='+desc+'&price='+newprice;
+											_this.attr('href',newlink);
+											window.location.href = newlink;
+										   }
+										});
+									});
+								});
 							}
-							var image = "";
-							if (v_featured_image != null) {
-								image = product[i].variants[index].featured_image.src;
-							} else {
-							    if (product[i].images.length) {
-							       image = product[i].images[0].src;
-							    }
-							}
-							var newlink = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
-							_this.attr('href',newlink);
-							//console.log(newlink);
-							//window.location.href = newlink;
-						   }
-						});
-					});
-				  });
-                             }
                         });
                     }
                 } else if (url.indexOf('/cart') > -1 && value == 'cart_page') {
@@ -217,7 +216,7 @@
                                     var desc = items[index].product_description;
                                     var price = items[index].price;
                                     var image = items[index].image;
-                                    var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                    var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&productname='+name+'&image='+image+'&description='+desc+'&price='+price;
                                     itemsarray.push(link);
                                 });
                                 var Allitems = itemsarray.join("|");
@@ -226,8 +225,7 @@
                         });
                     }
                 }
-
             });
-        }
+		}
     });
 })();
