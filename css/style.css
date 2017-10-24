@@ -248,8 +248,27 @@ input[type="checkbox"]:checked#automatic_code label::before, input[type="checkbo
 tbody tr:first-child {
     border-bottom: 1px solid #e8e9ed;
     border-top: 1px solid #e8e9ed;
+	line-height: 50px;
+	position: relative;
 }
-
+tbody tr:first-child::before{
+	content:"";
+    border-bottom: 1px solid #e8e9ed;
+    border-top: 1px solid #e8e9ed;
+	line-height: 50px;
+	position: absolute;
+	width: 20px;
+	left: 0;
+}
+tbody tr:first-child::after{
+	content:"";
+    border-bottom: 1px solid #e8e9ed;
+    border-top: 1px solid #e8e9ed;
+	line-height: 50px;
+	position: absolute;
+	width: 20px;
+	right:0;
+}
 #product_page, #manual_code {
     visibility: hidden;
     margin-left: 0px;
