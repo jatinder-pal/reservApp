@@ -8,16 +8,19 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {	
 	$response = $shopify('GET /admin/metafields.json');
+	$flag = false;
 	foreach($response as $options){
 		if($options['namespace'] == 'genarateMerchantId'){
 			echo 'Already Exist';
+			$flag = true;
 			echo $getMerchantId = $options['value'];
-		} else {
-			$metafield = array( "metafield" => array('namespace' => 'genarateMerchantId', 'key' => 'merchantId', 'value' => $merchantId, 'value_type' => 'string'));
-			$response = $shopify('POST /admin/metafields.json',$metafield);
-			echo 'Newly Added';
-			echo $response['value'];
-		}
+		} 
+	}
+	if($flag){
+		$metafield = array( "metafield" => array('namespace' => 'genarateMerchantId', 'key' => 'merchantId', 'value' => $merchantId, 'value_type' => 'string'));
+		$response = $shopify('POST /admin/metafields.json',$metafield);
+		echo 'Newly Added';
+		echo $response['value'];
 	}
 }
 catch (shopify\ApiException $e)
