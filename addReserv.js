@@ -9,8 +9,8 @@
             "Access-Control-Allow-Origin": "*"
         },
         success: function(response) {
-            //console.log(response['options']);
-            var data = response['options'];
+            console.log(response['data']);
+            var data = response['data'];
             data = data.split(',');
             $.each(data, function(index, value) {
                 var values = value.split(':');
