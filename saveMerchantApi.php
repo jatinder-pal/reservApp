@@ -10,10 +10,12 @@ try
 	$response = $shopify('GET /admin/metafields.json');
 	foreach($response as $options){
 		if($options['namespace'] == 'genarateMerchantId'){
+			echo 'Already Exist';
 			echo $getMerchantId = $options['value'];
 		} else {
 			$metafield = array( "metafield" => array('namespace' => 'genarateMerchantId', 'key' => 'merchantId', 'value' => $merchantId, 'value_type' => 'string'));
 			$response = $shopify('POST /admin/metafields.json',$metafield);
+			echo 'Newly Added';
 			echo $response['value'];
 		}
 	}
