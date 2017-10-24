@@ -301,14 +301,16 @@ tbody tr:first-child {
 	line-height: 50px;
 	position: relative;
 }
-tbody tr:first-child::before{
-	content:"";
-    border-bottom: 1px solid #e8e9ed;
+tbody tr:first-child::before {
+    content: "";
     border-top: 1px solid #e8e9ed;
+	border-bottom: 1px solid #e8e9ed;
+    line-height: 50px;
+    position: absolute;
+    width: 30px;
+    left: -30px;
+    top: -2px;
 	line-height: 50px;
-	position: absolute;
-	width: 20px;
-	left: 0;
 }
 tbody tr:first-child::after{
 	content:"";
@@ -316,8 +318,10 @@ tbody tr:first-child::after{
     border-top: 1px solid #e8e9ed;
 	line-height: 50px;
 	position: absolute;
-	width: 20px;
-	right:0;
+    width: 30px;
+    left: -30px;
+    top: -2px;
+	line-height: 50px;
 }
 [type="checkbox"]:checked,
 [type="checkbox"]:not(:checked) {
