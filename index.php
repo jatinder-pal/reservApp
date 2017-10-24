@@ -324,7 +324,7 @@ function showMerchantmsg(){
 		success: function(response) {
 			console.log(response);
 			if (!$.trim(response)){ 
-			  alert(response);
+			  //alert(response);
 			} else {
 				$('body .code_merchantid_msg').remove();
 				$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
