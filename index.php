@@ -210,11 +210,8 @@ function fetchCssCode(){
 function termcondition(){
     var checked = $('#term_and_condition').is(':checked');
     if (checked) {
-	//alert('checked');
-	$('#termModal').modal();
 	$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
     } else {
-	//alert('unchecked');
 	$('.getmerchantApi').attr('disabled', 'disabled').addClass('disabled');
     }
 }
@@ -267,12 +264,7 @@ function showMerchantmsg(){
 		dataType: "html",
 		success: function(response) {
 			console.log(response);
-			if(response == "No MerchantID"){
-				//$('#getmerchantApi').after('<p class="code_merchantid_msg"></p>');
-			} else {
-				$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
-				$('#term_and_condition').attr('checked', true);
-			}
+			$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
 		}
 	 });
 }
@@ -287,11 +279,20 @@ $(document).ready(function(){
 	
 	fetchMetafield();
 	fetchCssCode();
-	showMerchantmsg();
 	termcondition();
 	
+	if ($('#term_and_condition').is(':checked')) {
+	  showMerchantmsg();
+	}
+	
 	$('#term_and_condition').click(function() {
-	   termcondition();
+	    var checked = $(this).is(':checked');
+	    if (checked) {
+		$('#termModal').modal();
+		$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
+	    } else {
+		$('.getmerchantApi').attr('disabled', 'disabled').addClass('disabled');
+	    }
 	});
 	
 	$('body').on('click', '.getmerchantApi', function(e){
