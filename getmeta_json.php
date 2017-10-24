@@ -7,13 +7,17 @@ $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token 
 try
 {		
 		$response = $shopify('GET /admin/metafields.json');
+		$array = "";
 		foreach($response as $options){
 			if($options['namespace'] == 'revisebutton'){
-			//echo $options['value'];
-			$array = array(
-				'options' => $options['value']
+				$array .= 'revisebutton=='.$options['value'];
+			} else if($options['namespace'] == 'genarateMerchantId'){
+				$array .= 'genarateMerchantId'.$options['value'];
+			}
+			$data = array(
+				'data' => $array
 			);
-			echo $_REQUEST['callback']."(".json_encode($array).")";
+			echo $_REQUEST['callback']."(".json_encode($data).")";
 			}
 		}
 }
