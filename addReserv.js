@@ -11,6 +11,9 @@
         success: function(response) {
             console.log(response['data']);
             var data = response['data'];
+	    var getnewdata = data.split('==');
+	    var getMerchantID = getnewdata[0];
+	    data = getnewdata[1];
             data = data.split(',');
             $.each(data, function(index, value) {
                 var values = value.split(':');
@@ -58,7 +61,7 @@
                                 } else {
                                     image = product.image.src;
                                 }
-                                var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                 $('.'+classes).after('<a href="'+link+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
                                 $('body').on('click','.reserv_button',function(e){
                                    e.preventDefault();
@@ -84,7 +87,7 @@
 						} else {
 							var image = product.image.src;
 						}
-						var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
+						var newlink = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
 						_this.attr('href',newlink);
 						//window.location.href = newlink;
 					   }
@@ -148,7 +151,7 @@
                                            image = product[index].images[0].src;
                                         }
                                     }
-                                    var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                    var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                     proarray.push(link);
                                 });
                                 $('body .'+classes).each(function(index) {
@@ -183,7 +186,7 @@
 							       image = product[i].images[0].src;
 							    }
 							}
-							var newlink = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
+							var newlink = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+newprice;
 							_this.attr('href',newlink);
 							//console.log(newlink);
 							//window.location.href = newlink;
@@ -214,7 +217,7 @@
                                     var desc = items[index].product_description;
                                     var price = items[index].price;
                                     var image = items[index].image;
-                                    var link = 'id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
+                                    var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&name='+name+'&image='+image+'&description='+desc+'&price='+price;
                                     itemsarray.push(link);
                                 });
                                 var Allitems = itemsarray.join("|");
