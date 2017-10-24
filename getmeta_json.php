@@ -14,12 +14,9 @@ try
 			} else if($options['namespace'] == 'genarateMerchantId'){
 				$array .= 'genarateMerchantId'.$options['value'];
 			}
-			$data = array(
-				'data' => $array
-			);
-			echo $_REQUEST['callback']."(".json_encode($data).")";
-			}
 		}
+		$data = array('data' => $array);
+		echo $_REQUEST['callback']."(".json_encode($data).")";
 }
 catch (shopify\ApiException $e)
 {
