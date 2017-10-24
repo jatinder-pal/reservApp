@@ -10,9 +10,9 @@ try
 		$array = "";
 		foreach($response as $options){
 			if($options['namespace'] == 'revisebutton'){
-				$array .= '==revisebutton=='.$options['value'];
+				$array .= '=='.$options['value'];
 			} else if($options['namespace'] == 'genarateMerchantId'){
-				$array .= '==genarateMerchantId=='.$options['value'];
+				$array .= $options['value'];
 			}
 		}
 		$data = array('data' => $array);
