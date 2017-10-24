@@ -14,9 +14,9 @@ try
 			echo 'Already Exist';
 			$flag = true;
 			echo $getMerchantId = $options['value'];
-		} 
+		}
 	}
-	if($flag){
+	if($flag == false){
 		$metafield = array( "metafield" => array('namespace' => 'genarateMerchantId', 'key' => 'merchantId', 'value' => $merchantId, 'value_type' => 'string'));
 		$response = $shopify('POST /admin/metafields.json',$metafield);
 		echo 'Newly Added';
