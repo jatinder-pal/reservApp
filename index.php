@@ -167,21 +167,25 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td>&nbsp;</td>
 						<td>Options</td>
 						<td>Enter Unique class of "Add to Cart" button</td>
+						<td></td>
 					</tr>
 					<tr class="2">
 						<td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /></td>
 						<td><label for="product_page">Product Page</label></td>
 						<td><input id="product_page_class" type="text" name="product_page_class" value="" /></td>
+						<td><a href="#" data-toggle="tooltip" title="dummy content here"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 					<tr class="3">
 						<td style="width: 1%;"><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /></td>
 						<td><label for="catalog_page">Catalog Page</label></td>
 						<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
+						<td><a href="#" data-toggle="tooltip" title="dummy content here"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 					<tr class="4">
 						<td style="width: 1%;"><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" /></td>
 						<td><label for="cart_page">Cart Page</label></td>
 						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td>
+						<td><a href="#" data-toggle="tooltip" title="dummy content here"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 				</table>
 				<div class="generate_code_outer">
@@ -334,6 +338,9 @@ function showMerchantmsg(){
 }
 	
 $(document).ready(function(){
+
+	$('[data-toggle="tooltip"]').tooltip(); 
+	 
 	$('#manual_code').click(function(){
 		$('#generate_code').slideDown();
 	});
