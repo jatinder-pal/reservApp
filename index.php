@@ -254,10 +254,14 @@ function showMerchantmsg(){
 		dataType: "html",
 		success: function(response) {
 			console.log(response);
-			$('body .code_merchantid_msg').remove();
-			$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
-			$('#term_and_condition').attr('checked', true);
-			$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
+			if(response == 'No MerchantID'){
+			  alert(response);
+			} else {
+				$('body .code_merchantid_msg').remove();
+				$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
+				$('#term_and_condition').attr('checked', true);
+				$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
+			}
 		}
 	 });
 }
