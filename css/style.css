@@ -237,3 +237,7 @@ input[type=button] {
 input[type="checkbox"]#automatic_code:checked + label::before, input[type="checkbox"]#manual_code:checked + label::before {
 	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
 }
+tbody tr:first-child {
+    border-bottom: 1px solid #e8e9ed;
+    border-top: 1px solid #e8e9ed;
+}
