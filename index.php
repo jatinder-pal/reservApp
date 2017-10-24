@@ -151,21 +151,18 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	  
 		<div class="options">
 			<form method="post" name="form" id="getoptions" action="#">
-				<table cellspacing="10" cellpadding="10" border="1">
-					<tr>
-						<td colspan="3">Do you want to add Resev button Automatic or Manual ?</td>
-					</tr>
-					<tr>
-						<td class="atc" style="width: 130px;">
-							<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked />
-							<label for="automatic_code">Automatic</label>
-						</td>
-						<td class="optn" style="width: 130px;"><input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" />
+				<div class="auto_manual_outer">
+					<p>Do you want to add Resev button Automatic or Manual ?</p>
+					<div class="options">
+						<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked />
+						<label for="automatic_code">Automatic</label>
+					</div>
+					<div class="options">
+						<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" />
 						<label for="manual_code">Manual</label>
-						</td>
-					</tr>
-				</table>
-				<table cellspacing="10" cellpadding="10" border="1">
+					</div>
+				</div>
+				<table>
 					<tr class="1">
 						<td>&nbsp;</td>
 						<td>Options</td>
@@ -187,24 +184,25 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" /></td>
 					</tr>
 				</table>
-				<table cellspacing="10" cellpadding="10" border="1">
-					<tr>
-						<td colspan="3"><textarea class="generate_code" placeholder="/*****Generate Code*****/" id="generate_code" name="generate_code"></textarea></td></tr>
-					<tr>
-						<td colspan="3"><input type="button" class="saveoptions" value="Show Reserv button" name="submit" /></td>
-					</tr>
-				</table>
+				<div class="generate_code_outer">
+					<div class="code_textarea">
+						<textarea class="generate_code" placeholder="/*****Generate Code*****/" id="generate_code" name="generate_code"></textarea>
+					</div>
+					<div class="code_submit">
+						<input type="button" class="saveoptions" value="Show Reserv button" name="submit" />
+					</div>
+				</div>
 			</form>
 		</div>
 		<div class="customcss">
 			<form method="post" name="cssform" id="addcustomcss" action="#">
-				<table cellspacing="10" cellpadding="10" border="1">
-					<thead><tr><th>Custom CSS</th></tr></thead>
-					<tbody>
-						<tr><td><textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea></td></tr>
-						<tr><td><input type="button" class="savecss" value="Save CSS" name="submit" /></td></tr>
-					</tbody>
-				</table>
+				<div class="css_code_outer">
+					<h3 class="css_title">Custom CSS</h3>
+					<div class="css_body">
+						<textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea>
+						<input type="button" class="savecss" value="Save CSS" name="submit" />
+					</div>
+				</div>
 			</form>
 		</div>
   </div>
