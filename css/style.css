@@ -209,5 +209,25 @@ input[type=button] {
 	border: 1px solid #4a59b6;
 	border-radius: 5px;
 	font-size: 14px;
+	width: auto;
     text-transform: inherit;   
+}
+.auto_manual_outer p {
+	font-size: 1em;
+	font-weight: bold;
+}
+.auto_manual_outer .options {
+    width: 49%;
+    display: inline-block;
+	position: relative;
+} 
+#automatic_code, #manual_code {
+    visibility: hidden;
+}
+#automatic_code + label::before, #manual_code + label::before{
+	content: "";
+	background: #eee;
+	padding: 20px;
+	border-radius: 50%;
+	position: absolute;
 }
