@@ -266,6 +266,7 @@ function showMerchantmsg(){
 		url: '/showMerchantApi.php?access_token='+access_token+'&shop='+shop,
 		dataType: "html",
 		success: function(response) {
+			console.log(response);
 			if(response == "No MerchantID"){
 				//$('#getmerchantApi').after('<p class="code_merchantid_msg"></p>');
 			} else {
