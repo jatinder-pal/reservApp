@@ -323,7 +323,7 @@ function showMerchantmsg(){
 		dataType: "html",
 		success: function(response) {
 			console.log(response);
-			if(response == 'No MerchantID'){
+			if (!$.trim(response)){ 
 			  alert(response);
 			} else {
 				$('body .code_merchantid_msg').remove();
