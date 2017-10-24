@@ -6,8 +6,7 @@ require __DIR__.'/connection.php'; //DB connectivity
 require __DIR__.'/vendor/autoload.php';
 use phpish\shopify;
 // Required File END...........
-error_reporting(E_ALL);
- //print_r($_SESSION); 
+error_reporting(E_ALL); 
 ini_set('display_errors', 1);
 if((isset($_REQUEST['shop'])) && (isset($_REQUEST['code'])) && $_REQUEST['shop']!='' && $_REQUEST['code']!='' )
 {
@@ -65,14 +64,84 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 			  <div class="modal-dialog">
 			    <div class="modal-content">
 			      <div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			      </div>
 			      <div class="modal-body">
-				Dummy Content is here
-			      </div>
-			      <div class="modal-footer">
-				      
+					<div class="merchant-agreement">
+						<h3 class="modal-title">Merchant Agreement</h3>
+						<h4 class="modal-subtitle">Merchant Signup Form (“Order Form”)</h4>
+						<div class="columns">
+							<div class="left-column">Service Provider</div>
+							<div class="right-column">
+								<p>Agatsu, LLC, d/b/a Forward Funded(referred to herein as “Reserv”)</p>
+								<p>Address:128 Monroe St., Rockville, MD 20850</p>
+								<p>Attn:Brendan Snow</p>
+								<p>Email:Brendan.snow@forwardfunded.com</p>
+								<p>Phone:303-304-0208</p>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="left-column">Merchant</div>
+							<div class="right-column">
+								<p>Any merchant that has hereby downloaded the Reserv app from the Shopify store and uses it to create digital layaway, automated saving, or other saving plans (e.g. “Reserves”) for the customers of its ecommerce store. </p>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="left-column">Merchant Stores/Websites to be Integrated</div>
+							<div class="right-column">
+								<p></p>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="left-column">Effective Date</div>
+							<div class="right-column">
+								<p>October 9, 2017</p>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="left-column">Territory</div>
+							<div class="right-column">
+								<p>United States</p>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="left-column">Description of Services</div>
+							<div class="right-column">
+								<p>Digital layaway, automated saving, saving goals, save up before purchase, or other plans, referred to as amongst other things, “Reserves”.</p>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="left-column">Service Fees and Payment Terms</div>
+							<div class="right-column">
+								<p>2% of completed plans OR 2% of down payments remitted to Crown and Caliber</p>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="left-column">Term</div>
+							<div class="right-column">
+								<p>This Merchant Agreement (the “Agreement”) shall commence on the Effective Date and shall continue through the end of December 31st 2018(the “Initial Term”) unless sooner terminated in accordance with Section 10.2 of the attached Merchant Terms and Conditions.  Following the Initial Term, this Agreement shall automatically renew for successive one (1) year terms unless either party provides the other with written notice of non-renewal at least thirty (30) days prior to the expiration of the then current term (each a “Renewal Term” and collectively with the Initial Term, the “Term”).</p>
+							</div>
+						</div>
+						<div class="columns">
+							<div class="left-column">Merchant Terms and Conditions</div>
+							<div class="right-column">
+								<p>This Merchant Agreement (including the Order Form) may be executed in one or more counterparts, each of which when executed and delivered shall be deemed an original, but all of which taken together shall constitute one and the same agreement.  By signing below, the undersigned represents that he/she is duly authorized to sign on behalf of the party for whom he/she signs, and that this Merchant Agreement constitutes the valid and binding agreement of such party.  The Merchant Terms and Conditions located in Exhibit “A” are incorporated into this Agreement by reference.  If there is any conflict between this Order Form and the Merchant Terms and Conditions, this Order Form shall control.  Certain capitalized terms not otherwise defined herein shall have the meanings ascribed to such terms in the attached Merchant Terms and Conditions.</p>
+							</div>
+						</div>
+					</div>
+					<div class="exhibit-a">
+						<h3 class="modal-title">Exhibit “A”</h3>
+						<h4 class="modal-subtitle">MERCHANT TERMS & CONDITIONS</h4>
+						<ul>
+							<div class="head">SECTION 1.DEFINED TERMS</div>
+							<div class="subhead">
+							<li>1.1	“Brand Features” means the registered and unregistered trade names, trademarks, service marks, logos, domain names, and other distinctive brand features of each party.</li>
+							<li>1.2	“Buyer” means a person that purchases digital, virtual or physical goods and/or services from the Merchant.</li>
+							<li>1.3	“Disputes” means any disagreements, litigation, or other disputes between Merchant and a Buyer with respect to the Products or a Transaction or between Merchant and a third party arising from the use of the Service, but excluding Service Disputes.</li>
+							<li>1.4	“Reserv Account Holder” means the individual that establishes an Reserv Account and provides a Payment Account to be used for the Service.</li>
+							</div>
+						</ul>
+					</div>
 			      </div>
 			    </div>
 			  </div>
