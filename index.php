@@ -284,8 +284,8 @@ $(document).ready(function(){
 	
 	fetchMetafield();
 	fetchCssCode();
-	termcondition();
 	showMerchantmsg();
+	termcondition();
 	
 	$('#term_and_condition').click(function() {
 	   termcondition();
