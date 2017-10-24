@@ -110,9 +110,7 @@ input[type=button] {
     color: #008000;
     font-weight: bolder;
 }
-#settings td {
-    font-weight: bold;
-}
+
 #settings table {
     background: none;
     border: 0 !important;
@@ -277,6 +275,7 @@ tbody tr:first-child {
     border-top: 1px solid #e8e9ed;
 	line-height: 50px;
 	position: relative;
+	font-weight: bold;
 }
 tbody tr:first-child::before {
     content: "";
