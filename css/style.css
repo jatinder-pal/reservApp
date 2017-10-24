@@ -223,11 +223,14 @@ input[type=button] {
 } 
 #automatic_code, #manual_code {
     visibility: hidden;
+    margin-left: 15px;
 }
-#automatic_code + label::before, #manual_code + label::before{
+#automatic_code + label::before, #manual_code + label::before {
 	content: "";
 	background: #eee;
-	padding: 20px;
+	padding: 8px;
 	border-radius: 50%;
 	position: absolute;
+	left: 0;
+	border: 1px solid #cbcbcb;
 }
