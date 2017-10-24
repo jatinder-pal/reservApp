@@ -247,6 +247,7 @@ function fetchMerchantApi(data){
 				dataType: "html",
 				success: function(response1) { 
 					console.log(response1);
+					showMerchantmsg();
 				}
 			  });
 			} else {
@@ -254,6 +255,21 @@ function fetchMerchantApi(data){
 			}
 		}
 	});
+}
+
+// show Merchant ID message
+function showMerchantmsg(){
+	var access_token = '<?php echo $access_token ?>';
+	var shop = '<?php echo $_REQUEST['shop'] ?>';
+	 $.ajax({
+		type: 'POST',
+		url: '/showMerchantApi.php?access_token='+access_token+'&shop='+shop,
+		dataType: "html",
+		success: function(response) { 
+			console.log(response);
+			$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
+		}
+	 });
 }
 	
 $(document).ready(function(){
@@ -267,6 +283,7 @@ $(document).ready(function(){
 	fetchMetafield();
 	fetchCssCode();
 	termcondition();
+	showMerchantmsg();
 	
 	$('#term_and_condition').click(function() {
 	   termcondition();
