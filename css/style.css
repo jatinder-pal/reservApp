@@ -319,13 +319,13 @@ tbody tr:first-child::after{
 	width: 20px;
 	right:0;
 }
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked) {
+td [type="checkbox"]:checked,
+td [type="checkbox"]:not(:checked) {
     position: absolute;
     left: -9999px;
 }
-[type="checkbox"]:checked + label,
-[type="checkbox"]:not(:checked) + label
+td [type="checkbox"]:checked + td label,
+td [type="checkbox"]:not(:checked) + td label
 {
     position: relative;
     padding-left: 28px;
