@@ -202,9 +202,8 @@ input[type=button] {
     top:-3px;
 }
 /***/
-input[type="button"].getmerchantApi{
+#settings input[type="button"].getmerchantApi{
 	display: block;
-	width: 100%;
 	padding: 0.6em 1em;
 	background: #606ec6;
 	border: 1px solid #4a59b6;
