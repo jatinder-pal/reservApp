@@ -6,7 +6,7 @@ img {
 }
 input.getmerchantApi.disabled {
     background: #dcdcdc;
-    color: #1c1c1c;
+    color: #1c1c1c; 
 }
 textarea#add_css {
     height: 250px;
