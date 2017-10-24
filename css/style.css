@@ -323,22 +323,25 @@ tbody tr:first-child::after{
     top: 0;
     width: 18px;
     height: 18px;
-    border: 1px solid #606ec6;
-    border-radius: 2px;
+    border: 1px solid #666;
+    border-radius: 5px;
     background: #fff;
 }
-#getoptions [type="checkbox"]:checked + label:after,
-#getoptions [type="checkbox"]:not(:checked) + label:after {
-    content: '\f00c';
+#getoptions [type="checkbox"]:checked + label::after, 
+#getoptions [type="checkbox"]:not(:checked) + label::after {
+	content: '\f00c';
 	font-family: fontawesome;
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    border-radius: 2px;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 0px;
+	left: 2px;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	font-weight: normal;
+	font-size: 15px;
+	color: #606ec6;
+	border: 1px solid #606ec6;
 }
 #getoptions [type="checkbox"]:not(:checked) + label:after {
     opacity: 0;
