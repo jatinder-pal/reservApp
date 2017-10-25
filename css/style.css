@@ -141,13 +141,14 @@ input[type=button] {
 }
 #settings input.savecss{
 	border-radius: 4px;
-    font-size: 16px;
-    text-transform: capitalize;
-    font-weight: normal;
-    background:#606ec6;
-    color:#fff;
-    font-size: 14px;
-    border:1px solid #4a59b4;
+	font-size: 14px;
+	text-transform: capitalize;
+	font-weight: normal;
+	background: #606ec6;
+	color: #fff;
+	border: 1px solid #4a59b4;
+	padding: 0.6em 1em;
+	margin: 20px 0;
 }
 .customcss textarea#add_css {
     height: 220px;
