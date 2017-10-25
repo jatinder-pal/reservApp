@@ -321,12 +321,12 @@ tbody tr:first-child::after{
 #getoptions [type="checkbox"]:not(:checked) + label:before {
     content: '';
     position: absolute;
-    left: 0;
+    left: -8px;
     top: 0;
     width: 18px;
     height: 18px;
     border: 1px solid #666;
-    border-radius: 5px;
+    border-radius: 3px;
     background: #fff;
 }
 #getoptions [type="checkbox"]:checked + label::after, 
@@ -337,8 +337,8 @@ tbody tr:first-child::after{
 	height: 18px;
 	position: absolute;
 	top: 0px;
-	left: 0px;
-	border-radius: 5px;
+	left: -8px;
+	border-radius: 3px;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 	font-weight: normal;
