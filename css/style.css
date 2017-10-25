@@ -133,13 +133,15 @@ input[type=button] {
      border: 1px solid #c4cdd4;
 }
 #settings input.saveoptions {
-    border-radius: 4px;
-    font-size: 16px;
-    text-transform: capitalize;
-    font-weight: normal;
-    background:#606ec6;
-    color:#fff;
-    border:1px solid #4a59b4;
+	border-radius: 4px;
+	font-size: 14px;
+	text-transform: capitalize;
+	font-weight: normal;
+	background: #606ec6;
+	color: #fff;
+	border: 1px solid #4a59b4;
+	padding: 0.6em 1em;
+	margin: 20px 0;
 }
 #settings input.savecss{border-radius: 4px;
     font-size: 16px;
