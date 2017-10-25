@@ -321,8 +321,8 @@ tbody tr:first-child::after{
 #getoptions [type="checkbox"]:not(:checked) + label:before {
     content: '';
     position: absolute;
-    left: -8px;
-    top: 0;
+    left: 0px;
+    top: -8px;
     width: 18px;
     height: 18px;
     border: 1px solid #666;
@@ -336,8 +336,8 @@ tbody tr:first-child::after{
 	width: 18px;
 	height: 18px;
 	position: absolute;
-	top: 0px;
-	left: -8px;
+	top: -8px;
+	left: 0;
 	border-radius: 3px;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
