@@ -169,9 +169,9 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td></td>
 					</tr>
 					<tr style="height: 20px">
-						<td></td>
-						<td></td>
-						<td></td>
+						<td style="padding: 5px"></td>
+						<td style="padding: 5px"></td>
+						<td style="padding: 5px"></td>
 					</tr>
 					<tr class="2">
 						<td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /><label for="product_page"></label></td>
