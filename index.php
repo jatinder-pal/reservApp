@@ -204,7 +204,9 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 				</div>
 			</form>
 		</div>
-		<div class="customcss">
+		
+  </div>
+  <div class="customcss">
 			<form method="post" name="cssform" id="addcustomcss" action="#">
 				<div class="css_code_outer">
 					<h3 class="css_title">Custom CSS</h3>
@@ -215,7 +217,6 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 				</div>
 			</form>
 		</div>
-  </div>
   <div id="help">
   	<h2>help!!</h2>
   </div>
