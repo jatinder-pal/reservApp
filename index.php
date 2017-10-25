@@ -134,8 +134,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<h3 class="modal-title">Exhibit “A”</h3>
 						<h4 class="modal-subtitle">MERCHANT TERMS & CONDITIONS</h4>
 						<ul>
-							<li><div class="head"><strong>SECTION 1.DEFINED TERMS</strong></div>
-							<li>
+							<li><div class="head"><strong>SECTION 1.DEFINED TERMS</strong></div></li>
 							<li>1.1	“Brand Features” means the registered and unregistered trade names, trademarks, service marks, logos, domain names, and other distinctive brand features of each party.</li>
 							<li>1.2	“Buyer” means a person that purchases digital, virtual or physical goods and/or services from the Merchant.</li>
 							<li>1.3	“Disputes” means any disagreements, litigation, or other disputes between Merchant and a Buyer with respect to the Products or a Transaction or between Merchant and a third party arising from the use of the Service, but excluding Service Disputes.</li>
