@@ -36,7 +36,7 @@ input[type=button] {
     color: #fff;
     font-size: 20px;
 } 
-#settings.ui-tabs .ui-tabs-panel {padding: 1em 0 !important;}
+.ui-tabs #settings.ui-tabs-panel {padding: 1em 0 !important;}
 input[type=button] {
     background: #1b627f;
     width: auto;
