@@ -225,19 +225,21 @@ input[type=button] {
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
-.css_title:after{
-	content:"";
+.css_title::after {
+	content: "";
 	position: absolute;
-	border-top: 1px solid #e8e9ed;
-	right:-30px;
-	width:30px;
+	border-bottom: 1px solid #e8e9ed;
+	right: 0px;
+	width: 30px;
+	height: 39px;
 }
-.css_title:before{
-	content:"";
+.css_title::before {
+	content: "";
 	position: absolute;
-	border-top: 1px solid #e8e9ed;
-	left:-30px;
-	width:30px;
+	border-bottom: 1px solid #e8e9ed;
+	left: 0px;
+	width: 30px;
+	height: 39px;
 }
 .auto_manual_outer .options {
     width: 17%;
