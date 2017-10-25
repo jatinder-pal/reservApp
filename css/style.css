@@ -356,3 +356,14 @@ tbody tr:first-child::after{
     -webkit-transform: scale(1);
     transform: scale(1);
 }
+#settings input.getmerchantApi[type="button"]:disabled {
+	display: block;
+	padding: 0.6em 1em;
+	background: #eee;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 14px;
+	width: auto;
+	text-transform: inherit;
+	cursor: no-drop;
+}
