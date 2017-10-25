@@ -168,7 +168,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td>Enter Unique class of "Add to Cart" button</td>
 						<td></td>
 					</tr>
-					<tr style="height: 20px">
+					<tr style="height: 10px">
 						<td style="padding: 5px"></td>
 						<td style="padding: 5px"></td>
 						<td style="padding: 5px"></td>
