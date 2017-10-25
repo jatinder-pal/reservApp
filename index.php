@@ -150,7 +150,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 			<!-- Terms and Condition Modal -->
 		</div>
 	  
-		<div class="options">
+		<div class="options option_outer">
 			<form method="post" name="form" id="getoptions" action="#">
 				<div class="auto_manual_outer">
 					<p>Do you want to add Resev button Automatic or Manual ?</p>
