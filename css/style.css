@@ -263,6 +263,13 @@ input[type=button] {
     position: relative;
     padding: 15px 0 25px;
 }
+.tooltip-inner {
+    max-width: 400px !important;
+    color: #606ec6 !important;
+    background-color: #f9f9f9  !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2)  !important;
+}
 .options [type="radio"]:checked,
 .options [type="radio"]:not(:checked) {
     position: absolute;
