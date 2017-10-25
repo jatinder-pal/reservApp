@@ -337,7 +337,8 @@ tbody tr:first-child::after{
 	height: 18px;
 	position: absolute;
 	top: 0px;
-	left: 2px;
+	left: 0px;
+	border-radius: 5px;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 	font-weight: normal;
