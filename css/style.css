@@ -1,10 +1,235 @@
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked) {
+th, td {
+    padding: 10px;
+}
+img {
+    width: 100px;
+} 
+input.getmerchantApi.disabled {
+    background: #dcdcdc;
+    color: #1c1c1c;
+}
+textarea#add_css {
+    height: 250px;
+    width: 485px;
+}
+textarea#generate_code {
+    width: 485px;
+    height: 110px;
+}
+.logo {
+    text-align: center;
+    margin: 0;
+    color: #1b627f;
+    background: #1b627f;
+    padding: 10px 0;
+}
+img.logo_img {
+    width: 250px;
+}
+.ui-tabs-active .ui-tabs-anchor {
+    background: #1b627f;
+    border: #1b627f;
+}
+input[type=button] {
+    background: #1b627f;
+    width: auto;
+    color: #fff;
+    font-size: 20px;
+} 
+input[type=button] {
+    background: #1b627f;
+    width: auto;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px;
+    text-transform: uppercase;
+    border: #1b627f;
+}
+.ui-tabs.ui-tabs-vertical {
+    width: 100%;
+    background: #f5f6f8;
+    border: none;
+    padding: 40px;
+}
+.ui-tabs.ui-tabs-vertical .ui-widget-header {
+    border: none;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav {
+    float: left;
+    width: 100%;
+    background:#f5f6f8;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
+    clear: none;
+    width: auto;
+    margin: 0.2em 0;
+    border: none!important;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    right: 0;
+    z-index: 2;
+    background:none!important;
+    margin-right:20px;
+}
+.ui-tabs-active .ui-tabs-anchor {
+    background: #606ec6;
+    border: 1px solid #4a59b6;
+}
+.ui-tabs-panel {
+    margin-top: 40px;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {
+    display: block;
+    width: 100%;
+    padding: 0.6em 1em;
+}
+
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
+    cursor: pointer;
+}
+.ui-tabs-panel h3 {
+    margin-top: 0;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li:last-child {
+    margin-bottom: 10px;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+    float: left;
+    width: 100%;
+    border-left: none;
+    border-radius: 0;
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    border-radius: 4px;
+    border: 1px solid #e7e8ea;
+}
+.code_success_msg, .css_success_msg {
+    margin-top: 10px;
+    color: #008000;
+    font-weight: bolder;
+}
+
+#settings table {
+    background: none;
+    border: 0 !important;
+    border-color: #fff !important;
+    width:100%;
+   
+}
+#settings  label{font-weight:400;}
+/*#settings tr:nth-child(3) {
+    border-top: 1px solid #cfcfcf;
+    width: 100%;
+}
+#settings{padding:0;}*/
+#settings textarea#generate_code {
+    width: 100%;
+    height: 160px;
+    padding: 0 20px 0px;
+    font-weight: 400;
+    line-height: 25px;
+     border: 1px solid #c4cdd4;
+}
+#settings input.saveoptions {
+    border-radius: 4px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: normal;
+    background:#606ec6;
+    color:#fff;
+    border:1px solid #4a59b4;
+}
+#settings input.savecss{border-radius: 4px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: normal;
+    background:#606ec6;
+    color:#fff;
+    font-size: 14px;
+    border:1px solid #4a59b4;}
+.customcss textarea#add_css {
+    height: 220px;
+    width: 100%;
+    padding: 0 20px 0;
+    font-weight: 400;
+    font-size: 14px;
+     border: 1px solid #c4cdd4;
+}
+#register input.btn{border-radius: 4px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: normal;
+    background:#606ec6;
+    color:#fff;
+    font-size: 14px;
+    border:1px solid #4a59b4;}
+#settings input {
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: none!important;
+    -webkit-box-shadow: none !important;
+    border: 1px solid #c4cdd4;
+}
+.atc input[type=radio] + label:before, .optn input[type=radio] + label:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+    background-color: #f5f6f8;
+    box-shadow: 0;
+    border-radius: 8px;
+    border: 1px solid #c9d2d9;
+}
+.atc input[type=radio]:checked + label:before, .optn input[type=radio]:checked + label:before{
+    content: "\2022"; /* Bullet */
+    color:#606ec6;
+    font-size:1.8em;
+    text-align:center;
+    line-height:14px;
+    text-shadow:0px 0px 3px #eee;
+    border: 1px solid #c9d2d9;
+}
+.atc label, .optn label {
+    margin-left: -19px;
+    margin-top: -4px;
+    position:relative;
+    top:-3px;
+}
+/***/
+#settings input[type="button"].getmerchantApi{
+	display: block;
+	padding: 0.6em 1em;
+	background: #606ec6;
+	border: 1px solid #4a59b6;
+	border-radius: 5px;
+	font-size: 14px;
+	width: auto;
+    text-transform: inherit;   
+}
+.code_merchantid_msg {
+    margin-bottom: 20px;
+}
+.auto_manual_outer p {
+	font-size: 1em;
+	font-weight: bold;
+}
+.auto_manual_outer .options {
+    width: 17%;
+    display: inline-block;
+    position: relative;
+    padding: 15px 0 25px;
+}
+.options [type="radio"]:checked,
+.options [type="radio"]:not(:checked) {
     position: absolute;
     left: -9999px;
 }
-[type="checkbox"]:checked + label,
-[type="checkbox"]:not(:checked) + label
+.options [type="radio"]:checked + label,
+.options [type="radio"]:not(:checked) + label
 {
     position: relative;
     padding-left: 28px;
@@ -13,8 +238,8 @@
     display: inline-block;
     color: #666;
 }
-[type="checkbox"]:checked + label:before,
-[type="checkbox"]:not(:checked) + label:before {
+.options [type="radio"]:checked + label:before,
+.options [type="radio"]:not(:checked) + label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -25,26 +250,120 @@
     border-radius: 100%;
     background: #fff;
 }
-[type="checkbox"]:checked + label:after,
-[type="checkbox"]:not(:checked) + label:after {
+.options [type="radio"]:checked + label:after,
+.options [type="radio"]:not(:checked) + label:after {
     content: '';
     width: 12px;
     height: 12px;
-    background: #F87DA9;
+    background: #606ec6;
     position: absolute;
-    top: 4px;
-    left: 4px;
+    top: 3px;
+    left: 3px;
     border-radius: 100%;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-[type="checkbox"]:not(:checked) + label:after {
+.options [type="radio"]:not(:checked) + label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
 }
-[type="checkbox"]:checked + label:after {
+.options [type="radio"]:checked + label:after {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
+}
+tbody tr:first-child {
+    border-bottom: 1px solid #e8e9ed;
+    border-top: 1px solid #e8e9ed;
+	line-height: 50px;
+	position: relative;
+	font-weight: bold;
+}
+tbody tr:first-child::before {
+    content: "";
+    border-top: 1px solid #e8e9ed;
+	border-bottom: 1px solid #e8e9ed;
+    line-height: 50px;
+    position: absolute;
+    width: 30px;
+    left: -30px;
+    top: -2px;
+	height: 72px;
+}
+tbody tr:first-child::after{
+	content:"";
+    border-bottom: 1px solid #e8e9ed;
+    border-top: 1px solid #e8e9ed;
+	line-height: 50px;
+	position: absolute;
+    width: 30px;
+    right: -30px;
+    top: -2px;
+	height: 72px;
+}
+#getoptions [type="checkbox"]:checked,
+#getoptions [type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+#getoptions [type="checkbox"]:checked + label,
+#getoptions [type="checkbox"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 16px;
+    display: inline-block;
+    color: #666;
+}
+#getoptions [type="checkbox"]:checked + label:before,
+#getoptions [type="checkbox"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: -8px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #666;
+    border-radius: 3px;
+    background: #fff;
+}
+#getoptions [type="checkbox"]:checked + label::after, 
+#getoptions [type="checkbox"]:not(:checked) + label::after {
+	content: '\f00c';
+	font-family: fontawesome;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: -8px;
+	left: 0;
+	border-radius: 3px;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	font-weight: normal;
+	font-size: 15px;
+	color: #606ec6;
+	border: 1px solid #606ec6;
+}
+#getoptions [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+#getoptions [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+#settings input.getmerchantApi[type="button"]:disabled {
+	display: block;
+	padding: 0.6em 1em;
+	background: #eee;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 14px;
+	width: auto;
+	text-transform: inherit;
+	cursor: no-drop;
 }
