@@ -155,7 +155,8 @@ input[type=button] {
     padding: 0 20px 0;
     font-weight: 400;
     font-size: 14px;
-     border: 1px solid #c4cdd4;
+    border: 1px solid #606ec6;
+	border-radius: 2px;
 }
 #register input.btn{border-radius: 4px;
     font-size: 16px;
