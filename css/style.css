@@ -210,16 +210,19 @@ input[type=button] {
 	width: auto;
     text-transform: inherit;   
 }
+.code_merchantid_msg {
+    margin-bottom: 20px;
+}
 .auto_manual_outer p {
 	font-size: 1em;
 	font-weight: bold;
 }
 .auto_manual_outer .options {
-    width: 49%;
+    width: 17%;
     display: inline-block;
-	position: relative;
-} 
-
+    position: relative;
+    padding: 15px 0 25px;
+}
 .options [type="radio"]:checked,
 .options [type="radio"]:not(:checked) {
     position: absolute;
@@ -286,7 +289,7 @@ tbody tr:first-child::before {
     width: 30px;
     left: -30px;
     top: -2px;
-	line-height: 50px;
+	height: 72px;
 }
 tbody tr:first-child::after{
 	content:"";
@@ -295,9 +298,9 @@ tbody tr:first-child::after{
 	line-height: 50px;
 	position: absolute;
     width: 30px;
-    left: -30px;
+    right: -30px;
     top: -2px;
-	line-height: 50px;
+	height: 72px;
 }
 #getoptions [type="checkbox"]:checked,
 #getoptions [type="checkbox"]:not(:checked) {
