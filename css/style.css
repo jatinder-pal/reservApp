@@ -3,10 +3,10 @@ th, td {
 }
 img {
     width: 100px;
-}
+} 
 input.getmerchantApi.disabled {
     background: #dcdcdc;
-    color: #1c1c1c; 
+    color: #1c1c1c;
 }
 textarea#add_css {
     height: 250px;
@@ -340,7 +340,6 @@ tbody tr:first-child::after{
 	font-weight: normal;
 	font-size: 15px;
 	color: #606ec6;
-	border: 1px solid #606ec6;
 }
 #getoptions [type="checkbox"]:not(:checked) + label:after {
     opacity: 0;
