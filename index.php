@@ -168,7 +168,11 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td>Enter Unique class of "Add to Cart" button</td>
 						<td></td>
 					</tr>
-					<br/>
+					<tr style="height: 20px">
+						<td>Options</td>
+						<td>Enter Unique class of "Add to Cart" button</td>
+						<td></td>
+					</tr>
 					<tr class="2">
 						<td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /><label for="product_page"></label></td>
 						<td>Product Page</td>
@@ -264,7 +268,6 @@ function fetchMetafield(){
 		}
 	});
 }
-
 // Add CSS
 function fetchCssCode(){
 	var access_token = '<?php echo $access_token ?>';
@@ -314,7 +317,6 @@ function fetchMerchantApi(data){
 		}
 	});
 }
-
 // show Merchant ID message
 function showMerchantmsg(){
 	var access_token = '<?php echo $access_token ?>';
@@ -338,7 +340,6 @@ function showMerchantmsg(){
 }
 	
 $(document).ready(function(){
-
 	$('[data-toggle="tooltip"]').tooltip(); 
 	 
 	$('#manual_code').click(function(){
