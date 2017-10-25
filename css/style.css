@@ -177,6 +177,17 @@ input[type=button] {
 #settings table input {
 	min-width: 200px;
 }
+.head strong {
+    margin: 10px 0 10px -15px;
+    display: block;
+}
+.exhibit-a ul {
+    padding-left: 20px;
+}
+.exhibit-a li {
+    list-style: none;
+    margin-bottom: 10px;
+}
 .atc input[type=radio] + label:before, .optn input[type=radio] + label:before {
     content: "";
     display: inline-block;
