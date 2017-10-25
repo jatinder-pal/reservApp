@@ -94,7 +94,7 @@ input[type=button] {
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav li:last-child {
     margin-bottom: 10px;
 }
-.generate_key, .options.option_outer, .css-section {
+#register, .generate_key, .options.option_outer, .css-section {
     float: left;
     width: 100%;
     border-left: none;
