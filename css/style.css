@@ -394,3 +394,9 @@ tbody tr:first-child::after{
 	text-transform: inherit;
 	cursor: no-drop;
 }
+tbody tr td:nth-child(2) {
+    width: 20%;
+}
+tbody tr td:nth-child(3) {
+    width: 40%;
+}
