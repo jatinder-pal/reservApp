@@ -173,6 +173,7 @@ input[type=button] {
     box-shadow: none!important;
     -webkit-box-shadow: none !important;
     border: 1px solid #c4cdd4;
+	min-width: 200px;
 }
 .atc input[type=radio] + label:before, .optn input[type=radio] + label:before {
     content: "";
@@ -399,4 +400,14 @@ tbody tr td:nth-child(2) {
 }
 tbody tr td:nth-child(3) {
     width: 40%;
+}
+.option_outer table .tooltip  {
+	display: inline-block;
+	opacity: 1;
+	color: #ddd;
+	line-height: 44px;
+}
+.option_outer table .tooltip  i{
+	font-size: 20px;
+	padding: 10px 20px;
 }
