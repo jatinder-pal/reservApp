@@ -244,7 +244,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 				<table>
 					<tr class="1 height">
 						<td>Options</td>
-						<td class="custom_option" style="diplay:none;">Enter Unique class of "Add to Cart" button</td>
+						<td class="custom_option" style="display:none;">Enter Unique class of "Add to Cart" button</td>
 						<td></td>
 					</tr>
 					<tr style="height: 10px">
@@ -255,7 +255,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<tr class="2">
 						<td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" checked /><label for="product_page"></label></td>
 						<td>Product Page</td>
-						<td class="custom_option" style="diplay:none;">
+						<td class="custom_option" style="display:none;">
 							<input id="product_page_class" type="text" name="product_page_class" value="" />
 						</td>
 						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
@@ -263,7 +263,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<tr class="3">
 						<td style="width: 1%;"><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" checked /><label for="catalog_page"></label></td>
 						<td>Catalog Page</td>
-						<td class="custom_option" style="diplay:none;">
+						<td class="custom_option" style="display:none;">
 							<input id="catalog_page_class" type="text" name="catalog_page_class" value="" />
 						</td>
 						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
@@ -271,7 +271,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<tr class="4">
 						<td style="width: 1%;"><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" checked /><label for="cart_page"></label></td>
 						<td>Cart Page</td>
-						<td class="custom_option" style="diplay:none;">
+						<td class="custom_option" style="display:none;">
 							<input id="cart_page_class" type="text" name="cart_page_class" value="" />
 						</td>
 						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
@@ -476,11 +476,11 @@ $(document).ready(function(){
 		var access_token = '<?php echo $access_token ?>';
 		var shop = '<?php echo $_REQUEST['shop'] ?>';
 		var Arraydata = [];
+		var auto_custom = $("input[name='automatic_custom_code']:checked").val();
 		$("input[name='sel_options[]']:checked").each(function() {
 		    var getid = $(this).attr('id');
 		    Arraydata.push($(this).val()+':'+$('#'+getid+'_class').val());
 		});
-		var auto_custom = $("input[name='automatic_custom_code']:checked").val();
 		$.ajax({
 			type: 'POST',
 			url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata+'&auto_manual='+auto_custom,
