@@ -216,16 +216,17 @@ input[type=button] {
     top:-3px;
 }
 /***/
-#settings input[type="button"].allbtns{
-	display: inline-block;
-	padding: 0.6em 1em;
-	background: #606ec6;
-	border: 1px solid #4a59b6;
-	border-radius: 5px;
-	font-size: 14px;
-	width: auto;
-    text-transform: inherit;   
-	margin: 10px 0;
+#settings .allbtns {
+    display: inline-block;
+    padding: 0.6em 1em;
+    background: #606ec6;
+    border: 1px solid #4a59b6;
+    border-radius: 5px;
+    font-size: 14px;
+    width: auto;
+    text-transform: inherit;
+    margin: 10px 0;
+    color: #fff;
 }
 .auto_manual_outer p {
 	font-size: 16px;
