@@ -66,7 +66,7 @@
 							}
 							var link = 'https://create.myreserv.com/#login?merchant='+getMerchantID+'&id='+id+'&product_id='+product_id+'&productname='+name+'&image='+image+'&description='+desc+'&price='+price;
 							if(getautocustom == 'automatic_code'){
-								$('form[action="/cart/add"] button[type=submit]').after('<a href="'+link+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
+								$('form[action="/cart/add"] [type=submit]').after('<a href="'+link+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
 							} else if(getautocustom == 'custom_code'){
 								$('.'+classes).after('<a href="'+link+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
 							}
