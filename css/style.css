@@ -50,6 +50,7 @@ input[type=button] {
     width: 100%;
     background: #f5f6f8;
     border: none;
+    float: left;
     padding: 40px;
 }
 .ui-tabs.ui-tabs-vertical .ui-widget-header {
