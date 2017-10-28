@@ -9,8 +9,12 @@
             "Access-Control-Allow-Origin": "*"
         },
         success: function(response) {
-            console.log(response['data']);
             var data = response['data'];
+	    data = data.split('===');
+	    var getautocustom = data[0];
+	    data = data[1];
+	    console.log(getautocustom);
+	    console.log(data);
 	    var getnewdata = data.split('==');
 	    var getMerchantID = getnewdata[0];
 	    data = getnewdata[1];
