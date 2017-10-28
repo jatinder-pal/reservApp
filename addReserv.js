@@ -11,9 +11,9 @@
         success: function(response) {
             console.log(response['data']);
             var data = response['data'];
-			var getnewdata = data.split('==');
-			var getMerchantID = getnewdata[0];
-			data = getnewdata[1];
+	    var getnewdata = data.split('==');
+	    var getMerchantID = getnewdata[0];
+	    data = getnewdata[1];
             data = data.split(',');
             $.each(data, function(index, value) {
                 var values = value.split(':');
