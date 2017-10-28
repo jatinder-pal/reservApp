@@ -163,7 +163,7 @@
 								if(getautocustom == 'automatic_code'){
 									$('body form[action="/cart/add"]').each(function(index) {
 										$('[type=submit]',this).after('<a href="'+proarray[index]+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
-									}
+									});
 								} else if(getautocustom == 'custom_code'){	
 									$('body .'+classes).each(function(index) {
 										$(this).after('<a href="'+proarray[index]+'" class="reserv_button"><img src="https://reserv-app.herokuapp.com/images/ReservButton.png" alt="reservbtn" /></a>');
