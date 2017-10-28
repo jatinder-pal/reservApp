@@ -416,7 +416,7 @@ function showMerchantmsg(){
 			  //alert(response);
 			} else {
 				$('body .code_merchantid_msg').remove();
-				$('#getmerchantApi').after('<a href="#" class="allbtns gotoreserv">Go to Reserv</a>');
+				$('.getmerchantApi').after('<a href="#" class="allbtns gotoreserv">Go to Reserv</a>');
 				$('.api_buttons').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
 				$('#term_and_condition').attr('checked', true);
 				$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
