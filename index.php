@@ -233,18 +233,18 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 				<div class="auto_manual_outer">
 					<p>Do you want to add Resev button Automatic or Manual ?</p>
 					<div class="options">
-						<input id="automatic_code" type="radio" name="automatic_manual_code" value="automatic_code" checked />
+						<input id="automatic_code" type="radio" name="automatic_custom_code" value="automatic_code" checked />
 						<label for="automatic_code">Automatic</label>
 					</div>
 					<div class="options">
-						<input id="manual_code" type="radio" name="automatic_manual_code" value="manual_code" />
-						<label for="manual_code">Manual</label>
+						<input id="custom_code" type="radio" name="automatic_custom_code" value="custom_code" />
+						<label for="custom_code">Custom</label>
 					</div>
 				</div>
 				<table>
 					<tr class="1 height">
 						<td>Options</td>
-						<td>Enter Unique class of "Add to Cart" button</td>
+						<td class="custom_option" style="diplay:none;">Enter Unique class of "Add to Cart" button</td>
 						<td></td>
 					</tr>
 					<tr style="height: 10px">
@@ -253,27 +253,31 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td style="padding: 5px"></td>
 					</tr>
 					<tr class="2">
-						<td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" /><label for="product_page"></label></td>
+						<td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" checked /><label for="product_page"></label></td>
 						<td>Product Page</td>
-						<td><input id="product_page_class" type="text" name="product_page_class" value="" />
-						<a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+						<td class="custom_option" style="diplay:none;">
+							<input id="product_page_class" type="text" name="product_page_class" value="" />
+						</td>
+						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 					<tr class="3">
-						<td style="width: 1%;"><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" /><label for="catalog_page"></label></td>
+						<td style="width: 1%;"><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" checked /><label for="catalog_page"></label></td>
 						<td>Catalog Page</td>
-						<td><input id="catalog_page_class" type="text" name="catalog_page_class" value="" /><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+						<td class="custom_option" style="diplay:none;">
+							<input id="catalog_page_class" type="text" name="catalog_page_class" value="" />
+						</td>
+						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 					<tr class="4">
-						<td style="width: 1%;"><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" /><label for="cart_page"></label></td>
+						<td style="width: 1%;"><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" checked /><label for="cart_page"></label></td>
 						<td>Cart Page</td>
-						<td><input id="cart_page_class" type="text" name="cart_page_class" value="" />
-						<a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+						<td class="custom_option" style="diplay:none;">
+							<input id="cart_page_class" type="text" name="cart_page_class" value="" />
+						</td>
+						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 				</table>
 				<div class="generate_code_outer">
-					<div class="code_textarea">
-						<textarea class="generate_code" placeholder="/*****Generate Code*****/" id="generate_code" name="generate_code"></textarea>
-					</div>
 					<div class="code_submit">
 						<input type="button" class="saveoptions" value="Show Reserv button" name="submit" />
 					</div>
@@ -428,11 +432,11 @@ function showMerchantmsg(){
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip(); 
 	 
-	$('#manual_code').click(function(){
-		$('#generate_code').slideDown();
+	$('#custom_code').click(function(){
+		$('.custom_option').slideDown();
 	});
 	$('#automatic_code').click(function(){
-		$('#generate_code').slideUp();
+		$('.custom_option').slideUp();
 	});
 	
 	fetchMetafield();
@@ -476,10 +480,10 @@ $(document).ready(function(){
 		    var getid = $(this).attr('id');
 		    Arraydata.push($(this).val()+':'+$('#'+getid+'_class').val());
 		});
-		var auto_manual = $("input[name='automatic_manual_code']:checked").val();
+		var auto_custom = $("input[name='automatic_custom_code']:checked").val();
 		$.ajax({
 			type: 'POST',
-			url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata+'&auto_manual='+auto_manual,
+			url: '/metafields.php?access_token='+access_token+'&shop='+shop+'&options='+Arraydata+'&auto_manual='+auto_custom,
 			dataType: "html",
 			success: function(data) { 
 				//console.log(data);
