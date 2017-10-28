@@ -12,6 +12,8 @@ try
 			if($options['namespace'] == 'revisebutton'){
 				$array .= '=='.$options['value'];
 			} else if($options['namespace'] == 'genarateMerchantId'){
+				$array .= '==='.$options['value'];
+			} else if($options['namespace'] == 'automanualfield'){
 				$array .= $options['value'];
 			}
 		}
