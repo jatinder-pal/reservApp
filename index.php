@@ -32,22 +32,17 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	<img class="logo_img" src="images/ReservTheNewLayawayLogo.jpg" alt="ReservStoreLogo" />
 </div>
 <div class="content-container">
-<div id="tabs">
-  <ul>
-    <li><a href="#dashboard">Dashboard</a></li>
-    <li><a href="#settings">Settings</a></li>
-    <li><a href="#help">Help</a></li>
-  </ul>
-  <div id="dashboard">
-    <h2>Welcome to Reserv App</h2>
-  </div>
-  <div id="settings">
+<h1 class="title">Welcome to Reserv</h1>
+<div id="settings">
+  <h2 class="heading">Settings</h2>
   <div class="section-top">
 		<div class="generate_key">
 			<form method="post" name="merchantform" id="getmerchantApi" action="#">
-				<input id="term_and_condition" type="checkbox" name="term_and_condition" data-target="#termModal" value="term_condition" />
-				<label for="term_and_condition">Please confirm these Terms and Conditions</label>
-				<input type="button" class="getmerchantApi" value="Get Merchant ID" name="submit" />
+				<input id="term_and_condition" type="checkbox" name="term_and_condition" value="term_condition" />
+				<label>Please confirm these <a data-target="#termModal" href="javascript:void(0);" class="popup_click">Terms and Conditions</a></label>
+				<div class="api_buttons">
+					<input type="button" class="getmerchantApi" value="Get Merchant ID" name="submit" />
+				</div>
 			</form>
 			<!-- Terms and Condition Modal -->
 			<div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -299,7 +294,11 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 			</form>
 		</div>
 		</div>
-  </div>
+</div>
+<div id="tabs">
+  <ul>
+    <li><a href="#help">Help</a></li>
+  </ul> 
   <div id="help">
   	<h2>help!!</h2>
   </div>
@@ -417,7 +416,8 @@ function showMerchantmsg(){
 			  //alert(response);
 			} else {
 				$('body .code_merchantid_msg').remove();
-				$('#getmerchantApi').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
+				$('#getmerchantApi').after('<a href="#" class="allbtns gotoreserv">Go to Reserv</a>');
+				$('.api_buttons').after('<p class="code_merchantid_msg">Merchant ID: '+response+'</p>');
 				$('#term_and_condition').attr('checked', true);
 				$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
 			}
@@ -439,10 +439,13 @@ $(document).ready(function(){
 	fetchCssCode();
   	showMerchantmsg();
 	
+	$('.popup_click').click(function(){
+		$('#termModal').modal();
+	});
+	
 	$('#term_and_condition').click(function() {
 	    var checked = $(this).is(':checked');
 	    if (checked) {
-		$('#termModal').modal();
 		$('.getmerchantApi').removeAttr('disabled').removeClass('disabled');
 	    } else {
 		$('.getmerchantApi').attr('disabled', 'disabled').addClass('disabled');
