@@ -132,6 +132,7 @@ input[type=button] {
 .option_outer table .tooltip i {
     vertical-align: top;
     display: table;
+	margin-top: -10px;
 }
 .code_success_msg, .css_success_msg {
     margin-top: 10px;
