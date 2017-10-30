@@ -1,3 +1,4 @@
+
 th, td {
     padding: 10px;
 }
@@ -445,3 +446,7 @@ tbody tr td:nth-child(3) {
 h5.faqhead {
     font-weight: bold;
 }
+.tile_code {
+    line-height: 1.8;
+}
+
