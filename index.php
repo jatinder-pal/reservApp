@@ -32,14 +32,19 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 	<img class="logo_img" src="images/ReservTheNewLayawayLogo.jpg" alt="ReservStoreLogo" />
 </div>
 <div class="content-container">
-<h1 class="title">Welcome to Reserv</h1>
-<div id="settings">
-  <h2 class="heading">Settings</h2>
-  <div class="section-top">
-		<div class="generate_key">
+<h1 class="title">Welcome to Reserv!</h1>
+<div id="tabs">
+	<ul>
+	<li><a href="#settings">Settings</a></li>
+	<li><a href="#faq">FAQ</a></li>
+	<li><a href="#contactus">Contact Us</a></li>
+	</ul> 
+	<div id="settings">
+		<div class="section-top">
+			<div class="generate_key">
 			<form method="post" name="merchantform" id="getmerchantApi" action="#">
 				<input id="term_and_condition" type="checkbox" name="term_and_condition" value="term_condition" />
-				<label>Please confirm these <a data-target="#termModal" href="javascript:void(0);" class="popup_click">Terms and Conditions</a></label>
+				<label>I Agree to the <a data-target="#termModal" href="javascript:void(0);" class="popup_click">terms and conditions</a></label>
 				<div class="api_buttons">
 					<input type="button" class="allbtns getmerchantApi" value="Get Merchant ID" name="submit" />
 				</div>
@@ -228,23 +233,24 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 			<!-- Terms and Condition Modal -->
 		</div>
 	  
-		<div class="options option_outer">
+			<div class="options option_outer">
 			<form method="post" name="form" id="getoptions" action="#">
 				<div class="auto_manual_outer">
 					<p>Do you want to add Resev button Automatic or Manual ?</p>
 					<div class="options">
 						<input id="automatic_code" type="radio" name="automatic_custom_code" value="automatic_code" checked />
-						<label for="automatic_code">Automatic</label>
+						<label for="automatic_code">Select an Automatic</label>
 					</div>
 					<div class="options">
 						<input id="custom_code" type="radio" name="automatic_custom_code" value="custom_code" />
-						<label for="custom_code">Custom</label>
+						<label for="custom_code">Custom Reserv button set up</label>
 					</div>
 				</div>
+				<div class="settings_err">Is the Reserv button not appearing? Try a Custom set up or <a href="#contactus">contact us</a>.</div>
 				<table>
 					<tr class="1 height">
 						<td>Options</td>
-						<td class="custom_option" style="display:none;">Enter Unique class of "Add to Cart" button</td>
+						<td class="custom_option" style="display:none;">Enter the code you use to create your custom "Add to Cart" button in the textbox below, and the Reserv button will appear beneath your "Add to Cart" button</td>
 						<td></td>
 					</tr>
 					<tr style="height: 10px">
@@ -258,7 +264,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td class="custom_option" style="display:none;">
 							<input id="product_page_class" type="text" name="product_page_class" value="" />
 						</td>
-						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+						<td><a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on each product page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 					<tr class="3">
 						<td style="width: 1%;"><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" checked /><label for="catalog_page"></label></td>
@@ -266,7 +272,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td class="custom_option" style="display:none;">
 							<input id="catalog_page_class" type="text" name="catalog_page_class" value="" />
 						</td>
-						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+						<td><a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on each catalog page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 					<tr class="4">
 						<td style="width: 1%;"><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" checked /><label for="cart_page"></label></td>
@@ -274,7 +280,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 						<td class="custom_option" style="display:none;">
 							<input id="cart_page_class" type="text" name="cart_page_class" value="" />
 						</td>
-						<td><a href="#" data-toggle="tooltip" title="dummy content here" class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+						<td><a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on cart page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 					</tr>
 				</table>
 				<div class="generate_code_outer">
@@ -286,18 +292,26 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 		</div>
 		</div>
 		<div class="css-section">
-		<div class="customcss">
-			<form method="post" name="cssform" id="addcustomcss" action="#">
-				<div class="css_code_outer">
-					<h3 class="css_title">Custom CSS</h3>
-					<div class="css_body">
-						<textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea>
-						<input type="button" class="savecss" value="Save CSS" name="submit" />
+			<div class="customcss">
+				<form method="post" name="cssform" id="addcustomcss" action="#">
+					<div class="css_code_outer">
+						<h3 class="css_title">Custom CSS</h3>
+						<div class="css_body">
+							<textarea id="add_css" name="add_css" placeholder="/*****Custom CSS*****/"></textarea>
+							<input type="button" class="savecss" value="Save CSS" name="submit" />
+						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
-		</div>
+	</div>
+	<div id="faq">
+		faq Content!
+	</div>
+	<div id="contactus">
+		Contact US Content!
+	</div>
+	
 </div>
 <div id="tabs">
   <ul>
