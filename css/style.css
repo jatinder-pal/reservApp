@@ -490,4 +490,10 @@ tbody tr:first-child p.tile_code {
 		width: 100%;
 		text-align: center;
 	}
+	.auto_manual_outer .options {
+		width: 100%;
+		padding: 5px 0;
+		line-height: 1;
+	}
+	#settings input.saveoptions, #settings input.savecss {width: 100%;}
 }
