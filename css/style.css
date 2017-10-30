@@ -479,4 +479,8 @@ tbody tr:first-child p.tile_code {
     overflow: scroll;
     display: inline-block;
 }
+	#settings tr {font-size: 13px;}
+	tbody tr:first-child p.tile_code {
+    line-height: 1.3;
+}
 }
