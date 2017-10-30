@@ -446,7 +446,7 @@ tbody tr td:nth-child(3) {
 h5.faqhead {
     font-weight: bold;
 }
-.tile_code {
+tbody tr:first-child p.tile_code {
     line-height: 1.8;
 }
 
