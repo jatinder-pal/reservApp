@@ -474,4 +474,8 @@ tbody tr:first-child p.tile_code {
 }
 @media(max-width: 800px){
 	.auto_manual_outer .options {width: 40%;}
+	table {
+    overflow: scroll;
+    display: inline-block;
+}
 }
