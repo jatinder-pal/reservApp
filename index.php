@@ -44,7 +44,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 				<div class="generate_key">
 				<form method="post" name="merchantform" id="getmerchantApi" action="#">
 					<input id="term_and_condition" type="checkbox" name="term_and_condition" value="term_condition" />
-					<label>I Agree to the <a data-target="#termModal" href="javascript:void(0);" class="popup_click">terms and conditions</a></label>
+					<label>I Agree to the <a data-target="#termModal" href="javascript:void(0);" class="popup_click">Terms and Conditions</a></label>
 					<div class="api_buttons">
 						<input type="button" class="allbtns getmerchantApi" value="Get Merchant ID" name="submit" />
 					</div>
