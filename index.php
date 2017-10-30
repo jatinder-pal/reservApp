@@ -1,3 +1,31 @@
+
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Marketplace
+    Explore
+
+    @jatinder-pal
+
+1
+0
+
+    0
+
+jatinder-pal/reservApp
+Code
+Issues 0
+Pull requests 0
+Projects 0
+Wiki
+Insights
+Settings
+reservApp/index.php
+0779ac9 6 hours ago
+@jatinder-pal jatinder-pal Update index.php
+548 lines (530 sloc) 61 KB
 <?php
 session_start();
 // Required File Start.........
@@ -250,7 +278,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 					<table>
 						<tr class="1 height">
 							<td>Options</td>
-							<td colspan="2" class="custom_option" style="display:none;">Enter the code you use to create your custom "Add to Cart" button in the textbox below, and the Reserv button will appear beneath your "Add to Cart" button</td>
+							<td colspan="2" class="custom_option" style="display:none;"><p class="tile_code">Enter the code you use to create your custom "Add to Cart" button in the textbox below, and the Reserv button will appear beneath your "Add to Cart" button</p></td>
 						</tr>
 						<tr style="height: 10px">
 							<td style="padding: 5px"></td>
@@ -455,7 +483,6 @@ function showMerchantmsg(){
 	
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip({placement: "right"});
-
 	$('.contactclick').on('click', function(){
 		$('.contacttab').trigger('click');
 	});
@@ -545,3 +572,5 @@ $(document).ready(function(){
 </script>	
 </body>
 </html>
+
+
