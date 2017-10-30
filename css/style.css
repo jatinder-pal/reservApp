@@ -469,4 +469,9 @@ h5.faqhead {
 tbody tr:first-child p.tile_code {
     line-height: 1.8;
 }
-
+@media(max-width: 1100px){
+	.auto_manual_outer .options {width: 45%;}
+}
+@media(max-width: 800px){
+	.auto_manual_outer .options {width: 40%;}
+}
