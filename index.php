@@ -1,31 +1,4 @@
 
-Skip to content
-This repository
-
-    Pull requests
-    Issues
-    Marketplace
-    Explore
-
-    @jatinder-pal
-
-1
-0
-
-    0
-
-jatinder-pal/reservApp
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Wiki
-Insights
-Settings
-reservApp/index.php
-0779ac9 6 hours ago
-@jatinder-pal jatinder-pal Update index.php
-548 lines (530 sloc) 61 KB
 <?php
 session_start();
 // Required File Start.........
@@ -572,5 +545,3 @@ $(document).ready(function(){
 </script>	
 </body>
 </html>
-
-
