@@ -432,7 +432,7 @@ tbody tr td:nth-child(3) {
 	display: inline-block;
 	opacity: 1;
 	color: #ddd;
-	line-height: 44px;
+	line-height: 20px;
 }
 .option_outer table .tooltip  i{
 	font-size: 20px;
