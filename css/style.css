@@ -71,7 +71,7 @@ input[type=button] {
     width: auto;
     margin: 0.2em 0;
     border: none!important;
-    border-radius: 4px;
+    border-radius: 4px; 
     overflow: hidden;
     position: relative;
     right: 0;
