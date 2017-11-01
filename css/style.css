@@ -511,4 +511,6 @@ tbody tr:first-child p.tile_code {
 	.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {padding: 0.3em 5px;}
 	.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {margin-right: 5px;
 }
+.ui-tabs.ui-tabs-vertical {padding: 10px;}
+.generate_key label {max-width: 89% !important;}
 }
