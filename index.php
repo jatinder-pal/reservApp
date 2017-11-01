@@ -81,7 +81,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 									<div class="columns">
 										<div class="left-column"><b>Merchant Stores/Websites to be Integrated</b></div>
 										<div class="right-column">
-											<p></p>
+											<p><br/><br/></p>
 										</div>
 									</div>
 									<div class="columns">
@@ -105,7 +105,7 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 									<div class="columns">
 										<div class="left-column"><b>Service Fees and Payment Terms</b></div>
 										<div class="right-column">
-											<p><b>2% of completed plans OR 2% of down payments remitted to Crown and Caliber</b></p>
+											<p><b>2% of completed plans OR 2% of down payments remitted to Crown and Caliber</b><br/></p>
 										</div>
 									</div>
 									<div class="columns">
