@@ -138,6 +138,23 @@ input[type=button] {
     color: #008000;
     font-weight: bolder;
 }
+.modal-open .columns {
+    border: 1px solid #000;
+    float: left;
+    width: 100%;
+}
+.modal-open .left-column {
+    width: 25%;
+    float: left;
+    padding: 1%;
+}
+.modal-open .right-column {
+    width: 70%;
+    float: left;
+    text-align: left;
+    padding: 1%;
+    border-left: 1px solid #000;
+}
 #settings table {
     background: none;
     border: 0 !important;
