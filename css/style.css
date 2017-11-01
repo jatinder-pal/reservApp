@@ -135,10 +135,13 @@ input[type=button] {
 	box-sizing: border-box;
 }
 .option_outer table .tooltip {display: flex;}
+
 .option_outer table .tooltip i {
-    vertical-align: top;
-    display: table;
-	margin-top: -10px;
+    font-size: 20px;
+    padding: 6px 5px;
+    margin-top: 0;
+    margin-left: 10px;
+    display: inline-block;
 }
 #contactus strong {
     margin-bottom: 20px;
