@@ -262,22 +262,22 @@ $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHO
 								<td style="width: 1%;"><input id="product_page" type="checkbox" name="sel_options[]" value="product_page" checked /><label for="product_page"></label></td>
 								<td>Product Page</td>
 								<td class="custom_option" style="display:none;">
-									<input id="product_page_class" type="text" name="product_page_class" value="" />
-								    <a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on each product page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+									<input id="product_page_class" type="text" name="product_page_class" value="" /></td>
+								<td><a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on each product page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 							</tr>
 							<tr class="3">
 								<td style="width: 1%;"><input id="catalog_page" type="checkbox" name="sel_options[]" value="catalog_page" checked /><label for="catalog_page"></label></td>
 								<td>Catalog Page</td>
 								<td class="custom_option" style="display:none;">
-									<input id="catalog_page_class" type="text" name="catalog_page_class" value="" />
-								<a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on each catalog page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+									<input id="catalog_page_class" type="text" name="catalog_page_class" value="" /></td>
+								<td><a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on each catalog page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 							</tr>
 							<tr class="4">
 								<td style="width: 1%;"><input id="cart_page" type="checkbox" name="sel_options[]" value="cart_page" checked /><label for="cart_page"></label></td>
 								<td>Cart Page</td>
 								<td class="custom_option" style="display:none;">
-									<input id="cart_page_class" type="text" name="cart_page_class" value="" />
-								<a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on cart page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+									<input id="cart_page_class" type="text" name="cart_page_class" value="" /></td>
+								<td><a href="#" data-toggle="tooltip" title="If you check this box, the Reserv button will appear on cart page." class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 							</tr>
 						</table>
 						<div class="generate_code_outer">
