@@ -513,4 +513,8 @@ tbody tr:first-child p.tile_code {
 }
 .ui-tabs.ui-tabs-vertical {padding: 10px;}
 .generate_key label {max-width: 89% !important;}
+#register, .generate_key, .options.option_outer, .css-section, #faq, #contactus {
+     padding: 15px;
 }
+}
+
