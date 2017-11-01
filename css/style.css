@@ -166,6 +166,7 @@ input[type=button] {
 .tooltip.fade.right.in {
     text-align: left;
     line-height: 2;
+	margin-top: auto;
 }
 #contactus p {
     font-weight: 100;
