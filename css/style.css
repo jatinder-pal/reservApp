@@ -163,6 +163,11 @@ input[type=button] {
     margin-bottom: 20px;
     display: block;
 }
+.tooltip.fade.right.in {
+    margin-top: 1%;
+    text-align: left;
+    line-height: 1;
+}
 #contactus p {
     font-weight: 100;
 }
