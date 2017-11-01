@@ -498,7 +498,6 @@ tbody tr td:nth-child(3) {width: 40%;}
 	color: #ddd;
 	line-height: 20px;
 	vertical-align: top;
-    position: relative;
 }
 .option_outer table .tooltip  i{
 	font-size: 20px;
