@@ -152,8 +152,8 @@ input[type=button] {
 }
 .option_outer table .tooltip {display: flex;}
 
-.option_outer table .tooltip i {
-    font-size: 20px;
+.option_outer table .tooltip img {
+    width: 20px;
     padding: 6px 5px;
     margin-top: 0;
     margin-left: 10px;
@@ -499,7 +499,7 @@ tbody tr td:nth-child(3) {width: 20%;}
     line-height: 20px;
     margin-top: -20px;
 }
-.option_outer table .tooltip i {
+.option_outer table .tooltip img {
     font-size: 20px;
     padding: 10px 0px;
     margin-left: 0;
