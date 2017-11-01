@@ -508,4 +508,7 @@ tbody tr:first-child p.tile_code {
 		line-height: 1;
 	}
 	#settings input.saveoptions, #settings input.savecss {width: 100%;}
+	.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {padding: 0.3em 5px;}
+	.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {margin-right: 5px;
+}
 }
