@@ -21,6 +21,20 @@ textarea#generate_code {
     width: 485px;
     height: 110px;
 }
+a.tooltip:hover {
+    text-decoration: none;
+    color: #000;
+}
+.tooltip.right .tooltip-arrow {
+    left: -5px;
+    margin-top: -10px;
+    border-width: 8px 10px 8px 0;
+    border-right-color: #ddd;
+}
+.tooltip.right {
+    padding: 0 5px;
+    margin-left: 10px;
+}
 a.popup_click {
     text-decoration: underline;
     color: #606ec6;
