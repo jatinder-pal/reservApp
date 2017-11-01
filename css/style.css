@@ -217,6 +217,9 @@ input[type=button] {
     border: 1px solid #c4cdd4;
 }
 #settings table input {min-width: 200px;}
+#settings .allbtns:hover {
+    text-decoration: none;
+}
 .head strong {
     margin: 10px 0 10px -15px;
     display: block;
