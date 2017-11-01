@@ -122,7 +122,7 @@ input[type=button] {
 	box-sizing: border-box;
 }
 .modal-content {
-    max-height: 450px;
+    max-height: 480px;
     overflow: scroll;
 }
 .modal-header {
@@ -497,6 +497,8 @@ tbody tr td:nth-child(3) {width: 40%;}
 	opacity: 1;
 	color: #ddd;
 	line-height: 20px;
+	vertical-align: top;
+    position: relative;
 }
 .option_outer table .tooltip  i{
 	font-size: 20px;
