@@ -491,17 +491,18 @@ tbody tr:first-child::after{
 	cursor: no-drop;
 }
 tbody tr td:nth-child(2) {width: 20%;}
-tbody tr td:nth-child(3) {width: 40%;}
-.option_outer table .tooltip  {
-	display: inline-block;
-	opacity: 1;
-	color: #ddd;
-	line-height: 20px;
-	vertical-align: top;
+tbody tr td:nth-child(3) {width: 20%;}
+.option_outer table .tooltip {
+    display: inline-block;
+    opacity: 1;
+    color: #ddd;
+    line-height: 20px;
+    margin-top: -20px;
 }
-.option_outer table .tooltip  i{
-	font-size: 20px;
-	padding: 10px 20px;
+.option_outer table .tooltip i {
+    font-size: 20px;
+    padding: 10px 0px;
+    margin-left: 0;
 }
 #termModal .modal-dialog {
     width: 850px;
