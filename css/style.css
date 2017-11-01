@@ -498,11 +498,12 @@ tbody tr:first-child::after{
 tbody tr td:nth-child(2) {width: 20%;}
 tbody tr td:nth-child(3) {width: 20%;}
 .option_outer table .tooltip {
-    display: inline-block;
+    display: table-cell;
     opacity: 1;
     color: #ddd;
-    line-height: 20px;
+    line-height: 1;
     margin-top: -20px;
+    vertical-align: top;
 }
 .option_outer table .tooltip img {
     font-size: 20px;
