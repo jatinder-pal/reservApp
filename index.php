@@ -15,7 +15,7 @@ if((isset($_REQUEST['shop'])) && (isset($_REQUEST['code'])) && $_REQUEST['shop']
 	$_SESSION['code']=$_REQUEST['code'];
 }
 $access_token = shopify\access_token($_REQUEST['shop'], SHOPIFY_APP_API_KEY, SHOPIFY_APP_SHARED_SECRET, $_REQUEST['code']);
-$server = $_SERVER['SERVER_NAME'];
+echo $server = 'https://'.$_SERVER['SERVER_NAME'];
 ?>
 <html>
 <head>
@@ -341,8 +341,9 @@ $(function(){
 function addScript(options){
 	var access_token = '<?php echo $access_token ?>';
 	var shop = '<?php echo $_REQUEST['shop'] ?>';
+	var server = '<?php echo $_SERVER['SERVER_NAME']; ?>';
 	$.ajax({
-		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options,
+		url: '/addScript.php?access_token='+access_token+'&shop='+shop+'&options='+options+'&server='+server,
 		success: function(data){
 			console.log(data);
 			if($("#manual_code").is(':checked')){
