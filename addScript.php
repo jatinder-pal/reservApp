@@ -10,9 +10,9 @@ try
 	$alloptions = explode('===',$alloptions);
 	$auto_manual = $alloptions[1];
 	$alloptions = $alloptions[0];
-	
-	$url = "/admin/script_tags.json?src=https://shopify.myreserv.com/addReserv.js?access_token=$access_token";
-	$js_file = "https://shopify.myreserv.com/addReserv.js?access_token=$access_token";
+	$server = 'https://'.$_SERVER['SERVER_NAME'];
+	$url = "/admin/script_tags.json?src=".$server."/addReserv.js?access_token=$access_token";
+	$js_file = $server."/addReserv.js?access_token=$access_token";
 	if($auto_manual == 'automatic_code') {
 		if($alloptions == 'noData'){
 			$data = $shopify("GET $url");
@@ -40,7 +40,7 @@ try
 			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
 			//print_r('Remove JS file on Manual selection');
 		}
-		echo "<script src='https://shopify.myreserv.com/addReserv.js?access_token=$access_token&shop=$shop'></script>";
+		echo "<script src='"'.$server.'"/addReserv.js?access_token=$access_token&shop=$shop'></script>";
 	}
 }
 catch (shopify\ApiException $e)
