@@ -11,7 +11,7 @@ try
 	$alloptions = explode('===',$alloptions);
 	$auto_manual = $alloptions[1];
 	$alloptions = $alloptions[0];
-	$server = 'https://'.$server;
+	echo $server = 'https://'.$server;
 	$url = "/admin/script_tags.json?src=$server/addReserv.js?access_token=$access_token";
 	$js_file = "$server/addReserv.js?access_token=$access_token";
 	if($auto_manual == 'automatic_code') {
