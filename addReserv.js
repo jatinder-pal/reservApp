@@ -1,8 +1,6 @@
 <!--Reserv.js-->
 (function() {
     var data = $("script[src*='addReserv.js']").attr('src').split('?')[1];
-    var server = '<?php echo $_SERVER['SERVER_NAME']; ?>';
-    console.log('server=='+server);
     $.ajax({
         crossDomain: true,
         url: 'https://shopify.myreserv.com/getmeta_json.php?' + data,
