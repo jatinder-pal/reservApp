@@ -12,8 +12,8 @@ try
 	$auto_manual = $alloptions[1];
 	$alloptions = $alloptions[0];
 	echo $server = 'https://'.$server;
-	$url = "/admin/script_tags.json?src=$server/addReserv.js?access_token=$access_token";
-	$js_file = "$server/addReserv.js?access_token=$access_token";
+	$url = '/admin/script_tags.json?src=$server/addReserv.js?access_token=$access_token';
+	$js_file = '$server/addReserv.js?access_token=$access_token';
 	if($auto_manual == 'automatic_code') {
 		if($alloptions == 'noData'){
 			$data = $shopify("GET $url");
