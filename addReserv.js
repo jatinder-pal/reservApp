@@ -3,7 +3,7 @@
     var data = $("script[src*='addReserv.js']").attr('src').split('?')[1];
     $.ajax({
         crossDomain: true,
-        url: 'https://reserv-app.herokuapp.com/getmeta_json.php?' + data,
+        url: 'https://shopify.myreserv.com/getmeta_json.php?' + data,
         dataType: "jsonp",
         header: {
             "Access-Control-Allow-Origin": "*"
