@@ -4,13 +4,14 @@ require __DIR__.'/vendor/autoload.php';
 use phpish\shopify;
 $access_token = $_REQUEST['access_token'];
 $alloptions = $_REQUEST['options'];
+$server = $_REQUEST['server'];
 $shopify = shopify\client($_REQUEST['shop'], SHOPIFY_APP_API_KEY, $access_token );
 try
 {	
 	$alloptions = explode('===',$alloptions);
 	$auto_manual = $alloptions[1];
 	$alloptions = $alloptions[0];
-	$server = 'https://'.$_SERVER['SERVER_NAME'];
+	$server = 'https://'.$server;
 	$url = "/admin/script_tags.json?src=".$server."/addReserv.js?access_token=$access_token";
 	$js_file = $server."/addReserv.js?access_token=$access_token";
 	if($auto_manual == 'automatic_code') {
@@ -40,7 +41,7 @@ try
 			$response = $shopify('DELETE /admin/script_tags/'.$file['id'].'.json');
 			//print_r('Remove JS file on Manual selection');
 		}
-		echo "<script src='"'.$server.'"/addReserv.js?access_token=$access_token&shop=$shop'></script>";
+		echo "<script src='$server/addReserv.js?access_token=$access_token&shop=$shop&server=$server'></script>";
 	}
 }
 catch (shopify\ApiException $e)
