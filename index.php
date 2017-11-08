@@ -361,10 +361,10 @@ function fetchMetafield(){
 	$.ajax({
 		url: '/getmetafields.php?access_token='+access_token+'&shop='+shop,
 		success: function(data){
-			console.log('fetchData==>'+data);
 			var options = data.split('===');
 			var auto_manual = options[1];
 			options = options[0].split(',');
+			if(auto_manual != '') {
 			$('input[name="automatic_manual_code"][value='+auto_manual+']').attr("checked","true");
 			$.each(options, function(index, value){
 				var value_data = value.split(':');
@@ -379,6 +379,7 @@ function fetchMetafield(){
 				}
 			});
 			addScript(data);
+		   }
 		}
 	});
 }
