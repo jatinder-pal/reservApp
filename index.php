@@ -48,7 +48,7 @@ $server = 'https://'.$_SERVER['SERVER_NAME'];
 						<input id="term_and_condition" type="checkbox" name="term_and_condition" value="term_condition" />
 						<label>I Agree to the <a data-target="#termModal" href="javascript:void(0);" class="popup_click">Terms and Conditions</a></label>
 						<div class="api_buttons">
-							<input type="button" class="allbtns getmerchantApi" value="Get Merchant ID" name="submit" />
+							<input type="button" class="allbtns getmerchantApi" value="Get Merchant ID" name="submit" disabled />
 						</div>
 					</form>
 					<!-- Terms and Condition Modal -->
